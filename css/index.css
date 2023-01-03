@@ -1,20 +1,105 @@
+:root {
+  --contentwidth: 650px;
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.8rem);
+  --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1rem);
+  --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  --step-2: clamp(1.62rem, calc(1.5rem + 0.58vw), 1.95rem);
+  --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+  --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+  --step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
+  --pink: #f9968b;
+  --red: #f27348;
+  --gray: #26474e;
+  --blue: #76cdcd;
+  --teal: #2cced2;
+}
+
+header {
+  padding: 1.5rem;
+}
+
 body {
-  margin: 40px auto;
-  max-width: 650px;
-  line-height: 1.6;
-  font-size: 18px;
+  line-height: 1.7;
   color: #404040;
-  padding: 0 10px;
-  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: var(--step-0);
+}
+
+main {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--contentwidth);
 }
 
 ul {
   width: 300px;
-  margin: 0 auto;
+  margin: 0;
+  margin-left: 2em;
   text-align: left;
+  padding: 0;
+}
+
+ol {
+  list-style: none;
 }
 h1,
 h2,
 h3 {
   line-height: 1.2;
+  letter-spacing: -1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+blockquote,
+dl,
+figcaption,
+li,
+p {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+* + p {
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+a {
+  color: currentColor;
+  text-decoration-skip-ink: auto;
+  /* text-decoration-color: rgb(0, 0, 238); */
+  text-decoration-color: var(--teal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2ex;
+  transition: text-decoration-thickness 0.1s linear;
+}
+
+a:hover {
+  text-decoration-thickness: 4px;
+}
+
+.home {
+  font-size: var(--step-2);
+}
+
+.homepage h1 {
+  margin: 1em 0;
+}
+
+.homepage h2 {
+  margin: 1em 0;
+}
+
+.homepage h2 em {
+  margin: 1em 0;
+  color: var(--pink);
 }
