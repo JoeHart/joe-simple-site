@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title or metadata.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ description or metadata.description }}">
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <meta name="author" content="Joe Hart" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@joehart" />
+    <meta name="twitter:creator" content="@joehart" />
+    <meta property="og:url" content="https://joehart.co.uk" />
+    <meta property="og:title" content="Joe Hart's Homepage" />
+    <meta
+      property="og:description"
+      content="Joe Hart's pioneering personal website."
+    />
+    <meta property="og:image" content="https://joehart.co.uk/me.gif" />
+    <link rel="stylesheet" href="/css/index.css">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Joe Hart",
+        "disambiguatingDescription": "Comedian & Coder"
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 class="home">{{ metadata.title }}</h1>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+  </body>
+</html>
