@@ -16,6 +16,7 @@
       content="Joe Hart's pioneering personal website."
     />
     <meta property="og:image" content="https://joehart.co.uk/me.gif" />
+    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/index.css">
     <script type="application/ld+json">
       {
@@ -28,9 +29,9 @@
   </head>
   <body>
     <header>
-      <h1 class="home">{{ metadata.title }}</h1>
+      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
     </header>
-    <main>
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
     </main>
   </body>
