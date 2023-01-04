@@ -31,6 +31,8 @@ main {
   box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--contentwidth);
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 ul {
@@ -76,7 +78,6 @@ h2 {
 a {
   color: currentColor;
   text-decoration-skip-ink: auto;
-  /* text-decoration-color: rgb(0, 0, 238); */
   text-decoration-color: var(--teal);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2ex;
