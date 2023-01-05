@@ -2,20 +2,24 @@
 <html lang="en">
   <head>
     <title>{{ title or metadata.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="{{ description or metadata.description }}">
     <meta name="generator" content="{{ eleventy.generator }}">
-    <meta name="author" content="Joe Hart" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@joehart" />
-    <meta name="twitter:creator" content="@joehart" />
-    <meta property="og:url" content="https://joehart.co.uk" />
-    <meta property="og:title" content="Joe Hart's Homepage" />
+    <meta name="author" content="Joe Hart"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@joehart"/>
+    <meta name="twitter:creator" content="@joehart"/>
+
+    <link rel="webmention" href="https://webmention.io/www.joehart.co.uk/webmention"/>
+    <link rel="pingback" href="https://webmention.io/www.joehart.co.uk/xmlrpc"/>
+
+    <meta property="og:url" content="https://joehart.co.uk"/>
+    <meta property="og:title" content="Joe Hart's Homepage"/>
     <meta
       property="og:description"
       content="Joe Hart's pioneering personal website."
-    />
-    <meta property="og:image" content="https://joehart.co.uk/me.gif" />
+/>
+    <meta property="og:image" content="https://joehart.co.uk/me.gif"/>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/index.css">
     <script type="application/ld+json">
@@ -29,7 +33,9 @@
   </head>
   <body>
     <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+      <h1 class="home">
+        <a href="{{ '/' | url }}">{{ metadata.title }}</a>
+      </h1>
     </header>
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
