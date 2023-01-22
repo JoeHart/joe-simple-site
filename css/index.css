@@ -14,27 +14,45 @@
   --gray: #26474e;
   --blue: #76cdcd;
   --teal: #2cced2;
+  --gutter: 1.5em;
+  --color-emphasis: var(--red);
+  --color-accent: var(--teal);
+  --color-decoration: var(--teal);
+  --l: 50%; /*the initial lightness*/
+  --color-secondary: var(--blue);
 }
 
 header {
-  padding: 1.5rem;
+  padding: var(--gutter);
+}
+
+time {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.post time {
+  margin-block-end: var(--step-1);
+  display: block;
 }
 
 body {
   line-height: 1.7;
   color: #404040;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Spectral", Georgia, "Times New Roman", Times, serif;
   font-size: var(--step-0);
 }
 
 main {
-  box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--contentwidth);
   padding-inline-start: 1.5rem;
   padding-inline-end: 1.5rem;
 }
-
+strong {
+  font-weight: 600;
+  color: var(--color-emphasis);
+}
 ul {
   width: 300px;
   margin: 0;
@@ -46,12 +64,27 @@ ul {
 ol {
   list-style: none;
 }
+
+h1 {
+  color: var(--color-accent);
+}
+
 h1,
 h2,
 h3 {
   line-height: 1.2;
   letter-spacing: -1px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  clear: both;
+}
+
+h3 em {
+  font-size: 0.8em;
+  font-weight: 600;
 }
 
 h1 {
@@ -67,10 +100,6 @@ p {
   line-height: 1.7;
 }
 
-* + p {
-  margin-top: 1em;
-}
-
 h2 {
   font-size: var(--step-4);
 }
@@ -78,7 +107,7 @@ h2 {
 a {
   color: currentColor;
   text-decoration-skip-ink: auto;
-  text-decoration-color: var(--teal);
+  text-decoration-color: var(--color-decoration);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2ex;
   transition: text-decoration-thickness 0.1s linear;
@@ -90,6 +119,7 @@ a:hover {
 
 .home {
   font-size: var(--step-2);
+  color: black;
 }
 
 .homepage h1 {
@@ -102,5 +132,63 @@ a:hover {
 
 .homepage h2 em {
   margin: 1em 0;
-  color: var(--pink);
+}
+
+li::marker {
+  color: var(--color-emphasis);
+}
+
+em {
+  color: var(--color-emphasis);
+}
+
+.table-of-contents ol {
+  padding-left: 1em;
+}
+
+.flow {
+  --flow-space: 1em;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1.5em);
+}
+
+h2 {
+  --flow-space: var(--step-3);
+}
+
+h3 {
+  --flow-space: var(--step-2);
+}
+
+.book-left {
+  float: left;
+  width: 30%;
+  margin-right: var(--gutter);
+  margin-bottom: var(--gutter);
+  /* The minimum margin is the width of the img plus it's right margin */
+  /* We should position it to the left hand side of the screen */
+  /* The maximum left margin is 0, essentially floating it normally */
+  margin-left: clamp(
+    calc(-30% - var(--gutter)),
+    calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
+    0px
+  );
+}
+
+.book-right {
+  float: right;
+  width: 30%;
+  margin-left: var(--gutter);
+  margin-bottom: var(--gutter);
+  margin-right: clamp(
+    calc(-30% - var(--gutter)),
+    calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
+    0px
+  );
+}
+
+main {
+  padding-bottom: 30vh;
 }

@@ -1,5 +1,23 @@
 const { DateTime } = require("luxon");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require('markdown-it-anchor');
+const markdownItTocDoneRight = require("markdown-it-toc-done-right");
+
 module.exports = function (eleventyConfig) {
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+    typographer: true,
+  };
+  const myMarkdownIt = markdownIt(options)
+
+  myMarkdownIt.use(markdownItAnchor,
+    {
+      permalink: markdownItAnchor.permalink.headerLink(),
+    });
+  myMarkdownIt.use(markdownItTocDoneRight);
+
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
@@ -12,6 +30,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
+
+  eleventyConfig.setLibrary("md", myMarkdownIt);
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {

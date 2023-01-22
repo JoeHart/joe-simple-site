@@ -12,14 +12,20 @@
 
     <link rel="webmention" href="https://webmention.io/www.joehart.co.uk/webmention"/>
     <link rel="pingback" href="https://webmention.io/www.joehart.co.uk/xmlrpc"/>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <meta property="og:url" content="https://joehart.co.uk"/>
-    <meta property="og:title" content="Joe Hart's Homepage"/>
-    <meta
-      property="og:description"
-      content="Joe Hart's pioneering personal website."
-/>
-    <meta property="og:image" content="https://joehart.co.uk/me.gif"/>
+    <meta property="og:title" content="{{ title or renderData.title or metadata.title }}"/>
+    <meta property="twitter:title" content="{{ title or renderData.title or metadata.title }}"/>
+    <meta property="og:url" content="{{ page.url }}"/>
+    <meta property="twitter:url" content="{{ page.url }}"/>
+    <meta property="twitter:domain" content="joehart.co.uk"/>
+    <meta property="og:description" content="{{description or renderData.description}}"/>
+    <meta property="twitter:description" content="{{description or renderData.description}}"/>
+    <meta property="og:image" content="{{metadata.url}}{{socialImage or metadata.socialImage}}"/>
+    <meta property="twitter:image" content="{{metadata.url}}{{socialImage or metadata.socialImage}}"/>
+    <meta property="og:type" content="article"/>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/index.css">
     <script type="application/ld+json">
