@@ -9,10 +9,9 @@ templateClass: homepage
 <h2>This is a <em>work in progress</em> that I intend to <em>never finish</em></h2>
 
 <h3>Recent Posts</h3>
-<p>Coming soon...</p>
-  {# {% set postslist = collections.posts | head(-3) %}
+{% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %} #}
+{% include "postslist.njk" %}
 
 <p>I do a few things:</p> 
 <ul>
