@@ -14,10 +14,11 @@
   --gray: #26474e;
   --blue: #76cdcd;
   --teal: #2cced2;
+  --gutter: 1.5em;
 }
 
 header {
-  padding: 1.5rem;
+  padding: var(--gutter);
 }
 
 body {
@@ -33,6 +34,7 @@ main {
   max-inline-size: var(--contentwidth);
   padding-inline-start: 1.5rem;
   padding-inline-end: 1.5rem;
+  /* position: relative; */
 }
 
 ul {
@@ -52,6 +54,11 @@ h3 {
   line-height: 1.2;
   letter-spacing: -1px;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 em {
+  font-size: 0.8em;
+  font-weight: 600;
 }
 
 h1 {
@@ -103,4 +110,28 @@ a:hover {
 .homepage h2 em {
   margin: 1em 0;
   color: var(--pink);
+}
+
+.table-of-contents ol {
+  padding-left: 1em;
+}
+
+main > * + * {
+  margin-top: 1em;
+}
+
+.book-left {
+  float: left;
+  width: 30%;
+  margin-right: var(--gutter);
+  margin-bottom: var(--gutter);
+  margin-left: clamp(
+    calc(-30% - var(--gutter)),
+    calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
+    0px
+  );
+}
+
+main {
+  padding-bottom: 30vh;
 }
