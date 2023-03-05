@@ -216,3 +216,11 @@ h3 {
     0px
   );
 }
+
+.postlist-item > * + * {
+  margin-inline-start: 0.5rem;
+}
+
+.postlist-item > time {
+  font-size: var(--step--1);
+}
