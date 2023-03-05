@@ -48,13 +48,41 @@ main {
   max-inline-size: var(--contentwidth);
   padding-inline-start: 1.5rem;
   padding-inline-end: 1.5rem;
+  padding-bottom: 30vh;
 }
+
+footer {
+  border-top: 1px dashed var(--color-emphasis);
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li + li {
+  margin-inline-start: 0.5rem;
+}
+
+.footer-content {
+  max-inline-size: var(--contentwidth);
+  margin-inline: auto;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 strong {
   font-weight: 600;
   color: var(--color-emphasis);
 }
+
 ul {
-  width: 300px;
   margin: 0;
   margin-left: 2em;
   text-align: left;
@@ -187,8 +215,4 @@ h3 {
     calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
     0px
   );
-}
-
-main {
-  padding-bottom: 30vh;
 }

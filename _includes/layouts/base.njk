@@ -45,5 +45,28 @@
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
       {{ content | safe }}
     </main>
+    <footer>
+      <div class="footer-content">
+        <p>© Joe Hart 2023</p>
+        <ul>
+          <li>
+            <span>📰</span>
+            <a href="/feed.xml" target="__blank">RSS Feed</a>
+          </li>
+          <li>
+            <span>🦣</span>
+            <a href="https://social.lol/@joehart" rel="me" target="__blank">Mastodon</a>
+          </li>
+          <li>
+            <span>🐙</span>
+            <a href="https://github.com/JoeHart" rel="me" target="__blank">GitHub</a>
+          </li>
+          <li>
+            <span>💼</span>
+            <a href="https://www.linkedin.com/in/joe-hart-developer/" rel="me" target="__blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

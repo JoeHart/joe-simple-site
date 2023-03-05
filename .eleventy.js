@@ -2,14 +2,21 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItTocDoneRight = require("markdown-it-toc-done-right");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginRss);
+
+
   let options = {
     html: true,
     breaks: true,
     linkify: true,
     typographer: true,
   };
+
+
   const myMarkdownIt = markdownIt(options)
 
   myMarkdownIt.use(markdownItAnchor,
