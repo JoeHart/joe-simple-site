@@ -89,6 +89,11 @@ ul {
   padding: 0;
 }
 
+hr {
+  border: none;
+  border-top: 1px dashed var(--color-accent);
+}
+
 ol {
   list-style: none;
 }
