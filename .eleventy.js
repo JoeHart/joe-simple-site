@@ -25,8 +25,7 @@ module.exports = function (eleventyConfig) {
     });
   myMarkdownIt.use(markdownItTocDoneRight);
 
-  // Copy the `img` and `css` folders to the output
-  eleventyConfig.addPassthroughCopy("img");
+  // Copy the  `css` folders to the output
   eleventyConfig.addPassthroughCopy("css");
 
   eleventyConfig.addFilter("readableDate", dateObj => {
@@ -62,7 +61,10 @@ module.exports = function (eleventyConfig) {
       "md",
       "njk",
       "html",
-      "liquid"
+      "liquid",
+      "jpg",
+      "png",
+      "gif",
     ],
 
     // Pre-process *.md files with: (default: `liquid`)
