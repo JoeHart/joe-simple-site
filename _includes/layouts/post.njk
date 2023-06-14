@@ -3,11 +3,23 @@ layout: layouts/base.njk
 templateClass: post
 ---
 <h1>
-  <span class="emoji">{{ emoji }}</span>{{ title }}</h1>
+  <span class="emoji">{{ emoji }}</span>{{ title }}
+</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">
-  <em>{{ page.date | readableDate }}</em>
-</time>
+<ul class="post-metadata">
+  <li>
+    <time datetime="{{ page.date | htmlDateString }}">
+      <em>{{ page.date | readableDate }}</em>
+    </time>
+  </li>
+  {%- for tag in tags | filterTagList %}
+    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <li >
+      <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+      {%- if not loop.last %}{% endif %}
+    </li>
+  {%- endfor %}
+</ul>
 
 <div class="flow">
 

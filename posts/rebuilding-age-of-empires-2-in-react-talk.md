@@ -2,7 +2,7 @@
 title: "Talk: Building Age Of Empires 2 with React"
 description: In February I gave a talk at JSWORLD Conference in Amsterdam. It was a bit of fun using a tool like react for something it shouldn't really be used for.
 date: 2023-03-02
-tags: talk react
+tags: ["talk", "react"]
 layout: layouts/post.njk
 emoji: 📣
 socialImage: img/aoe2social.png

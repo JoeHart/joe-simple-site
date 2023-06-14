@@ -35,6 +35,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("activePostsOnly", postList => {
     return postList.filter(post => post.data.draft !== true);
   });
+
+  // Return all the tags used in a collection
+  eleventyConfig.addFilter("getAllTags", collection => {
+    let tagSet = new Set();
+    for (let item of collection) {
+      (item.data.tags || []).forEach(tag => tagSet.add(tag));
+    }
+    return Array.from(tagSet);
+  });
+
+
+
+  eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+  });
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');

@@ -31,9 +31,25 @@ time {
   font-weight: 600;
 }
 
-.post time {
+.post-metadata {
+  margin: 0;
+  padding: 0;
+  display: flex;
   margin-block-end: var(--step-1);
+  list-style: none;
+}
+
+.post-metadata time {
   display: block;
+  margin-right: var(--step-1);
+}
+
+.post-metadata .post-tag {
+  margin-right: 1ch;
+}
+
+.post-metadata .post-tag:before {
+  content: "#";
 }
 
 body {
