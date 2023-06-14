@@ -124,6 +124,10 @@ h1 {
   font-size: var(--step-5);
 }
 
+h1 .emoji {
+  margin-right: 0.5ch;
+}
+
 blockquote,
 dl,
 figcaption,
