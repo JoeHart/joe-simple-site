@@ -153,6 +153,13 @@ p {
   line-height: 1.7;
 }
 
+blockquote {
+  border-inline-start: 0.2em solid;
+  border-color: var(--color-decoration);
+  font-style: italic;
+  padding-inline-start: 1em;
+}
+
 h2 {
   font-size: var(--step-4);
 }
