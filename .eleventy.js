@@ -81,9 +81,9 @@ module.exports = function (eleventyConfig) {
       "njk",
       "html",
       "liquid",
-      "jpg",
-      "png",
-      "gif",
+      // "jpg",
+      // "png",
+      // "gif",
     ],
 
     // Pre-process *.md files with: (default: `liquid`)
