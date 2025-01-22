@@ -8,8 +8,7 @@ emoji: 📘
 socialImage: img/dmzsocial.jpeg
 ---
 
-<img src="/img/dmzsocial.jpg">
-
+![Image of DMZ Compendium 1 Front Cover](/img/dmzsocial.jpeg)
 I've been in a big nostalgia hole for the first half of this year, delving back into games, comics and movies I loved as a teenager. Re-experiencing them and re-evaluating my relationship with them.
 The prompt to revisit the 2005 comic was the 2024 movie "Civil War" popping up across my various digital timelines. A fractious USA devolving into civil war told through the eyes of a photo journalist dealing with themes of objectivity and intervention, haven't I seen this before?
 
