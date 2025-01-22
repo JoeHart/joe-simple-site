@@ -8,7 +8,7 @@ emoji: 🕹️
 socialImage: /img/poesocial.webp
 ---
 
-I’ve had Pillars of Eternity(PoE) in my steam library for a **long** time. It’s one of those games I’ve begun half a dozen times but never really managed to get bast the first few hours. It first happened when it came out, then during the pandemic and more recently just after I finished Baldur's Gate 3.
+I’ve had Pillars of Eternity(PoE) in my steam library for a **long** time. It’s one of those games I’ve begun half a dozen times but never really managed to get past the first few hours. It first happened when it came out, then during the pandemic and more recently just after I finished Baldur's Gate 3.
 
 The first two I bounced off mainly because I just probably wasn’t in a mood for reading a bunch of text, but the third time it was because I was in the “hangover” period you get just after finishing a fantastic game. Where you wander around your games collections, looking for something, **anything**, that’ll give you a similar rush to what you just completed.
 
