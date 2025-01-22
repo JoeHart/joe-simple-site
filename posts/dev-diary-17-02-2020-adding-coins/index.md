@@ -2,9 +2,9 @@
 title: Dev Diary - Adding Coins
 date: 2020-02-17T22:33:17.445Z
 description: Adding rewards to encourage educational VR experiences.
-socialImage: ./img/coin.png
+socialImage: /img/coin.png
 layout: layouts/post.njk
-tags: ['vr', 'devblog']
+tags: ["vr", "devblog"]
 emoji: 🪙
 ---
 

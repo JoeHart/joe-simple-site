@@ -3,12 +3,12 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItTocDoneRight = require("markdown-it-toc-done-right");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+// const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  // eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 
 
   let options = {
@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
 
   // Copy the  `css` folders to the output
   eleventyConfig.addPassthroughCopy("css");
-  // eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("dd LLL yyyy");

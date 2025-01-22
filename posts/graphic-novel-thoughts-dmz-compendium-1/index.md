@@ -5,7 +5,7 @@ date: 2024-07-21
 tags: ["comicbooks", "books", "thoughts"]
 layout: layouts/post.njk
 emoji: 📘
-socialImage: img/dmzsocial.jpeg
+socialImage: /img/dmzsocial.jpeg
 ---
 
 ![Image of DMZ Compendium 1 Front Cover](/img/dmzsocial.jpeg)

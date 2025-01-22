@@ -5,7 +5,7 @@ date: 2023-01-22
 tags: books
 layout: layouts/post.njk
 emoji: 📚
-socialImage: img/bookssocial.png
+socialImage: /img/bookssocial.png
 ---
 
 Through the combined powers of **Audible** and **"buying physical books so I can't forget I have them"** I managed to make a larger dent in reading in 2022 than many years previous. This is a loosely categorised and entirely unordered list of what I read with some thoughts attached to them.
@@ -17,6 +17,7 @@ I've loosely organised them into some categories, some straddle between a few of
 ${toc}
 
 ## 🚀 Sci-Fi Fantasy
+
 Sci-fi is my bread and butter when it comes to reading. I think literature can do great sci-fi better than any other medium out there, which is why I keep finding myself being drawn to the genre.
 
 After reading a whole bunch of [Asimov](https://www.goodreads.com/author/show/16667.Isaac_Asimov) and [Dan Simmons](https://www.goodreads.com/author/show/2687.Dan_Simmons?from_search=true&from_srp=true) in 2021 I wanted to branch out from just "western bloke" sci-fi and to other places. And wow did it pay off in what I picked up this year.
@@ -44,11 +45,11 @@ This was recommended to me by a friend whose book club recently read it, and com
 A significantly more grounded sci-fi tale than the adventures of Lillith's Brood, it again feels like it could have been written today. Paired with reading Dawn this book gives us a clear look at how Butler viewed humanity, its fundamental flaws and its perseverance at times.
 
 By introducing each chapter with quotes from the future religion of Earthseed this story about pure human survival is painted on a grand canvas. There are times when you're nodding along to Lauren, the author of Earthseed's first text, agreeing with her worldview and then becoming a tad anxious about where this could all lead.
- 
+
 There is a sequel I'm keen to read, though the trilogy was left unfinished. I am also worried about storming ahead too quickly and running out of Butler to read.
 
-
 ### Remembrance of Earth's Past Trilogy (2014) _by Cixin Liu_
+
 ![Book covers of The Three-body Problem, The Dark Forest and Death's End](/img/remembrancetrilogy.jpg)
 
 It's capital "H" Hard Sci-Fi, but so good. Such a wonderful read, try to know as little as possible going in for the best experience. Devoured it in two days and immediately ordered the other two in the trilogy.
@@ -65,7 +66,7 @@ There are some really weird tangents about masculinity in the second book that c
 
 This has featured in a lot of "sci-fi you should read" lists over the last few years and is often framed as "softer sci-fi", or more "character-focused sci-fi". These caveats are always said with a slight chip on their shoulder as if by having a cast of lovable and empathetic characters it somehow doesn't have the tantalising "what if" magic of sci-fi.
 
-This is **rubbish**, this book is a great space sci-fi novel with exciting ideas about space travel, alien species, trade and war and is also full of characters whom you'll learn to love. 
+This is **rubbish**, this book is a great space sci-fi novel with exciting ideas about space travel, alien species, trade and war and is also full of characters whom you'll learn to love.
 
 The only caveat I have is it is on the "slice of life" side of fiction, so if that isn't your jam you might find the narrative unsatisfying. However, I loved it. I can't wait to sink myself into the rest of this charming series.
 
@@ -73,8 +74,7 @@ The only caveat I have is it is on the "slice of life" side of fiction, so if th
 
 <img aria-hidden="true" class="book-left" src="/img/thealgebraist.jpg">
 
-
-This is a book I tried to read as a kid and just couldn't push through it. Primarily this is a book of really cool ideas, about ancient life in gas giants, about interstellar society. I know it's common wisdom to rave about Banks' Culture novels, but I think this is a lovely fully formed whole meal of a book. 
+This is a book I tried to read as a kid and just couldn't push through it. Primarily this is a book of really cool ideas, about ancient life in gas giants, about interstellar society. I know it's common wisdom to rave about Banks' Culture novels, but I think this is a lovely fully formed whole meal of a book.
 
 If you're looking for a heady hard sci-fi book that is a one-off, then this is for you.
 
@@ -128,9 +128,9 @@ If you haven't read My Brother's Husband, pick that up first but if you have thi
 
 **This is the good shit**. If you're curious to see what "making the big blue boy scout work for modern audiences" looks like, it's **this** run. I read the omnibus version, but you can read it on the DC app or pick up the trade paperbacks.
 
-This sees classic Superman enter a new phase of life, raising a son and coming back out into the world after some time in hiding. 
+This sees classic Superman enter a new phase of life, raising a son and coming back out into the world after some time in hiding.
 
-It's got time-travelling dinosaurs, it's got Lex Luthor, it's got feel-good lines about truth and justice. 
+It's got time-travelling dinosaurs, it's got Lex Luthor, it's got feel-good lines about truth and justice.
 
 What a vibe.
 
@@ -186,7 +186,6 @@ I feel like it's an important book to read since most I've ever read about the n
 
 This is about the people on the ground on the day, a few of them survivors and the culture and communities that span out from those events.
 
-
 ### Sorry I’m Late I Didn’t Want To Come (2019) _by Jessica Pan_
 
 <img aria-hidden="true" class="book-right" src="/img/sorryimlateididntwanttocome.jpg">
@@ -199,9 +198,9 @@ I wouldn't necessarily recommend this book, but I wouldn't **not** recommend it 
 
 <img aria-hidden="true" class="book-left" src="/img/stolenfocus.jpg">
 
-Ironically I saw a plug for this while scrolling Twitter. It is a timely look at exactly why we feel we can't do any deep focus anymore with some good stories and anecdotes thrown in. 
+Ironically I saw a plug for this while scrolling Twitter. It is a timely look at exactly why we feel we can't do any deep focus anymore with some good stories and anecdotes thrown in.
 
-It is a deeply realistic take on the state of the attention economy, and because of that a fairly depressing take. There is no solution here for the individual, this is a descriptive account of how bad things are written with lovely prose. 
+It is a deeply realistic take on the state of the attention economy, and because of that a fairly depressing take. There is no solution here for the individual, this is a descriptive account of how bad things are written with lovely prose.
 
 Now for most people, I'd probably say it's not necessarily worth reading. Though for those of us working in tech, I'd say it's essential. Books like this are key to making sure we understand the impact of the work we do.
 
@@ -213,7 +212,7 @@ This is a book I'm conflicted about a great deal. On the one hand, I spent a lot
 
 It can result in a wholesale dismissal of any and all medical interventions for mental health issues that could be a little dangerous.
 
-Like a lot of things, the uncomfortable reality is a murky grey area. 
+Like a lot of things, the uncomfortable reality is a murky grey area.
 
 Ultimately a compelling read with a lot to chew over and I think worth reading even though I don't agree with a lot of stuff in there.
 
