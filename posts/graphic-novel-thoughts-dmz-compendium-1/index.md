@@ -2,7 +2,7 @@
 title: "Graphic Novel Thoughts: DMZ Compendium 1"
 description: Revisiting DMZ was a nostalgic trip through 2000s grunge art and anti-establishment themes, rediscovering a comic that shaped my teenage years.
 date: 2024-07-21
-tags: ["comicbook", "book", "thoughts"]
+tags: ["comicbooks", "books", "thoughts"]
 layout: layouts/post.njk
 emoji: 📘
 socialImage: img/dmzsocial.jpeg
