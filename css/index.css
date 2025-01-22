@@ -24,6 +24,8 @@
 
 header {
   padding: var(--gutter);
+  display: flex;
+  justify-content: space-between;
 }
 
 time {
@@ -263,4 +265,13 @@ figcaption {
   font-style: italic;
   margin-left: 1em;
   line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
