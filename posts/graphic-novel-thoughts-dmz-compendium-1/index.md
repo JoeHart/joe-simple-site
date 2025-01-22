@@ -8,13 +8,13 @@ emoji: 📘
 socialImage: img/dmzsocial.jpeg
 ---
 
-![Image of DMZ Compendium 1 Front Cover](./dmzsocial.jpeg)
+![Image of DMZ Compendium 1 Front Cover](/img/dmzsocial.jpeg)
 I've been in a big nostalgia hole for the first half of this year, delving back into games, comics and movies I loved as a teenager. Re-experiencing them and re-evaluating my relationship with them.
 The prompt to revisit the 2005 comic was the 2024 movie "Civil War" popping up across my various digital timelines. A fractious USA devolving into civil war told through the eyes of a photo journalist dealing with themes of objectivity and intervention, haven't I seen this before?
 
 My main memory of DMZ was its cut and paste rough art style. I was so enamored with that particular style of grunge artwork in my teens I remember using panels from DMZ in my GCSE Graphics coursework "inspiration" section. It was a particularly 2000s aesthetic, lots of templates, rough -, and imagery enabled by the explosion of software like Photoshop at the time.
 
-![Showing inner pages from DMZ, displaying the grungey art style.](dmz1.jpeg)
+![Showing inner pages from DMZ, displaying the grungey art style.](/img/dmz1.jpeg)
 
 Story wise I vaguely remembered it being about a journalist dropped into New York city, the titular De-Militarised Zone, finding a life and a vocation in the war torn city. As a teenager living in a sleepy English town I was mostly enamoured by the idea of a big city and that a person could spend their life taking photographs, the "war-ness" of it was a peripheral part of my memory.
 As a kid I only ever had the first 2 or 3 trade paperbacks of the series, covering maybe 10-15 issues. So picking up this compendium covering a whopping 36 issues felt very indulgent.
