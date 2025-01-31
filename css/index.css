@@ -281,6 +281,12 @@ h3 {
   margin-inline-start: 0.5rem;
 }
 
+.postlist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .postlist-item > time {
   font-size: var(--step--1);
 }
@@ -303,4 +309,8 @@ nav.site-menu ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
