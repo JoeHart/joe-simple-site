@@ -181,17 +181,25 @@ h2 {
   font-size: var(--step-4);
 }
 
+@property --thickness {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2px;
+}
+
 a {
   color: currentColor;
   text-decoration-skip-ink: auto;
   text-decoration-color: var(--color-decoration);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2ex;
-  transition: text-decoration-thickness 0.1s linear;
+  text-decoration-thickness: var(--thickness);
+  text-underline-offset: 0.2em;
+  transition: --thickness 200ms;
 }
 
-a:hover {
-  text-decoration-thickness: 4px;
+a:hover,
+a:focus {
+  --thickness: 4px;
+  --offset: 2em;
 }
 
 .home {
