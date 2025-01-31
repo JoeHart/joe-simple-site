@@ -85,6 +85,7 @@
         person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
       })
     </script>
+    {% block customhead %}{% endblock %}
   </head>
   <body>
     <header>
@@ -100,9 +101,9 @@
             <li>
               <a href="{{ '/talks/' | url }}">📣 Talks</a>
             </li>
-            {# <li>
+            <li>
               <a href="{{ '/games/' | url }}">🕹️ Games</a>
-            </li> #}
+            </li>
           </ul>
         </nav>
       </burger-menu>

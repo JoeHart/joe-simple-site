@@ -73,6 +73,17 @@ main {
   margin-inline: auto;
 }
 
+.game-template {
+  max-inline-size: 100vw;
+}
+
+.game-template .webgl-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 footer {
   border-top: 1px dashed var(--color-emphasis);
 }
