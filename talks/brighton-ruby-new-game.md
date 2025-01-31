@@ -1,5 +1,5 @@
 ---
-title: "Talk: New Game @ Brighton Ruby"
+title: "New Game @ Brighton Ruby"
 description: This year it was an absolute joy to return to Brighton Ruby and do some silly game stuff.
 date: 2023-06-30
 tags: ["talk"]
