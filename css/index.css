@@ -20,13 +20,7 @@
   --color-decoration: var(--teal);
   --l: 50%; /*the initial lightness*/
   --color-secondary: var(--blue);
-  /* fix these */
 
-  --color-light: #ffffff;
-  --color-light-shade: #fafffd;
-  --color-dark: #062726;
-  --color-primary: #d81159;
-  --color-primary-shade: #b90f4c;
   --zindex-hamburger-menupanel: 10;
   --zindex-hamburger-close-icon: 11;
   --zindex-home-title: 11;
