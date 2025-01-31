@@ -65,9 +65,6 @@ main {
   padding-inline-start: 1.5rem;
   padding-inline-end: 1.5rem;
   padding-bottom: 30vh;
-}
-
-.main-fixed-width {
   max-inline-size: var(--contentwidth);
   margin-inline: auto;
 }
