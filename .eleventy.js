@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
 
 
   eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts", "talks", "blog"].indexOf(tag) === -1);
+    return (tags || []).filter(tag => ["all", "nav", "post", "posts", "talks", "blog", "blogs", "playgames"].indexOf(tag) === -1);
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

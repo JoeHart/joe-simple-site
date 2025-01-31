@@ -5,13 +5,11 @@ templateClass: post
 <h1>
   <span class="emoji">{{ emoji }}</span>{{ title }}
 </h1>
-
-<ul class="post-metadata">
-  <li>
-    <time datetime="{{ page.date | htmlDateString }}">
+<div  class="post-metadata">
+<time datetime="{{ page.date | htmlDateString }}">
       <em>{{ page.date | readableDate }}</em>
     </time>
-  </li>
+<ul>
   {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li >
@@ -20,6 +18,7 @@ templateClass: post
     </li>
   {%- endfor %}
 </ul>
+</div>
 
 <div class="flow">
 

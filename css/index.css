@@ -36,18 +36,23 @@ time {
   font-style: italic;
   font-weight: 600;
 }
-
 .post-metadata {
+  display: flex;
+}
+
+.post-metadata ul {
   margin: 0;
   padding: 0;
   display: flex;
   margin-block-end: var(--step-1);
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .post-metadata time {
-  display: block;
+  /* display: block; */
   margin-right: var(--step-1);
+  white-space: nowrap;
 }
 
 .post-metadata .post-tag {
