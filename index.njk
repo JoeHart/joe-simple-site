@@ -1,80 +1,75 @@
 ---
-layout: layouts/base-no-main.njk
+layout: layouts/base.njk
 title: Joe Hart's Homepage
+templateClass: homepage
 ---
 
-<main class="homepage">
-  <div class="main-with-sidebar">
-    <div
-      style="
-        max-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      "
-    >
-      <h1>👋 I'm Joe, and this is my homepage.</h1>
-      <h2>
-        I'm a <em>web person</em>, and I love making <em>joyous</em> and
-        <em>charming</em> things.
-      </h2>
-    </div>
-    <div class="flow">
-      <h3>Featured Talk</h3>
+<h1>👋 I'm Joe, and this is my homepage.</h1>
+<h2>
+  I'm a <em>web person</em>, and I love making <em>joyous</em> and
+  <em>charming</em> things.
+</h2>
+<div class="flow">
+  <h3>Recent Posts</h3>
+  {% set postslist = collections.posts | activePostsOnly | head(-5) %} {% set
+  postslistCounter = collections.posts | length %} {% include "postslist.njk" %}
 
-      <div
-        style="
-          position: relative;
-          padding-bottom: 56.25%;
-          height: 0;
-          overflow: hidden;
-        "
-      >
-        <iframe
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
-          src="https://www.youtube.com/embed/meUjZAyBkE8"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
+  <h3>Featured Talk</h3>
 
-      <h3>Recent Posts</h3>
-      {% set postslist = collections.posts | activePostsOnly | head(-5) %} {%
-      set postslistCounter = collections.posts | length %} {% include
-      "postslist.njk" %}
-      <h3>About me</h3>
-      <p>
-        <a href="https://www.joehartcomedian.com" target="_blank"
-          >I say/do/make funny things</a
-        >,
-        <a href="https://github.com/JoeHart" target="_blank">I write code</a> ,
-        <a href="http://www.joehart.fun" target="_blank">I make games</a>
-      </p>
-
-      <p>
-        For now find me on
-        <a href="https://social.lol/@joehart" rel="me" target="_blank"
-          >Mastodon</a
-        >,
-        <a
-          href="https://www.linkedin.com/in/joe-hart-developer/"
-          rel="me"
-          target="_blank"
-          >LinkedIn</a
-        >,
-        <a href="https://github.com/JoeHart" rel="me" target="_blank">GitHub</a>
-      </p>
-      <p>
-        If you'd like to work together, build something or just hang out say hi
-        on Mastodon!
-      </p>
-      <p>Thanks for reading!</p>
-      <p>Joe<br />x</p>
-
-      <marquee>Cool Right?</marquee>
-    </div>
+  <div
+    style="
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+    "
+  >
+    <iframe
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+      src="https://www.youtube.com/embed/meUjZAyBkE8"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
   </div>
-</main>
+  <h3>About me</h3>
+
+  <p>
+    I say/do/make
+    <a href="https://www.joehartcomedian.com" target="_blank">funny things</a>,
+    I write <a href="https://github.com/JoeHart" target="_blank">code</a> , I
+    make <a href="http://www.joehart.fun" target="_blank">silly games</a>.
+  </p>
+  <p>
+    In a professional sense im a front-end engineer, I've worked at
+    <a href="https://monzo.com/" target="_blank">Monzo</a>,
+    <a href="https://bbc.co.uk" target="_blank">The BBC</a>,
+    <a href="https://shop.lego.com/" target="_blank">LEGO</a> and a
+    <a
+      href="https://www.linkedin.com/in/joe-hart-developer/details/experience/"
+      target="_blank"
+      >bunch of startups</a
+    >.
+  </p>
+
+  <p>
+    For now find me on
+    <a href="https://social.lol/@joehart" rel="me" target="_blank">Mastodon</a>,
+    <a
+      href="https://www.linkedin.com/in/joe-hart-developer/"
+      rel="me"
+      target="_blank"
+      >LinkedIn</a
+    >,
+    <a href="https://github.com/JoeHart" rel="me" target="_blank">GitHub</a>
+  </p>
+  <p>
+    If you'd like to work together, build something or just hang out say hi on
+    Mastodon!
+  </p>
+  <p>Thanks for reading!</p>
+  <p>Joe<br />x</p>
+
+  <marquee>Cool Right?</marquee>
+</div>

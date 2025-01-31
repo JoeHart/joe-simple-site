@@ -48,19 +48,25 @@
       <h1 class="home">
         <a href="{{ '/' | url }}">{{ metadata.title }}</a>
       </h1>
-      <nav>
+      <nav class="site-menu">
         <ol>
           <li>
-            <a href="{{ '/blog/' | url }}">Blog</a>
+            <a href="{{ '/blog/' | url }}">✍️ Blog</a>
           </li>
+          {# <li>
+            <a href="{{ '/blog/' | url }}">📣 Talks</a>
+          </li>
+          <li>
+            <a href="{{ '/games/' | url }}">🕹️ Games</a>
+          </li> #}
         </nav>
       </header>
-      <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+<main{% if templateClass %} class="main-fixed-width {{ templateClass }}"{% endif %}>
         {{ content | safe }}
       </main>
       <footer>
         <div class="footer-content">
-          <p>© Joe Hart 2023</p>
+            <p>© Joe Hart {% year %}</p>
           <ul>
             <li>
               <span>📰</span>
