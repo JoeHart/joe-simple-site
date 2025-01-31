@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
   // Copy the  `css` folders to the output
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("js");
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
