@@ -189,6 +189,12 @@ a:hover {
 .home {
   font-size: var(--step-2);
   color: black;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .homepage ol {
@@ -391,6 +397,7 @@ nav.site-menu ul {
 
 .burger-menu[enabled="true"] .navigation ul {
   display: block;
+  padding-left: var(--gutter);
 }
 
 .burger-menu[enabled="true"] .navigation ul > * + * {
