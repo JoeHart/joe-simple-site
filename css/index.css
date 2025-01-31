@@ -284,7 +284,7 @@ h3 {
 }
 
 .postlist {
-  --post-list-line-indent: 2.5ch;
+  --post-list-line-indent: var(--step-1);
   padding: 0;
   margin-left: var(--post-list-line-indent);
 }
