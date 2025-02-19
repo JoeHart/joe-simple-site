@@ -7,8 +7,8 @@
   <li
     class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}"
   >
+    <span class="postlist-emoji">{{post.data.emoji}}</span>
     <a href="{{ post.url | url }}" class="postlist-link">
-      <span class="postlist-emoji">{{post.data.emoji}}</span>
       {% if post.data.title %}{{ post.data.title }} {% else %}
       <code>{{ post.url }}</code>
       {% endif %}

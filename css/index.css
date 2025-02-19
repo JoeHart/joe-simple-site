@@ -317,7 +317,9 @@ h3 {
   margin-inline-start: 0.5rem;
 }
 .postlist-link {
-  text-indent: calc(-1 * var(--post-list-line-indent));
+  text-align: left;
+  align-self: flex-start;
+  /* text-indent: calc(-1 * var(--post-list-line-indent)); */
 }
 
 .postlist-item {
@@ -328,6 +330,11 @@ h3 {
 
 .postlist-item > time {
   font-size: var(--step--1);
+}
+
+.postlist-date {
+  flex-grow: 1;
+  text-align: right;
 }
 
 figcaption {
