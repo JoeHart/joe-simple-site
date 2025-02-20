@@ -7,14 +7,23 @@
   <li
     class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}"
   >
-    <span class="postlist-emoji">{{post.data.emoji}}</span>
-    <a href="{{ post.url | url }}" class="postlist-link">
+    <span
+      style="view-transition-name: post-{{ post.fileSlug }}-emoji"
+      class="postlist-emoji"
+      >{{post.data.emoji}}</span
+    >
+    <a
+      style="view-transition-name: post-{{ post.fileSlug }}-title"
+      href="{{ post.url | url }}"
+      class="postlist-link"
+    >
       {% if post.data.title %}{{ post.data.title }} {% else %}
       <code>{{ post.url }}</code>
       {% endif %}
     </a>
     <time
       class="postlist-date no-wrap"
+      style="view-transition-name: post-{{ post.fileSlug }}-date"
       datetime="{{ post.date | htmlDateString }}"
       >{{ post.date | readableDate }}</time
     >

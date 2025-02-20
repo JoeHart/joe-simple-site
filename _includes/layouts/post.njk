@@ -2,22 +2,26 @@
 layout: layouts/base.njk
 templateClass: post
 ---
-<h1>
-  <span class="emoji">{{ emoji }}</span>{{ title }}
-</h1>
+  <h1>
+    <span       style="view-transition-name: post-{{ page.fileSlug }}-emoji"
+ class="emoji">{{ emoji }}</span><span       style="view-transition-name: post-{{ page.fileSlug }}-title"
+>{{ title }}</span>
+  </h1>
 <div  class="post-metadata">
-<time datetime="{{ page.date | htmlDateString }}">
-      <em>{{ page.date | readableDate }}</em>
-    </time>
-<ul>
-  {%- for tag in tags | filterTagList %}
-    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li >
-      <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
-      {%- if not loop.last %}{% endif %}
-    </li>
-  {%- endfor %}
-</ul>
+  <time      
+  style="view-transition-name: post-{{ page.fileSlug }}-date"
+ datetime="{{ page.date | htmlDateString }}">
+    <em>{{ page.date | readableDate }}</em>
+  </time>
+  <ul>
+    {%- for tag in tags | filterTagList %}
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li >
+        <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+        {%- if not loop.last %}{% endif %}
+      </li>
+    {%- endfor %}
+  </ul>
 </div>
 
 <div class="flow">
