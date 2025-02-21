@@ -1,8 +1,9 @@
 <div class="post-grid">
   {% for post in postslist | reverse %}
   <article class="post-card flow">
+    {% if post.data.remoteURL %} {% set link = post.data.remoteURL %} {% else %} {% set link = post.url %} {% endif %}
     {% if post.data.socialImage %}
-    <a href="{{ post.url | url }}" class="post-card-image">
+    <a href="{{ link | url }}" class="post-card-image">
       <img src="{{ post.data.socialImage | url }}" alt="{{ post.data.title }}" width="1600" height="900" />
     </a>
     {% endif %}
@@ -11,7 +12,8 @@
       <span style="view-transition-name: post-{{ post.fileSlug }}-emoji" class="post-card-emoji">
         {{ post.data.emoji }}
       </span>
-      <a href="{{ post.url | url }}" style="view-transition-name: post-{{ post.fileSlug }}-title">
+
+      <a href="{{ link | url }}" style="view-transition-name: post-{{ post.fileSlug }}-title">
         {% if post.data.title %}{{ post.data.title }}{% else %}
         <code>{{ post.url }}</code>
         {% endif %}
