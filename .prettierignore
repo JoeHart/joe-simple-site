@@ -3,3 +3,4 @@ public
 .cache
 *.min.js
 play
+feed.njk
