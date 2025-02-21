@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
+templateClass: flow
 ---
 
 <h1>📣 Talks</h1>
-{% set postslist = collections.talks %} {% include "postslist.njk" %}
+{% set postslist = collections.talks %} {% include "postgrid.njk" %}

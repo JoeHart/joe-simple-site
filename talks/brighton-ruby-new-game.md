@@ -4,6 +4,7 @@ description: This year it was an absolute joy to return to Brighton Ruby and do 
 date: 2023-06-30
 tags: ['talk']
 layout: layouts/post.njk
+socialImage: /img/new-game-ruby.jpeg
 emoji: 📣
 ---
 

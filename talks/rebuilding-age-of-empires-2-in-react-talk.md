@@ -5,7 +5,7 @@ date: 2023-03-02
 tags: ['talk', 'react']
 layout: layouts/post.njk
 emoji: 📣
-socialImage: /img/aoe2social.png
+socialImage: /img/aoe2social2.jpeg
 ---
 
 In February I gave a talk at JSWORLD Conference in Amsterdam. It was a bit of fun using a tool like react for something it shouldn't really be used for. Below is the recording, I hope you enjoy it!
