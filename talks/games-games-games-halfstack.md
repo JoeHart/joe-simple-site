@@ -1,7 +1,7 @@
 ---
 title: 'Games Games Games'
 description: In the middle of lockdown Halfstack did an online conference and this was my contribution to the day, talking about making fun games and why people should make fun stuff.
-date: 2023-03-02
+date: 2020-05-22
 tags: ['talk', 'games']
 layout: layouts/post.njk
 emoji: 📣
