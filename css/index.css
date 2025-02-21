@@ -473,7 +473,7 @@ nav.site-menu ul {
   transform: rotate(180deg);
 }
 .post-grid > * + * {
-  margin-top: var(--gutter);
+  margin-top: var(--step-5);
 }
 
 .post-card-footer {
