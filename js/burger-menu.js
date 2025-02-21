@@ -1,49 +1,47 @@
 // Credit: https://piccalil.li/blog/build-a-fully-responsive-progressively-enhanced-burger-menu/
 
-import getFocusableElements from './get-focusable-elements.js';
+import getFocusableElements from './get-focusable-elements.js'
 
 class BurgerMenu extends HTMLElement {
   constructor() {
-    super();
+    super()
 
-    const self = this;
+    const self = this
 
     this.state = new Proxy(
       {
         status: 'open',
-        enabled: false
+        enabled: false,
       },
       {
         set(state, key, value) {
-          const oldValue = state[key];
+          const oldValue = state[key]
 
-          state[key] = value;
+          state[key] = value
           if (oldValue !== value) {
-            self.processStateChange();
+            self.processStateChange()
           }
-          return state;
-        }
+          return state
+        },
       }
-    );
+    )
   }
 
   get maxWidth() {
-    return parseInt(this.getAttribute('max-width') || 9999, 10);
+    return parseInt(this.getAttribute('max-width') || 9999, 10)
   }
 
   connectedCallback() {
-    this.initialMarkup = this.innerHTML;
-    this.render();
+    this.initialMarkup = this.innerHTML
+    this.render()
 
-    const observer = new ResizeObserver(observedItems => {
-      const { contentRect } = observedItems[0];
-      this.state.enabled = contentRect.width <= this.maxWidth;
-    });
+    const observer = new ResizeObserver((observedItems) => {
+      const { contentRect } = observedItems[0]
+      this.state.enabled = contentRect.width <= this.maxWidth
+    })
 
     // We want to watch the parent like a hawk
-    observer.observe(this.parentNode);
-
-
+    observer.observe(this.parentNode)
   }
 
   render() {
@@ -56,100 +54,90 @@ class BurgerMenu extends HTMLElement {
           ${this.initialMarkup} 
         </div>
       </div>
-    `;
+    `
 
-    this.postRender();
+    this.postRender()
   }
 
   postRender() {
-    this.trigger = this.querySelector('[data-element="burger-menu-trigger"]');
-    this.panel = this.querySelector('[data-element="burger-menu-panel"]');
-    this.root = this.querySelector('[data-element="burger-root"]');
-    this.focusableElements = getFocusableElements(this);
+    this.trigger = this.querySelector('[data-element="burger-menu-trigger"]')
+    this.panel = this.querySelector('[data-element="burger-menu-panel"]')
+    this.root = this.querySelector('[data-element="burger-root"]')
+    this.focusableElements = getFocusableElements(this)
 
     if (this.trigger && this.panel) {
-      this.toggle();
+      this.toggle()
 
-      this.trigger.addEventListener('click', evt => {
-        evt.preventDefault();
+      this.trigger.addEventListener('click', (evt) => {
+        evt.preventDefault()
 
-        this.toggle();
-      });
+        this.toggle()
+      })
 
       document.addEventListener('focusin', () => {
         if (!this.contains(document.activeElement)) {
-          this.toggle('closed');
+          this.toggle('closed')
         }
-      });
+      })
 
-      return;
+      return
     }
 
-    this.innerHTML = this.initialMarkup;
+    this.innerHTML = this.initialMarkup
   }
-
 
   toggle(forcedStatus) {
     if (forcedStatus) {
       if (this.state.status === forcedStatus) {
-        return;
+        return
       }
 
-      this.state.status = forcedStatus;
+      this.state.status = forcedStatus
     } else {
-      this.state.status = this.state.status === 'closed' ? 'open' : 'closed';
+      this.state.status = this.state.status === 'closed' ? 'open' : 'closed'
     }
   }
 
   processStateChange() {
-    this.root.setAttribute('status', this.state.status);
-    this.root.setAttribute('enabled', this.state.enabled ? 'true' : 'false');
+    this.root.setAttribute('status', this.state.status)
+    this.root.setAttribute('enabled', this.state.enabled ? 'true' : 'false')
 
-    this.manageFocus();
+    this.manageFocus()
 
     switch (this.state.status) {
       case 'closed':
-        this.trigger.setAttribute('aria-expanded', 'false');
-        this.trigger.setAttribute('aria-label', 'Open menu');
-        break;
+        this.trigger.setAttribute('aria-expanded', 'false')
+        this.trigger.setAttribute('aria-label', 'Open menu')
+        break
       case 'open':
       case 'initial':
-        this.trigger.setAttribute('aria-expanded', 'true');
-        this.trigger.setAttribute('aria-label', 'Close menu');
-        break;
+        this.trigger.setAttribute('aria-expanded', 'true')
+        this.trigger.setAttribute('aria-label', 'Close menu')
+        break
     }
   }
-
 
   manageFocus() {
     if (!this.state.enabled) {
-      this.focusableElements.forEach(element => element.removeAttribute('tabindex'));
-      return;
+      this.focusableElements.forEach((element) => element.removeAttribute('tabindex'))
+      return
     }
 
     switch (this.state.status) {
       case 'open':
-        this.focusableElements.forEach(element => element.removeAttribute('tabindex'));
-        break;
+        this.focusableElements.forEach((element) => element.removeAttribute('tabindex'))
+        break
       case 'closed':
-        [...this.focusableElements]
-          .filter(
-            element => element.getAttribute('data-element') !== 'burger-menu-trigger'
-          )
-          .forEach(element => element.setAttribute('tabindex', '-1'));
-        break;
+        ;[...this.focusableElements]
+          .filter((element) => element.getAttribute('data-element') !== 'burger-menu-trigger')
+          .forEach((element) => element.setAttribute('tabindex', '-1'))
+        break
     }
   }
-
-
-
-
-
 }
 
 if ('customElements' in window) {
-  customElements.define('burger-menu', BurgerMenu);
+  customElements.define('burger-menu', BurgerMenu)
 }
 
-export default BurgerMenu;
-
+export default BurgerMenu

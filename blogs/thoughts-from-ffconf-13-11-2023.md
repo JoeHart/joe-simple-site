@@ -1,8 +1,8 @@
 ---
-title: "Thoughts from FFConf 2023"
+title: 'Thoughts from FFConf 2023'
 description: Immediate thoughts after a wonderful 2023 FFConf
 date: 2023-11-13
-tags: ["conference"]
+tags: ['conference']
 layout: layouts/post.njk
 emoji: 🤔
 ---

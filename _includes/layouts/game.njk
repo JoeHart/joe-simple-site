@@ -2,31 +2,26 @@
 layout: layouts/base.njk
 templateClass: game-template
 ---
-{% block customhead %}
-  <link rel="shortcut icon" href="/play/{{ gameid }}/TemplateData/favicon.ico" />
-    <link rel="stylesheet" href="/play/{{ gameid }}/TemplateData/style.css" />
-    <script src="/play/{{ gameid }}/TemplateData/UnityProgress.js"></script>
-    <script src="/play/{{ gameid }}/Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate(
-        "unityContainer",
-        "/play/{{ gameid }}/Build/Katamari.json",
-        { onProgress: UnityProgress }
-      );
-    </script>
-{% endblock %}
-<h1>
-  <span class="emoji">{{ emoji }}</span>{{ title }}
-</h1>
 
+{% block customhead %}
+<link rel="shortcut icon" href="/play/{{ gameid }}/TemplateData/favicon.ico" />
+<link rel="stylesheet" href="/play/{{ gameid }}/TemplateData/style.css" />
+<script src="/play/{{ gameid }}/TemplateData/UnityProgress.js"></script>
+<script src="/play/{{ gameid }}/Build/UnityLoader.js"></script>
+<script>
+  var unityInstance = UnityLoader.instantiate('unityContainer', '/play/{{ gameid }}/Build/Katamari.json', {
+    onProgress: UnityProgress,
+  })
+</script>
+{% endblock %}
+<h1><span class="emoji">{{ emoji }}</span>{{ title }}</h1>
 
 <div class="flow">
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 100%;  aspect-ratio: 4 / 3;"></div>
-      <div class="footer">
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-      </div>
+  <div class="webgl-content">
+    <div id="unityContainer" style="width: 100%; aspect-ratio: 4 / 3"></div>
+    <div class="footer">
+      <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
     </div>
+  </div>
   {{ content | safe }}
-
-</flow>
+</div>

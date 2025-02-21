@@ -63,13 +63,13 @@ time {
 }
 
 .post-metadata .post-tag:before {
-  content: "#";
+  content: '#';
 }
 
 body {
   line-height: 1.7;
   color: #404040;
-  font-family: "Spectral", Georgia, "Times New Roman", Times, serif;
+  font-family: 'Spectral', Georgia, 'Times New Roman', Times, serif;
   font-size: var(--step-0);
 }
 
@@ -190,7 +190,7 @@ h2 {
 }
 
 @property --thickness {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 2px;
 }
@@ -291,11 +291,7 @@ h3 {
   /* The minimum margin is the width of the img plus it's right margin */
   /* We should position it to the left hand side of the screen */
   /* The maximum left margin is 0, essentially floating it normally */
-  margin-left: clamp(
-    calc(-30% - var(--gutter)),
-    calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
-    0px
-  );
+  margin-left: clamp(calc(-30% - var(--gutter)), calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))), 0px);
 }
 
 .book-right {
@@ -303,11 +299,7 @@ h3 {
   width: 30%;
   margin-left: var(--gutter);
   margin-bottom: var(--gutter);
-  margin-right: clamp(
-    calc(-30% - var(--gutter)),
-    calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))),
-    0px
-  );
+  margin-right: clamp(calc(-30% - var(--gutter)), calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))), 0px);
 }
 
 .postlist {
@@ -391,7 +383,7 @@ nav.site-menu ul {
 
 .burger-menu__bar::before,
 .burger-menu__bar::after {
-  content: "";
+  content: '';
 }
 
 .burger-menu__bar::before {
@@ -402,7 +394,7 @@ nav.site-menu ul {
   bottom: -8px;
 }
 
-.burger-menu[enabled="true"] .burger-menu__trigger {
+.burger-menu[enabled='true'] .burger-menu__trigger {
   display: block;
   width: 2rem;
   height: 2rem; /* Nice big tap target */
@@ -413,7 +405,7 @@ nav.site-menu ul {
   cursor: pointer;
 }
 
-.burger-menu[enabled="true"] .burger-menu__panel {
+.burger-menu[enabled='true'] .burger-menu__panel {
   position: absolute;
   top: 0;
   left: 0;
@@ -428,46 +420,46 @@ nav.site-menu ul {
   -webkit-overflow-scrolling: touch;
 }
 
-.burger-menu[enabled="true"] .navigation ul {
+.burger-menu[enabled='true'] .navigation ul {
   display: block;
   padding-left: var(--gutter);
 }
 
-.burger-menu[enabled="true"] .navigation ul > * + * {
+.burger-menu[enabled='true'] .navigation ul > * + * {
   margin-top: var(--flow-space);
 }
 
-.burger-menu[enabled="true"] .navigation li {
+.burger-menu[enabled='true'] .navigation li {
   font-size: 1.5rem;
 }
 
-.burger-menu[enabled="true"][status="open"] .burger-menu__panel {
+.burger-menu[enabled='true'][status='open'] .burger-menu__panel {
   visibility: visible;
   opacity: 1;
   transition: opacity 100ms ease;
 }
 
-.burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
+.burger-menu[enabled='true'][status='closed'] .burger-menu__panel > * {
   opacity: 0;
 }
 
-.burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
+.burger-menu[enabled='true'][status='open'] .burger-menu__panel > * {
   transform: translateY(0);
   opacity: 1;
   transition: opacity 100ms ease 100ms;
 }
 
-.burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.burger-menu[enabled="true"][status="open"] .burger-menu__bar::after {
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar::after {
   top: 0;
   transform: rotate(-45deg);
 }
 
-.burger-menu[enabled="true"][status="open"] .burger-menu__bar {
+.burger-menu[enabled='true'][status='open'] .burger-menu__bar {
   background: transparent;
   border-color: transparent;
   transform: rotate(180deg);

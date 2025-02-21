@@ -1,0 +1,45 @@
+<div class="post-grid">
+  {% for post in postslist | reverse %}
+  <article class="post-card">
+    {% if post.data.socialImage %}
+    <a href="{{ post.url | url }}" class="post-card-image">
+      <img src="{{ post.data.socialImage | url }}" alt="{{ post.data.title }}" loading="lazy" />
+    </a>
+    {% endif %}
+
+    <div class="post-card-content">
+      <span style="view-transition-name: post-{{ post.fileSlug }}-emoji" class="post-card-emoji">
+        {{ post.data.emoji }}
+      </span>
+
+      <h2 class="post-card-title" style="view-transition-name: post-{{ post.fileSlug }}-title">
+        <a href="{{ post.url | url }}">
+          {% if post.data.title %}{{ post.data.title }}{% else %}
+          <code>{{ post.url }}</code>
+          {% endif %}
+        </a>
+      </h2>
+
+      <time
+        class="post-card-date"
+        style="view-transition-name: post-{{ post.fileSlug }}-date"
+        datetime="{{ post.date | htmlDateString }}"
+      >
+        {{ post.date | readableDate }}
+      </time>
+
+      {% if post.data.description %}
+      <p class="post-card-excerpt">{{ post.data.description }}</p>
+      {% else %}
+      <p class="post-card-excerpt">{{ post.templateContent | striptags | truncate(120) }}</p>
+      {% endif %} {% if post.data.tags %}
+      <div class="post-card-tags">
+        {% for tag in post.data.tags %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

@@ -11,7 +11,8 @@
     "watch": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve",
     "start": "npx @11ty/eleventy --serve",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
@@ -22,5 +23,8 @@
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.6",
     "markdown-it-toc-done-right": "^4.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.1"
   }
 }

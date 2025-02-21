@@ -1,8 +1,8 @@
 ---
-title: "Thoughts on Pillars of Eternity"
+title: 'Thoughts on Pillars of Eternity'
 description: I finally played through Pillars of Eternity, and despite enjoying it the experience overall was lacking.
 date: 2025-01-22
-tags: ["games", "rpgs", "thoughts"]
+tags: ['games', 'rpgs', 'thoughts']
 layout: layouts/post.njk
 emoji: 🕹️
 socialImage: /img/poesocial.webp
