@@ -36,20 +36,25 @@ header {
 }
 
 time {
-  font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 0.8em;
+  font-family: monospace;
 }
 .post-metadata {
   display: flex;
+  justify-content: space-between;
+  margin-block-end: var(--step-1);
+  align-items: baseline;
 }
 
-.post-metadata ul {
+.tags-list {
   margin: 0;
   padding: 0;
   display: flex;
-  margin-block-end: var(--step-1);
   list-style: none;
   flex-wrap: wrap;
+  font-size: 0.8em;
+  font-family: monospace;
 }
 
 .post-metadata time {
@@ -58,11 +63,12 @@ time {
   white-space: nowrap;
 }
 
-.post-metadata .post-tag {
+.tags-list .tags-list-item {
   margin-right: 1ch;
+  text-decoration-color: var(--color-emphasis);
 }
 
-.post-metadata .post-tag:before {
+.tags-list .tags-list-item:before {
   content: '#';
 }
 
@@ -186,7 +192,7 @@ blockquote {
 }
 
 h2 {
-  font-size: var(--step-4);
+  font-size: var(--step-3);
 }
 
 @property --thickness {
@@ -202,6 +208,10 @@ a {
   text-decoration-thickness: var(--thickness);
   text-underline-offset: 0.2em;
   transition: --thickness 200ms;
+}
+
+a.emphasis {
+  text-decoration-color: var(--color-emphasis);
 }
 
 a:hover,
@@ -303,9 +313,8 @@ h3 {
 }
 
 .postlist {
-  --post-list-line-indent: var(--step-1);
   padding: 0;
-  margin-left: var(--post-list-line-indent);
+  margin-left: 0;
 }
 
 .postlist-item > * + * {
@@ -314,7 +323,6 @@ h3 {
 .postlist-link {
   text-align: left;
   align-self: flex-start;
-  /* text-indent: calc(-1 * var(--post-list-line-indent)); */
 }
 
 .postlist-item {
@@ -464,3 +472,34 @@ nav.site-menu ul {
   border-color: transparent;
   transform: rotate(180deg);
 }
+.post-grid > * + * {
+  margin-top: var(--gutter);
+}
+
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-card-readmore {
+  float: right;
+}
+
+.post-card-title {
+  --flow-space: var(--step--2);
+}
+
+.post-card-metadata {
+  display: flex;
+  justify-content: space-between;
+  --flow-space: var(--step--2);
+}
+
+/* .post-card-metadata a {
+  --thickness: 0px;
+  text-decoration-color: transparent;
+}
+.post-card-metadata a:hover {
+  --thickness: 4px;
+  text-decoration-color: var(--color-emphasis);
+} */

@@ -8,17 +8,17 @@ templateClass: post
   ><span style="view-transition-name: post-{{ page.fileSlug }}-title">{{ title }}</span>
 </h1>
 <div class="post-metadata">
-  <time style="view-transition-name: post-{{ page.fileSlug }}-date" datetime="{{ page.date | htmlDateString }}">
-    <em>{{ page.date | readableDate }}</em>
-  </time>
-  <ul>
+  <ul class="tags-list">
     {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li>
-      <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
+      <a href="{{ tagUrl }}" class="tags-list-item">{{ tag }}</a>
       {%- if not loop.last %}{% endif %}
     </li>
     {%- endfor %}
   </ul>
+  <time style="view-transition-name: post-{{ page.fileSlug }}-date" datetime="{{ page.date | htmlDateString }}">
+    {{ page.date | readableDate }}
+  </time>
 </div>
 
 <div class="flow">{{ content | safe }}</div>
