@@ -190,7 +190,9 @@ blockquote {
   font-style: italic;
   padding-inline-start: 1em;
 }
-
+figure video {
+  width: 100%;
+}
 h2 {
   font-size: var(--step-3);
 }
