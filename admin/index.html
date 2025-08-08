@@ -4,24 +4,10 @@
     <meta charset="utf-8" />
     <title>Admin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <!-- Load Decap -->
+    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <!-- Load Cloudinary media library for Decap -->
-    <script src="https://unpkg.com/decap-cms-media-library-cloudinary@^3.0.0/dist/index.js"></script>
   </head>
   <body>
-    <script>
-      // Wait for CMS to be available then register Cloudinary
-      if (window.CMS) {
-        CMS.registerMediaLibrary(cloudinary);
-      } else {
-        // If CMS is not immediately available, wait for it
-        window.addEventListener('DOMContentLoaded', function() {
-          if (window.CMS && window.cloudinary) {
-            CMS.registerMediaLibrary(cloudinary);
-          }
-        });
-      }
-    </script>
+    <!-- CMS will auto-initialize -->
   </body>
 </html>

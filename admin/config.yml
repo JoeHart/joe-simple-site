@@ -2,27 +2,14 @@ backend:
   name: github
   repo: JoeHart/joe-simple-site
   branch: master
-  # Point Decap at the Vercel API route you'll add in Task 2
   base_url: https://www.joehart.co.uk
   auth_endpoint: api/auth
 
-# Optional: simple publish flow (commit directly to master)
 publish_mode: simple
 
-# Where media would go if you used local uploads (kept for completeness).
-# We'll actually use Cloudinary below.
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
-# Use Cloudinary inside the editor
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: dzdgmwhd6
-    api_key: 268617684873199
-    # multiple: true   # uncomment if you want multi-select
-
-# One collection for blog posts in /blogs
 collections:
   - name: "blog"
     label: "Blog"
@@ -38,10 +25,5 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - label: "Hero Image"
-        name: "hero"
-        widget: "image"
-        # Use Cloudinary dialog for this field too
-        media_library:
-          name: cloudinary
+      - { label: "Hero Image", name: "hero", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
