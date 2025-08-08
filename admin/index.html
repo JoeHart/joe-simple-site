@@ -11,9 +11,17 @@
   </head>
   <body>
     <script>
-      // Register Cloudinary picker
-      // (Assumes Cloudinary config provided in config.yml)
-      CMS.registerMediaLibrary(cloudinary);
+      // Wait for CMS to be available then register Cloudinary
+      if (window.CMS) {
+        CMS.registerMediaLibrary(cloudinary);
+      } else {
+        // If CMS is not immediately available, wait for it
+        window.addEventListener('DOMContentLoaded', function() {
+          if (window.CMS && window.cloudinary) {
+            CMS.registerMediaLibrary(cloudinary);
+          }
+        });
+      }
     </script>
   </body>
 </html>

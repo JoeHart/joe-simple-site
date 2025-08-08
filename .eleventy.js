@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('img')
   eleventyConfig.addPassthroughCopy('js')
   eleventyConfig.addPassthroughCopy('play')
+  eleventyConfig.addPassthroughCopy('admin')
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 
