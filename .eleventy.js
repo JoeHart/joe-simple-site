@@ -3,7 +3,7 @@ const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const markdownItTocDoneRight = require('markdown-it-toc-done-right')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
-// const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const Image = require('@11ty/eleventy-img')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
@@ -30,6 +30,27 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('play')
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    'clImage',
+    async function (src, alt = '', widths = [480, 800, 1280], sizes = '(min-width: 800px) 800px, 100vw') {
+      if (!src) return ''
+      let metadata = await Image(src, {
+        widths,
+        formats: ['webp', 'jpeg'],
+        urlPath: '/_siteimg/',
+        outputDir: './_siteimg/',
+        cacheOptions: { duration: '1y' },
+      })
+      let imageAttrs = {
+        alt,
+        sizes,
+        loading: 'lazy',
+        decoding: 'async',
+      }
+      return Image.generateHTML(metadata, imageAttrs)
+    }
+  )
 
   eleventyConfig.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd LLL yyyy')

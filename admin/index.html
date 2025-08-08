@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Load Decap -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Load Cloudinary media library for Decap -->
+    <script src="https://unpkg.com/decap-cms-media-library-cloudinary@^3.0.0/dist/index.js"></script>
+  </head>
+  <body>
+    <script>
+      // Register Cloudinary picker
+      // (Assumes Cloudinary config provided in config.yml)
+      CMS.registerMediaLibrary(cloudinary);
+    </script>
+  </body>
+</html>
