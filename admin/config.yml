@@ -2,7 +2,7 @@ backend:
   name: github
   repo: JoeHart/joe-simple-site
   branch: master
-  base_url: https://joehart.co.uk
+  base_url: https://www.joehart.co.uk
   auth_endpoint: api/auth
 
 publish_mode: simple
