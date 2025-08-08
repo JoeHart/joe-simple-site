@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^0.3.3",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@openlab/vercel-netlify-cms-github": "^1.1.1",
     "luxon": "^2.4.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.6",
