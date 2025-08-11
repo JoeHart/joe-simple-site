@@ -8,7 +8,13 @@
   <body>
     <!-- Decap CMS container -->
     <div id="nc-root"></div>
-    <!-- Load and initialize Decap CMS -->
+    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Load Cloudinary media library -->
+    <script src="https://unpkg.com/decap-cms-media-library-cloudinary@^3.0.0/dist/index.js"></script>
+    <script>
+      // Register Cloudinary media library after CMS loads
+      CMS.registerMediaLibrary(cloudinary);
+    </script>
   </body>
 </html>

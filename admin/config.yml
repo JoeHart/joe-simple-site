@@ -10,6 +10,13 @@ publish_mode: simple
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
+# Use Cloudinary for media management
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dzdgmwhd6
+    api_key: 268617684873199
+
 collections:
   - name: "blog"
     label: "Blog"
@@ -25,5 +32,10 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Hero Image", name: "hero", widget: "image", required: false }
+      - label: "Hero Image"
+        name: "hero"
+        widget: "image"
+        required: false
+        media_library:
+          name: cloudinary
       - { label: "Body", name: "body", widget: "markdown" }
