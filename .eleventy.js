@@ -57,6 +57,10 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd LLL yyyy')
   })
 
+  eleventyConfig.addFilter('readableDateFromString', (dateString) => {
+    return DateTime.fromISO(dateString, { zone: 'utc' }).toFormat('dd LLL yyyy')
+  })
+
   eleventyConfig.addFilter('activePostsOnly', (postList) => {
     return postList.filter((post) => post.data.draft !== true)
   })

@@ -11,6 +11,22 @@ templateClass: homepage
   {% set postslist = collections.posts | activePostsOnly | head(-5) %} {% set postslistCounter = collections.posts |
   length %} {% include "postslist.njk" %}
 
+  <h3>Upcoming Talks</h3>
+  <ol class="postlist">
+    {% for talk in upcomingTalks %}
+    <li class="postlist-item">
+      <span class="postlist-emoji">🎤</span>
+      <div style="flex-grow: 1">
+        <a href="{{ talk.link }}" target="_blank" rel="noopener" class="postlist-link">{{ talk.title }}</a>
+        <div style="font-size: 0.875em; opacity: 0.8">{{ talk.conference }} ⋅ {{ talk.location }}</div>
+      </div>
+      <div style="text-align: right">
+        <time class="postlist-date no-wrap" datetime="{{ talk.date }}">{{ talk.date | readableDateFromString }}</time>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+
   <h3>Featured Talk</h3>
 
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
