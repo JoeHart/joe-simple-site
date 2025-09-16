@@ -34,5 +34,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,md,css,njk}": "prettier --write"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }

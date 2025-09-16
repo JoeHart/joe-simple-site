@@ -1,0 +1,11 @@
+[
+  {
+    "title": "Final Fantasy IX in React",
+    "subtitle": "Fighting the Browser, One Frame at a Time",
+    "description": "The original Final Fantasy IX was a masterclass in creative constraint – pushing the PlayStation's hardware to its limits with tricks like pre-rendered backgrounds and low-res models. In this talk, Joe Hart recreates the magic in React, diving into WebGL, canvas positioning, and CSS hacks that should probably be illegal. It's part love letter to retro games, part deep dive into browser APIs, and part performance art.",
+    "conference": "React Advanced",
+    "location": "London",
+    "date": "2025-11-28",
+    "link": "https://reactadvanced.com/#person-joe-hart"
+  }
+]
