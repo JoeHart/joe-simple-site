@@ -45,25 +45,19 @@ collections:
         default: "📝"
         options:
           - { label: "📝 Writing", value: "📝" }
+          - { label: "📣 Talk", value: "📣" }
+          - { label: "📚 Books", value: "📚" }
+          - { label: "📘 Graphic Novel", value: "📘" }
+          - { label: "🤔 Thoughts", value: "🤔" }
+          - { label: "🕹️ Gaming", value: "🕹️" }
+          - { label: "🪙 Dev Diary", value: "🪙" }
+          - { label: "📂 Project", value: "📂" }
+          - { label: "🖋️ E-ink", value: "🖋️" }
+          - { label: "🔗 Web/Links", value: "🔗" }
+          - { label: "💻 Code", value: "💻" }
+          - { label: "🔧 Technical", value: "🔧" }
           - { label: "💡 Idea", value: "💡" }
           - { label: "🚀 Launch", value: "🚀" }
-          - { label: "🔧 Technical", value: "🔧" }
-          - { label: "🎨 Design", value: "🎨" }
-          - { label: "📚 Learning", value: "📚" }
-          - { label: "🤔 Thoughts", value: "🤔" }
-          - { label: "🎉 Announcement", value: "🎉" }
-          - { label: "⚡ Quick Tip", value: "⚡" }
-          - { label: "🌐 Web", value: "🌐" }
-          - { label: "📱 Mobile", value: "📱" }
-          - { label: "🎮 Gaming", value: "🎮" }
-          - { label: "🎵 Music", value: "🎵" }
-          - { label: "📷 Photography", value: "📷" }
-          - { label: "✈️ Travel", value: "✈️" }
-          - { label: "🍳 Food", value: "🍳" }
-          - { label: "💻 Code", value: "💻" }
-          - { label: "🐛 Bug Fix", value: "🐛" }
-          - { label: "📖 Review", value: "📖" }
-          - { label: "🔍 Research", value: "🔍" }
       - { label: "Hero Image", name: "hero", widget: "image", required: false }
       - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
