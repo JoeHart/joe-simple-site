@@ -10,13 +10,6 @@ publish_mode: simple
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
-# Use Cloudinary for media management
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: dzdgmwhd6
-    api_key: 268617684873199
-
 collections:
   - name: "blog"
     label: "Blog"
@@ -24,21 +17,22 @@ collections:
     create: true
     slug: "{{slug}}"
     format: "frontmatter"
-    summary: "{{title}} — {{year}}-{{month}}-{{day}}"
+    summary: "{{draft | ternary('DRAFT: ','')}}{{title}} — {{year}}-{{month}}-{{day}}"
+    sortable_fields:
+      fields: [title, date, draft]
+      default:
+        field: date
+        direction: descending
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Uncheck to publish" }
       - { label: "Description", name: "description", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
       - { label: "Emoji", name: "emoji", widget: "string", required: false, default: "📝" }
-      - label: "Hero Image"
-        name: "hero"
-        widget: "image"
-        required: false
-        media_library:
-          name: cloudinary
+      - { label: "Hero Image", name: "hero", widget: "image", required: false }
       - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

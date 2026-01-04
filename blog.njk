@@ -4,4 +4,4 @@ templateClass: flow
 ---
 
 <h1>✍️ Blog</h1>
-{% set postslist = collections.blogs %} {% include "postgrid.njk" %}
+{% set postslist = collections.blogs | activePostsOnly %} {% include "postgrid.njk" %}
