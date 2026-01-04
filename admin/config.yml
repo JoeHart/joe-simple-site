@@ -27,12 +27,23 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime", time_format: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Uncheck to publish" }
       - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        collapsed: false
+        field: { label: "Tag", name: "tag", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
-      - { label: "Emoji", name: "emoji", widget: "string", required: false, default: "📝" }
+      - label: "Emoji"
+        name: "emoji"
+        widget: "string"
+        required: false
+        default: "📝"
+        hint: "Common: 📝 📣 📚 📘 🤔 🕹️ 🪙 📂 🖋️ 🔗 💻 🔧 💡 🚀"
       - { label: "Hero Image", name: "hero", widget: "image", required: false }
       - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
