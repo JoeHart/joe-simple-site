@@ -30,9 +30,40 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Uncheck to publish" }
       - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        collapsed: false
+        field: { label: "Tag", name: "tag", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
-      - { label: "Emoji", name: "emoji", widget: "string", required: false, default: "📝" }
+      - label: "Emoji"
+        name: "emoji"
+        widget: "select"
+        required: false
+        default: "📝"
+        options:
+          - { label: "📝 Writing", value: "📝" }
+          - { label: "💡 Idea", value: "💡" }
+          - { label: "🚀 Launch", value: "🚀" }
+          - { label: "🔧 Technical", value: "🔧" }
+          - { label: "🎨 Design", value: "🎨" }
+          - { label: "📚 Learning", value: "📚" }
+          - { label: "🤔 Thoughts", value: "🤔" }
+          - { label: "🎉 Announcement", value: "🎉" }
+          - { label: "⚡ Quick Tip", value: "⚡" }
+          - { label: "🌐 Web", value: "🌐" }
+          - { label: "📱 Mobile", value: "📱" }
+          - { label: "🎮 Gaming", value: "🎮" }
+          - { label: "🎵 Music", value: "🎵" }
+          - { label: "📷 Photography", value: "📷" }
+          - { label: "✈️ Travel", value: "✈️" }
+          - { label: "🍳 Food", value: "🍳" }
+          - { label: "💻 Code", value: "💻" }
+          - { label: "🐛 Bug Fix", value: "🐛" }
+          - { label: "📖 Review", value: "📖" }
+          - { label: "🔍 Research", value: "🔍" }
       - { label: "Hero Image", name: "hero", widget: "image", required: false }
       - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
