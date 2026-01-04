@@ -1,8 +1,8 @@
-# Decap CMS Setup Guide
+# Sveltia CMS Setup Guide
 
 ## Overview
 
-This site now has Decap CMS configured with GitHub authentication via Vercel and Cloudinary for media management.
+This site uses Sveltia CMS with GitHub authentication via Vercel for content management. Sveltia CMS is a modern, drop-in replacement for Decap/Netlify CMS with improved performance and built-in asset management.
 
 ## Setup Steps
 
@@ -26,14 +26,6 @@ In your Vercel project settings → Environment Variables, add:
 #### In `/admin/config.yml`:
 
 - Replace `YOUR_PRODUCTION_DOMAIN` with your actual domain (e.g., joehart.co.uk)
-- Replace `YOUR_CLOUDINARY_CLOUD_NAME` with your Cloudinary cloud name
-- Replace `YOUR_CLOUDINARY_API_KEY` with your Cloudinary API key
-
-### 4. Cloudinary Setup
-
-1. Log into your Cloudinary account
-2. Find your cloud name and API key in the Dashboard
-3. Make sure you're logged into Cloudinary in the same browser when using the CMS
 
 ## Usage
 
@@ -44,10 +36,17 @@ Visit `https://YOUR_DOMAIN/admin/` (note the trailing slash) and log in with Git
 ### Creating/Editing Posts
 
 - Posts are stored as Markdown files in the `blogs/` directory
-- Images are managed through Cloudinary's media library
+- Images are uploaded via Sveltia's built-in media library to `/img/uploads/`
 - Changes are committed directly to the `master` branch
 
-### Using Cloudinary Images in Templates
+### Draft Workflow
+
+- **New posts default to draft status** (`draft: true`)
+- Drafts show a "DRAFT:" prefix in the CMS post list
+- Uncheck the "Draft" checkbox to publish a post
+- Draft posts are automatically filtered from the live site
+
+### Using Images in Templates
 
 The `clImage` shortcode is available for responsive image rendering:
 
@@ -63,27 +62,30 @@ Or with custom widths and sizes:
 {% clImage imageUrl, "Alt text", [400, 800, 1200], "(min-width: 1024px) 800px, 100vw" %}
 ```
 
-Alternatively, you can use Cloudinary URLs directly in your templates:
-
-```njk
-<img src="{{ hero }}" alt="Hero image">
-```
-
 ## File Structure
 
-- `/admin/` - Decap CMS interface
+- `/admin/` - Sveltia CMS interface
 - `/api/` - Vercel serverless functions for GitHub OAuth
 - `/blogs/` - Blog post markdown files
+- `/img/uploads/` - Uploaded media files
 - `/_siteimg/` - Cached/optimized images (generated at build time)
+
+## Sveltia CMS Features
+
+- **Built-in asset management** with drag-and-drop uploads
+- **Image optimization** with WebP conversion
+- **Stock photo integration** (Pexels, Pixabay, Unsplash)
+- **Faster performance** using GitHub GraphQL API
+- **Keyboard shortcuts** (Ctrl/Cmd+S to save)
 
 ## Troubleshooting
 
 - If you can't log in, verify your GitHub OAuth app settings and Vercel environment variables
-- If the media library doesn't show, ensure you're logged into Cloudinary in the same browser
 - For trailing slash issues, the `vercel.json` configuration should handle this automatically
+- If assets don't upload, ensure the `img/uploads` folder exists in the repository
 
 ## Notes
 
-- The Cloudinary API key in `config.yml` is public; authentication happens via browser session
-- Images are optimized at build time using Eleventy Image plugin
 - The CMS commits directly to the `master` branch (simple publish mode)
+- Images are optimized at build time using Eleventy Image plugin
+- Existing posts without a `draft` field are treated as published
