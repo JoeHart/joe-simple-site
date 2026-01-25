@@ -17,6 +17,7 @@ collections:
     create: true
     slug: "{{slug}}"
     format: "frontmatter"
+    extension: "md"
     summary: "{{draft | ternary('DRAFT: ','')}}{{title}} — {{year}}-{{month}}-{{day}}"
     sortable_fields:
       fields: [title, date, draft]
@@ -54,6 +55,7 @@ collections:
     create: true
     slug: "{{slug}}"
     format: "frontmatter"
+    extension: "md"
     summary: "{{draft | ternary('DRAFT: ','')}}{{title}} — {{year}}-{{month}}-{{day}}"
     sortable_fields:
       fields: [title, date, draft]
