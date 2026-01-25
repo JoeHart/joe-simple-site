@@ -5,6 +5,7 @@ description: Through the combined powers of Audible and "buying physical books s
 tags: books
 layout: layouts/post.njk
 emoji: 📚
+hero: /img/uploads/bookssocial.png
 socialImage: /img/uploads/bookssocial.png
 ---
 
