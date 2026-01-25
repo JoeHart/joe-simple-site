@@ -1,11 +1,11 @@
 ---
 title: Books I Read In 2022
-description: Through the combined powers of Audible and "buying physical books so I can't forget I have them" I managed to make a larger dent in reading in 2022 than many years previous. This is a loosely categorised and entirely unordered list of what I read with some thoughts attached to them.
 date: 2023-01-22
+description: Through the combined powers of Audible and "buying physical books so I can't forget I have them" I managed to make a larger dent in reading in 2022 than many years previous. This is a loosely categorised and entirely unordered list of what I read with some thoughts attached to them.
 tags: books
 layout: layouts/post.njk
 emoji: 📚
-socialImage: /img/bookssocial.png
+socialImage: /img/uploads/bookssocial.png
 ---
 
 Through the combined powers of **Audible** and **"buying physical books so I can't forget I have them"** I managed to make a larger dent in reading in 2022 than many years previous. This is a loosely categorised and entirely unordered list of what I read with some thoughts attached to them.
