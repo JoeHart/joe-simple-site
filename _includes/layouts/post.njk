@@ -21,6 +21,10 @@ templateClass: post
   </time>
 </div>
 
+{% if hero %}
+<img src="{{ hero }}" alt="Hero image for {{ title }}" class="post-hero" />
+{% endif %}
+
 <div class="flow">{{ content | safe }}</div>
 
 {%- if collections.posts %} {%- set nextPost = collections.posts | getNextCollectionItem(page) %} {%- set previousPost =

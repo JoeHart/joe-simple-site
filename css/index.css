@@ -47,6 +47,13 @@ time {
   align-items: baseline;
 }
 
+.post-hero {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-block-end: var(--step-2);
+}
+
 .tags-list {
   margin: 0;
   padding: 0;
