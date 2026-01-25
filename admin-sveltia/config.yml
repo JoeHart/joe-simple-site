@@ -21,27 +21,75 @@ collections:
     create: true
     slug: "{{slug}}"
     format: "frontmatter"
-    summary: "{{title}} — {{year}}-{{month}}-{{day}}"
+    summary: "{{draft | ternary('DRAFT: ','')}}{{title}} — {{year}}-{{month}}-{{day}}"
+    sortable_fields:
+      fields: [title, date, draft]
+      default:
+        field: date
+        direction: descending
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - label: "Draft"
-        name: "draft"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Set to true to hide this post from the live site"
+      - { label: "Date", name: "date", widget: "datetime", time_format: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Uncheck to publish" }
       - { label: "Description", name: "description", widget: "text", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        collapsed: false
+        field: { label: "Tag", name: "tag", widget: "string" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
-      - { label: "Emoji", name: "emoji", widget: "string", required: false, default: "📝" }
+      - label: "Emoji"
+        name: "emoji"
+        widget: "string"
+        required: false
+        default: "📝"
+        hint: "Common: 📝 📣 📚 📘 🤔 🕹️ 🪙 📂 🖋️ 🔗 💻 🔧 💡 🚀"
       - label: "Hero Image"
         name: "hero"
         widget: "image"
         required: false
         media_library:
           name: cloudinary
+      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "talks"
+    label: "Talks"
+    folder: "talks"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    summary: "{{draft | ternary('DRAFT: ','')}}{{title}} — {{year}}-{{month}}-{{day}}"
+    sortable_fields:
+      fields: [title, date, draft]
+      default:
+        field: date
+        direction: descending
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", time_format: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, hint: "Uncheck to publish" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        collapsed: false
+        default: ["talk"]
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
+      - label: "Emoji"
+        name: "emoji"
+        widget: "string"
+        required: false
+        default: "📣"
+        hint: "Common: 📣 🎤 🎙️ 💬 🗣️ 🎯 🎪 📺 🎬"
       - { label: "Social Image", name: "socialImage", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
