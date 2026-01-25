@@ -8,6 +8,7 @@ tags:
   - thoughts
 layout: layouts/post.njk
 emoji: 🕹️
+hero: /img/uploads/poesocial.webp
 socialImage: /img/uploads/poesocial.webp
 ---
 
