@@ -1,11 +1,14 @@
 ---
-title: 'Thoughts on Pillars of Eternity'
-description: I finally played through Pillars of Eternity, and despite enjoying it the experience overall was lacking.
+title: Thoughts on Pillars of Eternity
 date: 2025-01-22
-tags: ['games', 'rpgs', 'thoughts']
+description: I finally played through Pillars of Eternity, and despite enjoying it the experience overall was lacking.
+tags:
+  - games
+  - rpgs
+  - thoughts
 layout: layouts/post.njk
 emoji: 🕹️
-socialImage: /img/poesocial.webp
+socialImage: /img/uploads/poesocial.webp
 ---
 
 I’ve had Pillars of Eternity(PoE) in my steam library for a **long** time. It’s one of those games I’ve begun half a dozen times but never really managed to get past the first few hours. It first happened when it came out, then during the pandemic and more recently just after I finished Baldur's Gate 3.
