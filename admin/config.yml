@@ -45,8 +45,11 @@ collections:
         required: false
         default: "📝"
         hint: "Common: 📝 📣 📚 📘 🤔 🕹️ 🪙 📂 🖋️ 🔗 💻 🔧 💡 🚀"
-      - { label: "Hero Image", name: "hero", widget: "image", required: false }
-      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
+      - label: "Hero Image"
+        name: "hero"
+        widget: "image"
+        required: false
+        hint: "Used as hero image on post and for social sharing"
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "talks"
@@ -84,5 +87,9 @@ collections:
         required: false
         default: "📣"
         hint: "Common: 📣 🎤 🎙️ 💬 🗣️ 🎯 🎪 📺 🎬"
-      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
+      - label: "Hero Image"
+        name: "hero"
+        widget: "image"
+        required: false
+        hint: "Used as hero image on post and for social sharing"
       - { label: "Body", name: "body", widget: "markdown" }

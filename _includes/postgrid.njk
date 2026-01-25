@@ -2,9 +2,15 @@
   {% for post in postslist | reverse %}
   <article class="post-card flow">
     {% if post.data.remoteURL %} {% set link = post.data.remoteURL %} {% else %} {% set link = post.url %} {% endif %}
-    {% if post.data.socialImage %}
+    {% if post.data.hero or post.data.socialImage %}
     <a href="{{ link | url }}" class="post-card-image">
-      <img src="{{ post.data.socialImage | url }}" alt="{{ post.data.title }}" width="1600" height="900" />
+      <img
+        src="{{ (post.data.hero or post.data.socialImage) | url }}"
+        alt="{{ post.data.title }}"
+        width="1600"
+        height="900"
+        style="view-transition-name: post-{{ post.fileSlug }}-hero"
+      />
     </a>
     {% endif %}
 

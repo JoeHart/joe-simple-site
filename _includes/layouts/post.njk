@@ -3,6 +3,15 @@ layout: layouts/base.njk
 templateClass: post
 ---
 
+{% if hero %}
+<img
+  src="{{ hero }}"
+  alt="Hero image for {{ title }}"
+  class="post-hero"
+  style="view-transition-name: post-{{ page.fileSlug }}-hero"
+/>
+{% endif %}
+
 <h1>
   <span style="view-transition-name: post-{{ page.fileSlug }}-emoji" class="emoji">{{ emoji }}</span
   ><span style="view-transition-name: post-{{ page.fileSlug }}-title">{{ title }}</span>
@@ -20,10 +29,6 @@ templateClass: post
     {{ page.date | readableDate }}
   </time>
 </div>
-
-{% if hero %}
-<img src="{{ hero }}" alt="Hero image for {{ title }}" class="post-hero" />
-{% endif %}
 
 <div class="flow">{{ content | safe }}</div>
 
