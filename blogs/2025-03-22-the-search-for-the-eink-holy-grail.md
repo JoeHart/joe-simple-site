@@ -1,14 +1,19 @@
 ---
-title: 'The Search For The Eink Holy Grail'
-description: 'After months of testing, reselling, and deep-diving into e-paper tech, I’m still searching for the perfect eink device to replace my iPhone and iPad. Here’s everything I’ve learned—and what I’m still waiting for.'
+title: The Search For The Eink Holy Grail
 date: 2025-03-22
-tags: ['eink', 'tech', 'gadgets', 'digital-minimalism', 'reading']
+description: After months of testing, reselling, and deep-diving into e-paper tech, I’m still searching for the perfect eink device to replace my iPhone and iPad. Here’s everything I’ve learned—and what I’m still waiting for.
+tags:
+  - eink
+  - tech
+  - gadgets
+  - digital-minimalism
+  - reading
 layout: layouts/post.njk
 emoji: 🖋️
-socialImage: /img/einksocial.jpeg
+hero: /img/uploads/einksocial (1).jpeg
+socialImage: /img/uploads/einksocial (1).jpeg
 ---
 
-![Image of my Kindle and Boox Palma on my bedside table](/img/einksocial.jpeg)
 For the better part of a year now I've been on a quest, a fruitless adventure with many dead ends, false hopes and almosts. I've been trying to find one, or perhaps multiple, eink devices to replace my iPhone and my iPad. Looking for something that fits the perfect venn diagram of my desires so I can cast off my glowing slates of chaos energy and embrace a ploddier and slower pace of digital life.
 
 ## Display Technology
@@ -99,13 +104,13 @@ But I shall, in the laziest way possible list out my particular laundry list of 
 - Can use WhatsApp
 - Black and white eink display
 - Can use the "smartphone basics" of:
-  - Maps
-  - Calendar
-  - Email
-  - Note taking
-  - Podcasts
-  - Music
-  - Weather
+    - Maps
+    - Calendar
+    - Email
+    - Note taking
+    - Podcasts
+    - Music
+    - Weather
 
 ### The Tablet
 
