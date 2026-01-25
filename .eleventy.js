@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('js')
   eleventyConfig.addPassthroughCopy('play')
   eleventyConfig.addPassthroughCopy('admin')
+  eleventyConfig.addPassthroughCopy('admin-sveltia')
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 

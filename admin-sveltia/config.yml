@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: JoeHart/joe-simple-site
+  branch: master
+  base_url: https://www.joehart.co.uk
+  auth_endpoint: api/auth
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: dzdgmwhd6
+    api_key: 268617684873199
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blogs"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    summary: "{{title}} — {{year}}-{{month}}-{{day}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Set to true to hide this post from the live site"
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/post.njk" }
+      - { label: "Emoji", name: "emoji", widget: "string", required: false, default: "📝" }
+      - label: "Hero Image"
+        name: "hero"
+        widget: "image"
+        required: false
+        media_library:
+          name: cloudinary
+      - { label: "Social Image", name: "socialImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
