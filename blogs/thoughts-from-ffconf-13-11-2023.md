@@ -1,10 +1,13 @@
 ---
-title: 'Thoughts from FFConf 2023'
-description: Immediate thoughts after a wonderful 2023 FFConf
+title: Thoughts from FFConf 2023
 date: 2023-11-13
-tags: ['conference']
+description: Immediate thoughts after a wonderful 2023 FFConf
+tags:
+  - conference
 layout: layouts/post.njk
 emoji: 🤔
+hero: /img/uploads/IMG_5710.jpeg
+socialImage: /img/uploads/IMG_5710.jpeg
 ---
 
 I am sat on an early morning train back from Brighton to the big smoke, with a mild headache from a few too many ciders at the FFConf afterparty.
