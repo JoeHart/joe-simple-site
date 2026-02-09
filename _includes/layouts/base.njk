@@ -13,6 +13,8 @@
 
     <link rel="webmention" href="https://webmention.io/www.joehart.co.uk/webmention" />
     <link rel="pingback" href="https://webmention.io/www.joehart.co.uk/xmlrpc" />
+    <link rel="alternate" type="application/atom+xml" title="Notes feed" href="/notes/feed.xml" />
+    <link rel="micropub" href="/api/micropub" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -102,6 +104,9 @@
         <nav class="site-menu navigation" aria-label="primary">
           <ul role="list">
             <li>
+              <a href="{{ '/notes/' | url }}">📝 Notes</a>
+            </li>
+            <li>
               <a href="{{ '/blog/' | url }}">✍️ Blog</a>
             </li>
             <li>
@@ -116,12 +121,16 @@
     </header>
     <main {% if templateClass %} class=" {{ templateClass }}" {% endif %}>{{ content | safe }}</main>
     <footer>
-      <div class="footer-content">
-        <p>© Joe Hart {% year %}</p>
+      <div class="footer-content h-card">
+        <p>© <a class="p-name u-url" href="{{ metadata.url }}">Joe Hart</a> {% year %}</p>
         <ul>
           <li>
             <span>📰</span>
             <a href="/feed.xml" target="_blank">RSS Feed</a>
+          </li>
+          <li>
+            <span>📝</span>
+            <a href="/notes/feed.xml" target="_blank">Notes Feed</a>
           </li>
           <li>
             <span>🦣</span>

@@ -528,3 +528,36 @@ nav.site-menu ul {
   --thickness: 4px;
   text-decoration-color: var(--color-emphasis);
 } */
+
+/* Notes */
+.notes-feed > * + * {
+  margin-top: var(--step-3);
+}
+
+.note-card {
+  padding-block-end: var(--step-2);
+  border-bottom: 1px dashed var(--color-accent);
+}
+
+.note-card:last-child {
+  border-bottom: none;
+}
+
+.note-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-block-start: var(--step--1);
+}
+
+.note-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-block-end: var(--step-0);
+}
+
+.note-nav {
+  list-style: none;
+  margin-left: 0;
+}

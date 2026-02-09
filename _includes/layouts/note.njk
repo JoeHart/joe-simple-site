@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+templateClass: note
+---
+
+<article class="h-entry">
+  <div class="note-metadata">
+    <time class="dt-published" datetime="{{ page.date | htmlDateString }}"> {{ page.date | readableDate }} </time>
+    {%- if tags %}
+    <ul class="tags-list">
+      {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li>
+        <a href="{{ tagUrl }}" class="tags-list-item p-category">{{ tag }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+
+  <div class="e-content flow">{{ content | safe }}</div>
+
+  <a class="u-url" href="{{ metadata.url }}{{ page.url }}" style="display: none">permalink</a>
+  <span class="p-author h-card" style="display: none">
+    <a class="u-url p-name" href="{{ metadata.url }}">Joe Hart</a>
+  </span>
+</article>
+
+{%- set nextNote = collections.notes | getNextCollectionItem(page) %} {%- set previousNote = collections.notes |
+getPreviousCollectionItem(page) %} {%- if nextNote or previousNote %}
+<hr />
+<ul class="note-nav">
+  {%- if nextNote %}
+  <li>Newer: <a href="{{ nextNote.url | url }}">{{ nextNote.data.date | readableDate }}</a></li>
+  {% endif %} {%- if previousNote %}
+  <li>Older: <a href="{{ previousNote.url | url }}">{{ previousNote.data.date | readableDate }}</a></li>
+  {% endif %}
+</ul>
+{%- endif %}

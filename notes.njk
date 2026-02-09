@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+templateClass: flow
+---
+
+<h1>📝 Notes</h1>
+<p>
+  Short-form thoughts, published here first. Also on <a href="https://social.lol/@joehart" rel="me">Mastodon</a> via the
+  fediverse.
+</p>
+
+<div class="notes-feed h-feed">
+  {% set noteslist = collections.notes | activePostsOnly | reverse %} {% for note in noteslist %}
+  <article class="note-card h-entry">
+    <div class="e-content flow">{{ note.templateContent | safe }}</div>
+    <div class="note-card-footer">
+      <time class="dt-published" datetime="{{ note.date | htmlDateString }}">
+        <a href="{{ note.url | url }}" class="u-url">{{ note.date | readableDate }}</a>
+      </time>
+      {%- if note.data.tags | filterTagList | length %}
+      <ul class="tags-list">
+        {%- for tag in note.data.tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li><a href="{{ tagUrl }}" class="tags-list-item p-category">{{ tag }}</a></li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>

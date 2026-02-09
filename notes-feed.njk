@@ -1,0 +1,42 @@
+---json
+{
+  "permalink": "notes/feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "normalizeAbsoluteUrls": true,
+  "metadata": {
+    "title": "Joe Hart's Notes",
+    "subtitle": "Short-form thoughts and links.",
+    "language": "en",
+    "url": "https://joehart.co.uk/",
+    "author": {
+      "name": "Joe Hart"
+    }
+  }
+}
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.language }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ 'notes/feed.xml' | url | absoluteUrl(metadata.url) }}" rel="self" />
+  <link href="{{ metadata.url }}notes/" />
+  <updated>{{ collections.notes | activePostsOnly | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url }}notes/</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+  </author>
+  {%- for note in collections.notes | activePostsOnly | reverse %} {%- set absoluteNoteUrl = note.url |
+  absoluteUrl(metadata.url) %}
+  <entry>
+    <title>Note — {{ note.date | readableDate }}</title>
+    <link href="{{ absoluteNoteUrl }}" />
+    <updated>{{ note.date | dateToRfc3339 }}</updated>
+    <id>{{ absoluteNoteUrl }}</id>
+    <content type="html">
+      {%- if normalizeAbsoluteUrls -%} {{ note.templateContent | htmlToAbsoluteUrls(absoluteNoteUrl) }} {%- else -%} {{
+      note.templateContent }} {%- endif -%}
+    </content>
+  </entry>
+  {%- endfor %}
+</feed>
