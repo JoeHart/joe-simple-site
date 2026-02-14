@@ -1,0 +1,22 @@
+name: Syndicate to Mastodon
+
+on:
+  workflow_run:
+    workflows: ["Deploy Now: Orchestration"]
+    types: [completed]
+    branches: [master]
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Wait for deployment propagation
+        run: sleep 60
+
+      - name: Post to Mastodon
+        uses: nhoizey/github-action-feed-to-mastodon@v2
+        with:
+          feedUrl: "https://www.joehart.co.uk/notes/feed.json"
+          mastodonInstance: "https://social.lol"
+          mastodonToken: ${{ secrets.MASTODON_ACCESS_TOKEN }}

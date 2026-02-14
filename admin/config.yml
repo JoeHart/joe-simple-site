@@ -52,6 +52,33 @@ collections:
         hint: "Used as hero image on post and for social sharing"
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "notes"
+    label: "Notes"
+    folder: "notes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+    summary: "{{body | truncate(80)}} — {{year}}-{{month}}-{{day}}"
+    sortable_fields:
+      fields: [date]
+      default:
+        field: date
+        direction: descending
+    editor:
+      preview: false
+    fields:
+      - { label: "Date", name: "date", widget: "datetime", time_format: false }
+      - { label: "Syndicate", name: "syndicate", widget: "boolean", default: true, hint: "Post to Mastodon and Bluesky" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        allow_add: true
+        collapsed: false
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "talks"
     label: "Talks"
     folder: "talks"

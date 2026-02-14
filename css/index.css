@@ -528,3 +528,60 @@ nav.site-menu ul {
   --thickness: 4px;
   text-decoration-color: var(--color-emphasis);
 } */
+
+/* Notes timeline */
+.notes-timeline {
+  padding: 0;
+}
+
+.note-card {
+  padding-block-end: var(--step-2);
+  margin-block-end: var(--step-2);
+  border-bottom: 1px dashed var(--color-accent);
+}
+
+.note-card:last-child {
+  border-bottom: none;
+}
+
+.note-card > time {
+  display: block;
+  margin-block-end: var(--step--1);
+}
+
+.note-card .e-content img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-block-start: var(--step--1);
+}
+
+.note-card-footer {
+  display: flex;
+  gap: 1em;
+  margin-block-start: var(--step--1);
+  font-size: var(--step--1);
+  font-family: monospace;
+}
+
+/* Single note page */
+.note-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-block-end: var(--step-1);
+}
+
+.note-syndication {
+  margin-block-start: var(--step-2);
+  padding-block-start: var(--step-0);
+  border-top: 1px dashed var(--color-accent);
+  display: flex;
+  gap: 1em;
+  font-size: var(--step--1);
+  font-family: monospace;
+}
+
+.note .e-content img {
+  max-width: 100%;
+  border-radius: 4px;
+}
