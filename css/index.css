@@ -534,6 +534,10 @@ nav.site-menu ul {
   padding: 0;
 }
 
+.notes-intro-divider {
+  margin-block: var(--step-2);
+}
+
 .note-card {
   padding-block-end: var(--step-2);
   margin-block-end: var(--step-2);
