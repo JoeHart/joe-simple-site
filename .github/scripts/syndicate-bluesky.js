@@ -5,6 +5,7 @@ const https = require('https')
 
 const POSTED_FILE = path.join(__dirname, '..', 'data', 'bluesky-posted.json')
 const FEED_URL = 'https://www.joehart.co.uk/notes/feed.json'
+const NOTES_DIR = path.join(__dirname, '..', '..', 'notes')
 
 function fetchJSON(url) {
   return new Promise((resolve, reject) => {
@@ -33,6 +34,24 @@ function loadPosted() {
 function savePosted(data) {
   fs.mkdirSync(path.dirname(POSTED_FILE), { recursive: true })
   fs.writeFileSync(POSTED_FILE, JSON.stringify(data, null, 2))
+}
+
+function noteUrlToFilePath(noteUrl) {
+  // Extract slug from URL like https://www.joehart.co.uk/notes/2026-02-14-slug/
+  const match = noteUrl.match(/\/notes\/([^/]+)\/?$/)
+  if (!match) return null
+  const filepath = path.join(NOTES_DIR, `${match[1]}.md`)
+  return fs.existsSync(filepath) ? filepath : null
+}
+
+function addFrontmatterField(filepath, field, value) {
+  const content = fs.readFileSync(filepath, 'utf8')
+  if (content.includes(`${field}:`)) return // already has it
+
+  // Insert before tags: line or before closing ---
+  const updated = content.replace(/^(---\n[\s\S]*?)(tags:)/m, `$1${field}: ${value}\n$2`)
+  fs.writeFileSync(filepath, updated)
+  console.log(`  Added ${field} to ${path.basename(filepath)}`)
 }
 
 async function main() {
@@ -76,10 +95,10 @@ async function main() {
     const text = item.content_text.length > 280 ? item.content_text.slice(0, 277) + '...' : item.content_text
 
     // Use RichText for link/mention detection
-    const rt = new RichText({ text: `${text}\n\n${item.url}` })
+    const rt = new RichText({ text })
     await rt.detectFacets(agent)
 
-    await agent.post({
+    const response = await agent.post({
       text: rt.text,
       facets: rt.facets,
       createdAt: new Date().toISOString(),
@@ -87,6 +106,14 @@ async function main() {
 
     posted.posted.push(item.url)
     console.log('  Posted successfully.')
+
+    // Add bluesky_url back to the note's frontmatter
+    const postId = response.uri.split('/').pop()
+    const blueskyUrl = `https://bsky.app/profile/${handle}/post/${postId}`
+    const filepath = noteUrlToFilePath(item.url)
+    if (filepath) {
+      addFrontmatterField(filepath, 'bluesky_url', blueskyUrl)
+    }
 
     // Small delay between posts
     await new Promise((r) => setTimeout(r, 2000))
