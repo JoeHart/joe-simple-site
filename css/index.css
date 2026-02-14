@@ -535,8 +535,6 @@ nav.site-menu ul {
 }
 
 .note-card {
-  display: flex;
-  gap: var(--step-0);
   padding-block-end: var(--step-2);
   margin-block-end: var(--step-2);
   border-bottom: 1px dashed var(--color-accent);
@@ -544,19 +542,6 @@ nav.site-menu ul {
 
 .note-card:last-child {
   border-bottom: none;
-}
-
-.note-card-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.note-card-body {
-  flex: 1;
-  min-width: 0;
 }
 
 .note-card .e-content img {
