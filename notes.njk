@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+title: Notes
+pagination:
+  data: collections.notes
+  size: 20
+  reverse: true
+  alias: notes
+permalink: '/notes/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}'
+---
+
+<h1>Notes</h1>
+<p>Short-form thoughts, links, and updates.</p>
+<hr class="notes-intro-divider" />
+
+<div class="notes-timeline">
+  {%- for note in notes %}
+  <article class="note-card h-entry">
+    <div class="e-content flow">{{ note.templateContent | safe }}</div>
+    <div class="note-card-footer">
+      <div class="note-card-links">
+        <a href="{{ note.url | url }}" class="u-url">Permalink</a>
+        {% if note.data.mastodon_url %}
+        <a href="{{ note.data.mastodon_url }}" rel="syndication">Mastodon</a>
+        {% endif %} {% if note.data.bluesky_url %}
+        <a href="{{ note.data.bluesky_url }}" rel="syndication">Bluesky</a>
+        {% endif %}
+      </div>
+      <time class="dt-published" datetime="{{ note.date | htmlDateString }}">{{ note.date | readableDate }}</time>
+    </div>
+  </article>
+  {%- endfor %}
+</div>
+
+<nav class="notes-pagination" aria-label="Notes pagination">
+  {% if pagination.href.previous %}
+  <a href="{{ pagination.href.previous }}" class="pagination-prev">← Newer</a>
+  {% endif %}
+  <span class="pagination-current">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}</span>
+  {% if pagination.href.next %}
+  <a href="{{ pagination.href.next }}" class="pagination-next">Older →</a>
+  {% endif %}
+</nav>

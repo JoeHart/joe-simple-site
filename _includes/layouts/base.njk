@@ -91,6 +91,8 @@
         person_profiles: 'identified_only', // or 'always' to create profiles for anonymous users as well
       })
     </script>
+    <link rel="alternate" type="application/atom+xml" title="Joe Hart's Notes (Atom)" href="/notes/feed.xml" />
+    <link rel="alternate" type="application/feed+json" title="Joe Hart's Notes (JSON)" href="/notes/feed.json" />
     {% block customhead %}{% endblock %}
   </head>
   <body>
@@ -103,6 +105,9 @@
           <ul role="list">
             <li>
               <a href="{{ '/blog/' | url }}">✍️ Blog</a>
+            </li>
+            <li>
+              <a href="{{ '/notes/' | url }}">💬 Notes</a>
             </li>
             <li>
               <a href="{{ '/talks/' | url }}">📣 Talks</a>

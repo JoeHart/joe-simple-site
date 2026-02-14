@@ -1,0 +1,39 @@
+name: Syndicate to Bluesky
+
+on:
+  workflow_run:
+    workflows: ["Deploy Now: Orchestration"]
+    types: [completed]
+    branches: [master]
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install @atproto/api
+
+      - name: Wait for deployment propagation
+        run: sleep 60
+
+      - name: Post to Bluesky
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: node .github/scripts/syndicate-bluesky.js
+
+      - name: Commit posted tracker
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/data/bluesky-posted.json
+          git diff --staged --quiet || git commit -m "Update Bluesky posted tracker" && git push
