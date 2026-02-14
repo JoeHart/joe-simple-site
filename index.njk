@@ -9,8 +9,7 @@ templateClass: homepage
 <div class="flow">
   <h3>Recent Posts</h3>
   {% set postslist = collections.posts | activePostsOnly | head(-5) %} {% set postslistCounter = collections.posts |
-  length %} {% include "postslist.njk" %}
-
+  length %} {% include "postslist.njk" %} {% if upcomingTalks.length %}
   <h3>Upcoming Talks</h3>
   <ol class="postlist">
     {% for talk in upcomingTalks %}
@@ -26,6 +25,7 @@ templateClass: homepage
     </li>
     {% endfor %}
   </ol>
+  {% endif %}
 
   <h3>Featured Talk</h3>
 
