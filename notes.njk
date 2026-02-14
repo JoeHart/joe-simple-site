@@ -1,14 +1,19 @@
 ---
 layout: layouts/base.njk
 title: Notes
-permalink: /notes/
+pagination:
+  data: collections.notes
+  size: 20
+  reverse: true
+  alias: notes
+permalink: '/notes/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}'
 ---
 
 <h1>Notes</h1>
 <p>Short-form thoughts, links, and updates.</p>
 
 <div class="notes-timeline">
-  {%- for note in collections.notes | reverse %}
+  {%- for note in notes %}
   <article class="note-card h-entry">
     <time class="dt-published" datetime="{{ note.date | htmlDateString }}"> {{ note.date | readableDate }} </time>
     <div class="e-content flow">{{ note.templateContent | safe }}</div>
@@ -23,3 +28,13 @@ permalink: /notes/
   </article>
   {%- endfor %}
 </div>
+
+<nav class="notes-pagination" aria-label="Notes pagination">
+  {% if pagination.href.previous %}
+  <a href="{{ pagination.href.previous }}" class="pagination-prev">← Newer</a>
+  {% endif %}
+  <span class="pagination-current">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages | length }}</span>
+  {% if pagination.href.next %}
+  <a href="{{ pagination.href.next }}" class="pagination-next">Older →</a>
+  {% endif %}
+</nav>

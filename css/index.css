@@ -585,3 +585,19 @@ nav.site-menu ul {
   max-width: 100%;
   border-radius: 4px;
 }
+
+.notes-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-block-start: var(--step-3);
+  padding-block-start: var(--step-1);
+  border-top: 1px dashed var(--color-accent);
+  font-family: monospace;
+  font-size: var(--step--1);
+}
+
+.pagination-current {
+  color: var(--gray);
+}
