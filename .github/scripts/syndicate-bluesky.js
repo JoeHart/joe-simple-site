@@ -76,7 +76,7 @@ async function main() {
     const text = item.content_text.length > 280 ? item.content_text.slice(0, 277) + '...' : item.content_text
 
     // Use RichText for link/mention detection
-    const rt = new RichText({ text: `${text}\n\n${item.url}` })
+    const rt = new RichText({ text })
     await rt.detectFacets(agent)
 
     await agent.post({
