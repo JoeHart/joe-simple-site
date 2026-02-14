@@ -535,6 +535,8 @@ nav.site-menu ul {
 }
 
 .note-card {
+  display: flex;
+  gap: var(--step-0);
   padding-block-end: var(--step-2);
   margin-block-end: var(--step-2);
   border-bottom: 1px dashed var(--color-accent);
@@ -544,9 +546,17 @@ nav.site-menu ul {
   border-bottom: none;
 }
 
-.note-card > time {
-  display: block;
-  margin-block-end: var(--step--1);
+.note-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.note-card-body {
+  flex: 1;
+  min-width: 0;
 }
 
 .note-card .e-content img {
@@ -557,10 +567,16 @@ nav.site-menu ul {
 
 .note-card-footer {
   display: flex;
-  gap: 1em;
+  justify-content: space-between;
+  align-items: baseline;
   margin-block-start: var(--step--1);
   font-size: var(--step--1);
   font-family: monospace;
+}
+
+.note-card-links {
+  display: flex;
+  gap: 1em;
 }
 
 /* Single note page */

@@ -15,15 +15,20 @@ permalink: '/notes/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 
 <div class="notes-timeline">
   {%- for note in notes %}
   <article class="note-card h-entry">
-    <time class="dt-published" datetime="{{ note.date | htmlDateString }}"> {{ note.date | readableDate }} </time>
-    <div class="e-content flow">{{ note.templateContent | safe }}</div>
-    <div class="note-card-footer">
-      <a href="{{ note.url | url }}" class="u-url">Permalink</a>
-      {% if note.data.mastodon_url %}
-      <a href="{{ note.data.mastodon_url }}" rel="syndication">Mastodon</a>
-      {% endif %} {% if note.data.bluesky_url %}
-      <a href="{{ note.data.bluesky_url }}" rel="syndication">Bluesky</a>
-      {% endif %}
+    <img src="/img/joe-speaker.jpg" alt="" class="note-card-avatar" aria-hidden="true" />
+    <div class="note-card-body">
+      <div class="e-content flow">{{ note.templateContent | safe }}</div>
+      <div class="note-card-footer">
+        <div class="note-card-links">
+          <a href="{{ note.url | url }}" class="u-url">Permalink</a>
+          {% if note.data.mastodon_url %}
+          <a href="{{ note.data.mastodon_url }}" rel="syndication">Mastodon</a>
+          {% endif %} {% if note.data.bluesky_url %}
+          <a href="{{ note.data.bluesky_url }}" rel="syndication">Bluesky</a>
+          {% endif %}
+        </div>
+        <time class="dt-published" datetime="{{ note.date | htmlDateString }}">{{ note.date | readableDate }}</time>
+      </div>
     </div>
   </article>
   {%- endfor %}
