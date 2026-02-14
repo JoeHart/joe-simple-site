@@ -346,7 +346,7 @@ function deduplicatePosts(mastodonNotes, blueskyNotes) {
       merged.push({
         ...mNote,
         bluesky_url: bNote.bluesky_url,
-        images: [...mNote.images, ...bNote.images.filter((bi) => !mNote.images.some((mi) => mi.path === bi.path))],
+        images: mNote.images.length > 0 ? mNote.images : bNote.images,
         platform: 'both',
       })
       console.log(`  Matched: "${mNote.content.slice(0, 50)}..." (similarity: ${bestSimilarity.toFixed(2)})`)
