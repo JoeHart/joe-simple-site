@@ -1,5 +1,5 @@
 ---
-title: 'Final Fantasy IX in React: Fighting the Browser, One Frame at a Time'
+title: 'Final Fantasy IX in React'
 description: The original Final Fantasy IX was a masterclass in creative constraint – pushing the PlayStation's hardware to its limits. In this talk, Joe recreates the magic in React.
 date: 2025-11-28
 tags: ['talk', 'react', 'games']
