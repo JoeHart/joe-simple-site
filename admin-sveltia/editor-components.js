@@ -17,7 +17,7 @@ CMS.registerEditorComponent({
     },
   ],
   pattern:
-    /^<img\s+(?:aria-hidden="true"\s+)?(?:class="(?<position_class>book-left|book-right)"\s+)?src="(?<src>[^"]+)"\s+alt="(?<alt>[^"]*)"\s*\/?>$/m,
+    /^<img\s+(?:aria-hidden="true"\s+)?(?:class="(?<position_class>book-left|book-right)"\s+)?src="(?<src>[^"]+)"\s+alt="(?<alt>[^"]*(?:&quot;[^"]*?)*)"\s*\/?>$/m,
   fromBlock(match) {
     const posClass = match.groups.position_class || ''
     let position = 'full'
@@ -25,26 +25,28 @@ CMS.registerEditorComponent({
     if (posClass === 'book-right') position = 'right'
     return {
       src: match.groups.src || '',
-      alt: match.groups.alt || '',
+      alt: (match.groups.alt || '').replace(/&quot;/g, '"'),
       position,
     }
   },
   toBlock(data) {
+    const escAlt = (data.alt || '').replace(/"/g, '&quot;')
     const parts = ['<img aria-hidden="true"']
     if (data.position === 'left') parts.push(' class="book-left"')
     else if (data.position === 'right') parts.push(' class="book-right"')
     parts.push(` src="${data.src || ''}"`)
-    parts.push(` alt="${data.alt || ''}"`)
+    parts.push(` alt="${escAlt}"`)
     parts.push('>')
     return parts.join('')
   },
   toPreview(data) {
+    const escAlt = (data.alt || '').replace(/"/g, '&quot;')
     const style =
       data.position === 'left'
         ? 'float:left;width:30%;margin-right:1rem;'
         : data.position === 'right'
           ? 'float:right;width:30%;margin-left:1rem;'
           : ''
-    return `<img src="${data.src || ''}" alt="${data.alt || ''}" style="${style}">`
+    return `<img src="${data.src || ''}" alt="${escAlt}" style="${style}">`
   },
 })
