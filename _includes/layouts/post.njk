@@ -4,18 +4,10 @@ templateClass: post
 ---
 
 {% if hero %}
-<img
-  src="{{ hero }}"
-  alt="Hero image for {{ title }}"
-  class="post-hero"
-  style="view-transition-name: post-{{ page.fileSlug }}-hero"
-/>
+<img src="{{ hero }}" alt="Hero image for {{ title }}" class="post-hero" />
 {% endif %}
 
-<h1>
-  <span style="view-transition-name: post-{{ page.fileSlug }}-emoji" class="emoji">{{ emoji }}</span
-  ><span style="view-transition-name: post-{{ page.fileSlug }}-title">{{ title }}</span>
-</h1>
+<h1><span class="emoji">{{ emoji }}</span><span>{{ title }}</span></h1>
 <div class="post-metadata">
   <ul class="tags-list">
     {%- for tag in tags | filterTagList %} {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
@@ -25,9 +17,7 @@ templateClass: post
     </li>
     {%- endfor %}
   </ul>
-  <time style="view-transition-name: post-{{ page.fileSlug }}-date" datetime="{{ page.date | htmlDateString }}">
-    {{ page.date | readableDate }}
-  </time>
+  <time datetime="{{ page.date | htmlDateString }}"> {{ page.date | readableDate }} </time>
 </div>
 
 <div class="flow">{{ content | safe }}</div>

@@ -9,17 +9,14 @@
         alt="{{ post.data.title }}"
         width="1600"
         height="900"
-        style="view-transition-name: post-{{ post.fileSlug }}-hero"
       />
     </a>
     {% endif %}
 
     <h2 class="post-card-title">
-      <span style="view-transition-name: post-{{ post.fileSlug }}-emoji" class="post-card-emoji">
-        {{ post.data.emoji }}
-      </span>
+      <span class="post-card-emoji"> {{ post.data.emoji }} </span>
 
-      <a href="{{ link | url }}" style="view-transition-name: post-{{ post.fileSlug }}-title">
+      <a href="{{ link | url }}">
         {% if post.data.title %}{{ post.data.title }}{% else %}
         <code>{{ post.url }}</code>
         {% endif %}
@@ -35,13 +32,7 @@
         {% endfor %}
       </ul>
       {% endif %}
-      <time
-        class="post-card-date"
-        style="view-transition-name: post-{{ post.fileSlug }}-date"
-        datetime="{{ post.date | htmlDateString }}"
-      >
-        {{ post.date | readableDate }}
-      </time>
+      <time class="post-card-date" datetime="{{ post.date | htmlDateString }}"> {{ post.date | readableDate }} </time>
     </div>
 
     <p class="post-card-excerpt">
