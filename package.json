@@ -22,6 +22,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@openlab/vercel-netlify-cms-github": "^1.1.1",
+    "@vercel/analytics": "^1.6.1",
     "luxon": "^2.4.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.6",
