@@ -12,7 +12,7 @@ socialImage: ''
 
 Shakespeare being some shade of queer is an idea that you really only have two responses for. One being “duh, of course” and the other being “What? I’ve never heard about that?”. Regardless of if you are the former or the later, this book is well worth a read.
 
-![cover of Straight acting by Will Tosh](/img/uploads/straight%20acting.jpg)
+![Cover of "Straight Acting by Will Tosh"](/img/uploads/straight%20acting.jpg)
 
 My partner bought this book from Toppings Bookshop on a weekend away in Bath almost 2 years ago now. And it sat on his bedside table ever since, but at the beginning of the year we decided to listen to it in tandem. Both being absolute dweebs about the theatre and Shakespeare and of course being practicing homosexuals; the book seemed tailor made for us.
 
@@ -26,7 +26,7 @@ People reference Henry V St Crispins day speech, but often forget the whole "let
 
 This book illuminates Shakespeare into a figure I more easily recognise in the creatives and performers I have met in my own life. Passionate and gifted certainly, but also revellers and lovers. It also does well to contextualise how people thought of Shakespeare in his own time; before he was Shakespeare the playwright he was Shakespeare the poet.
 
-To be more specific, he was Shakespeare the erotic poet. There exists no original copies of the pamphlets of ["Venus & Adonis"](https://www.poetryfoundation.org/poems/56962/venus-and-adonis-56d239f8f109c) because they were so worn out. It wasn't just the base eroticism in the poem
+To be more specific, he was Shakespeare the erotic poet. There exists no original copies of the pamphlets of ["Venus & Adonis"](https://www.poetryfoundation.org/poems/56962/venus-and-adonis-56d239f8f109c) because they were so worn out. It wasn't just the base eroticism in the poem it is the queerness of it. In contrast to the standards of the time the pursuer is flipped to be Venus rather than Adonis.
 
 Will Tosh does a great job of revealing the queer influences and explicit content in both Shakespeare Poems and Plays. It's a tricky balance to strike in a book like this, for the gay theatre folks among us much of it is known but to people who've never engaged much with Shakespeares queerness it can all feel a bit new. For example The Sonnets; the first 126 of which are addressed to a young man (yes including the one everyone reads at their very heterosexual weddings) is something that feels pedestrian to some, but to others a revelation.
 
