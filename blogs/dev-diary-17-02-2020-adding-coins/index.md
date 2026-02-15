@@ -16,13 +16,13 @@ Today we added in a little feature to our main app, but one that we think will s
 
 The scene is set by a lake, you are given control of a low poly person to point around where you will with a laser pointer. It’s like having a less cute cat.
 
-![Video of user interacting with the described scene](wavehello.gif)
+![Video of user interacting with the described scene](/img/wavehello.gif)
 
 The idea is that you get your low poly person over to one of the jump pads and they go hurtling across the river in a perfect parabola, landing safely upon the other side.
 
 You perform this a couple more times, however on the third jump the application freezes time. Stranding your less cute cat equivalent at the peak of the parabola and poses you a question.
 
-![Image of question being pose in app](question.png)
+![Image of question being pose in app](/img/question.png)
 
 Where is the force acting on them?
 
