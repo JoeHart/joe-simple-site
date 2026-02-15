@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('play')
   eleventyConfig.addPassthroughCopy('admin')
   eleventyConfig.addPassthroughCopy('admin-sveltia')
+  eleventyConfig.addPassthroughCopy('_siteimg')
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 
@@ -53,6 +54,92 @@ module.exports = function (eleventyConfig) {
       return Image.generateHTML(metadata, imageAttrs)
     }
   )
+
+  eleventyConfig.addTransform('optimizeImages', async function (content, outputPath) {
+    if (!outputPath || !outputPath.endsWith('.html')) {
+      return content
+    }
+
+    const imgRegex = /<img\b([^>]*)>/gi
+    const matches = [...content.matchAll(imgRegex)]
+    if (matches.length === 0) return content
+
+    const replacements = await Promise.all(
+      matches.map(async (match) => {
+        const imgTag = match[0]
+        const attrs = match[1]
+
+        const srcMatch = attrs.match(/src="([^"]+)"/)
+        if (!srcMatch) return null
+        const src = srcMatch[1]
+
+        if (!src.startsWith('/img/')) return null
+        if (/\.(gif|svg|ico)$/i.test(src)) return null
+
+        const existingAttrs = {}
+        const attrRegex = /([\w-]+)="([^"]*)"/g
+        let attrMatch
+        while ((attrMatch = attrRegex.exec(attrs)) !== null) {
+          const [, name, value] = attrMatch
+          if (name !== 'src' && name !== 'width' && name !== 'height') {
+            existingAttrs[name] = value
+          }
+        }
+
+        try {
+          const metadata = await Image(`.${src}`, {
+            widths: [480, 800, 1280],
+            formats: ['webp', 'jpeg'],
+            urlPath: '/_siteimg/',
+            outputDir: './_siteimg/',
+          })
+
+          const imageAttrs = {
+            ...existingAttrs,
+            sizes: existingAttrs.sizes || '(min-width: 800px) 800px, 100vw',
+            loading: existingAttrs.loading || 'lazy',
+            decoding: existingAttrs.decoding || 'async',
+          }
+
+          let pictureHtml = Image.generateHTML(metadata, imageAttrs)
+          pictureHtml = pictureHtml.replace(/ width="\d+"/, '').replace(/ height="\d+"/, '')
+          return { index: match.index, length: imgTag.length, replacement: pictureHtml }
+        } catch (e) {
+          console.warn(`[image transform] Failed to process ${src}:`, e.message)
+          return null
+        }
+      })
+    )
+
+    const validReplacements = replacements.filter(Boolean).sort((a, b) => b.index - a.index)
+    let result = content
+    for (const { index, length, replacement } of validReplacements) {
+      result = result.slice(0, index) + replacement + result.slice(index + length)
+    }
+
+    // Rewrite preload links to point to the largest webp
+    const preloadRegex = /<link\b[^>]*rel="preload"[^>]*as="image"[^>]*>/gi
+    result = result.replace(preloadRegex, (tag) => {
+      const hrefMatch = tag.match(/href="([^"]+)"/)
+      if (!hrefMatch) return tag
+      const href = hrefMatch[1]
+      if (!href.startsWith('/img/') || /\.(gif|svg|ico)$/i.test(href)) return tag
+      try {
+        const metadata = Image.statsSync(`.${href}`, {
+          widths: [480, 800, 1280],
+          formats: ['webp', 'jpeg'],
+          urlPath: '/_siteimg/',
+          outputDir: './_siteimg/',
+        })
+        const largestWebp = metadata.webp[metadata.webp.length - 1]
+        return `<link rel="preload" as="image" type="image/webp" href="${largestWebp.url}" />`
+      } catch (e) {
+        return tag
+      }
+    })
+
+    return result
+  })
 
   eleventyConfig.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd LLL yyyy')

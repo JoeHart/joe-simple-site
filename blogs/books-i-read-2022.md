@@ -25,13 +25,13 @@ After reading a whole bunch of [Asimov](https://www.goodreads.com/author/show/16
 
 ### Xenogenesis Trilogy (1987) _by Octavia Butler_
 
-<img aria-hidden="true" class="book-left" src="/img/dawn.jpg">
+<img aria-hidden="true" class="book-left" src="/img/dawn.jpg" alt="Cover of Dawn by Octavia Butler">
 
 What if when humanity was actively wiping itself out with nuclear weapons an alien race was passing by and tried to save humanity?
 
 Like an endangered species the Oankali take humans from their natural habitat and attempt to domesticate and improve them by their own standards.
 
-<img aria-hidden="true" class="book-right" src="/img/imago.jpg">
+<img aria-hidden="true" class="book-right" src="/img/imago.jpg" alt="Cover of Imago by Octavia Butler">
 
 The best trilogy I've read in a long time and the **freshest** sci-fi I have read in a **very** long time. It feels like it could have been written yesterday, there's just so much humanity poured into such a slim volume. Butler explores imperialism, consent, agency and fundamentally human nature.
 
@@ -39,7 +39,7 @@ Even if you aren't into sci-fi the first book, [Dawn](https://www.goodreads.com/
 
 ### Parable of the Sower (1993) _by Octavia Butler_
 
-<img aria-hidden="true" class="book-left" src="/img/parableofthesower.webp">
+<img aria-hidden="true" class="book-left" src="/img/parableofthesower.webp" alt="Cover of Parable of the Sower by Octavia Butler">
 
 This was recommended to me by a friend whose book club recently read it, and coming hot off the heels of Butler's Xenogenesis trilogy I was more than on board to read it.
 
@@ -63,7 +63,7 @@ There are some really weird tangents about masculinity in the second book that c
 
 ### The Long Way To A Small Angry Planet (2014) _by Becky Chambers_
 
-<img aria-hidden="true" class="book-left" src="/img/thelongwaytoasmallangryplanet.jpg">
+<img aria-hidden="true" class="book-left" src="/img/thelongwaytoasmallangryplanet.jpg" alt="Cover of The Long Way to a Small Angry Planet by Becky Chambers">
 
 This has featured in a lot of "sci-fi you should read" lists over the last few years and is often framed as "softer sci-fi", or more "character-focused sci-fi". These caveats are always said with a slight chip on their shoulder as if by having a cast of lovable and empathetic characters it somehow doesn't have the tantalising "what if" magic of sci-fi.
 
@@ -73,7 +73,7 @@ The only caveat I have is it is on the "slice of life" side of fiction, so if th
 
 ### The Algebraist (2004) _by Iain M Banks_
 
-<img aria-hidden="true" class="book-left" src="/img/thealgebraist.jpg">
+<img aria-hidden="true" class="book-left" src="/img/thealgebraist.jpg" alt="Cover of The Algebraist by Iain M Banks">
 
 This is a book I tried to read as a kid and just couldn't push through it. Primarily this is a book of really cool ideas, about ancient life in gas giants, about interstellar society. I know it's common wisdom to rave about Banks' Culture novels, but I think this is a lovely fully formed whole meal of a book.
 
@@ -83,19 +83,19 @@ If you're looking for a heady hard sci-fi book that is a one-off, then this is f
 
 ### The Henna Wars (2020) _by Adiba Jaigirdar_
 
-<img aria-hidden="true" class="book-left" src="/img/thehennawars.jpg">
+<img aria-hidden="true" class="book-left" src="/img/thehennawars.jpg" alt="Cover of The Henna Wars by Adiba Jaigirdar">
 
 This was just very wholesome, two girls set up rival Henna businesses and fall in love. Solid, heart warming, YA romance.
 
 ### She Who Became The Sun (2021) _by Shelley Parker-Chan_
 
-<img aria-hidden="true" class="book-right" src="/img/shewhobecamethesun.jpg">
+<img aria-hidden="true" class="book-right" src="/img/shewhobecamethesun.jpg" alt="Cover of She Who Became the Sun by Shelley Parker-Chan">
 
 Good fantasy fun with a queer angle. Think "Mulan but more magic, lesbianism and gender bending". Very enjoyable, didn't know it was a series before going into it and am now impatiently waiting for the next one.
 
 ### Under the Udala Trees _by Chinelo Okparanta_
 
-<img aria-hidden="true" class="book-left" src="/img/undertheudalatrees.jpg">
+<img aria-hidden="true" class="book-left" src="/img/undertheudalatrees.jpg" alt="Cover of Under the Udala Trees by Chinelo Okparanta">
 
 This was the first book I got in my subscription from [Common Press](https://www.glasshouse.london/the-common-press), a wonderful queer bookshop in East London. This book made me feel a lot, it follows the life of a young woman discovering her queerness under the backdrop of the [Nigerian Civil War](https://en.wikipedia.org/wiki/Nigerian_Civil_War).
 
@@ -103,7 +103,7 @@ It was a wonderful read, but be ready to feel quite a lot of despair throughout 
 
 ### The Greatest Thing (2022) _by Sarah Winifred Searle_
 
-<img aria-hidden="true" class="book-right" src="/img/thegreatestthing.jpg">
+<img aria-hidden="true" class="book-right" src="/img/thegreatestthing.jpg" alt="Cover of The Greatest Thing by Sarah Winifred Searle">
 
 Whenever I'm browsing through the monthly comics/graphic novel previews on [Forbidden Planet](https://forbiddenplanet.com/), I'll see a book with a cover and a vague description where it doesn't explicitly **say** it's a queer comic but it has that vibe.
 
@@ -111,7 +111,7 @@ Sometimes when the comic arrives months later I am disappointed to read a perfec
 
 ### Our Colors (2022) _by Gengoroh Tagame_
 
-<img aria-hidden="true" class="book-left" src="/img/ourcolors.jpg">
+<img aria-hidden="true" class="book-left" src="/img/ourcolors.jpg" alt="Cover of Our Colors by Gengoroh Tagame">
 
 [My Brother's Husband (2017)](https://www.goodreads.com/book/show/32337897-my-brother-s-husband-volume-1) completely ruined me, which was the award-winning first-ever safe-for-work creation of Gengoroh Tagame.
 
@@ -125,7 +125,7 @@ If you haven't read My Brother's Husband, pick that up first but if you have thi
 
 ### Superman (2016) _by Peter J Tomasi and Patrick Gleason_
 
-<img aria-hidden="true" class="book-right" src="/img/supermantomasigleason.jpg">
+<img aria-hidden="true" class="book-right" src="/img/supermantomasigleason.jpg" alt="Cover of Superman by Peter J Tomasi and Patrick Gleason">
 
 **This is the good shit**. If you're curious to see what "making the big blue boy scout work for modern audiences" looks like, it's **this** run. I read the omnibus version, but you can read it on the DC app or pick up the trade paperbacks.
 
@@ -137,7 +137,7 @@ What a vibe.
 
 ### Something Is Killing the Children (2020) _by James Tynion IV, Werther Dell'edera and Miquel Muerto_
 
-<img aria-hidden="true" class="book-left" src="/img/somethingiskillingthechildren.jpg">
+<img aria-hidden="true" class="book-left" src="/img/somethingiskillingthechildren.jpg" alt="Cover of Something Is Killing the Children by James Tynion IV">
 
 What if Stranger Things were darker, more people died and there was a secret society of monster hunters?
 
@@ -147,7 +147,7 @@ James Tynion IV is now one of those comic authors where I'll pick up pretty much
 
 ### Batman (2013) _by Scott Snyder and Greg Capullo_
 
-<img aria-hidden="true" class="book-right" src="/img/batmanscottsnyder.jpg">
+<img aria-hidden="true" class="book-right" src="/img/batmanscottsnyder.jpg" alt="Cover of Batman by Scott Snyder and Greg Capullo">
 
 I've not really ever been a Batman person, but these two omnibuses made me into one. After only really consuming the Nolan-esque dark and gritty batman, this run sees a grumpy batman paired with his classic comic-book-ey elements.
 
@@ -155,7 +155,7 @@ There's a bat-blimp at one point, what more could you ask for?!
 
 ### Fantastic Four (2010) _by Jonathan Hickman, Sean Chen, Dale Eaglesham, Steve Epting, Nick Dragotta, Neil Edwards_
 
-<img aria-hidden="true" class="book-left" src="/img/fantasticofourhickman.jpg">
+<img aria-hidden="true" class="book-left" src="/img/fantasticofourhickman.jpg" alt="Cover of Fantastic Four by Jonathan Hickman">
 
 The above comic books are very much accessible enough for really anyone to pick up and enjoy, and I recommend you do! This however is layered in comic-book weirdness and continuity treats.
 
@@ -169,7 +169,7 @@ Similar to Scott Snyder's Batman, this has made me into a Fantastic Four person 
 
 ### This Much is True (2021) _by Miriam Margolyes_
 
-<img aria-hidden="true" class="book-right" src="/img/thismuchistrue.webp">
+<img aria-hidden="true" class="book-right" src="/img/thismuchistrue.webp" alt="Cover of This Much is True by Miriam Margolyes">
 
 Miriam Margolyes is a marmite kinda person, if you like her get the audiobook and you'll have a whale of a time.
 
@@ -177,7 +177,7 @@ Miriam Margolyes is a marmite kinda person, if you like her get the audiobook an
 
 ### Hiroshima (1946) _by John Hersey_
 
-<img aria-hidden="true" class="book-left" src="/img/hiroshima.jpg">
+<img aria-hidden="true" class="book-left" src="/img/hiroshima.jpg" alt="Cover of Hiroshima by John Hersey">
 
 Because I'm stupid, my response to reading about risks of nuclear war in the news was to try and read as much as possible about it.
 
@@ -189,7 +189,7 @@ This is about the people on the ground on the day, a few of them survivors and t
 
 ### Sorry I’m Late I Didn’t Want To Come (2019) _by Jessica Pan_
 
-<img aria-hidden="true" class="book-right" src="/img/sorryimlateididntwanttocome.jpg">
+<img aria-hidden="true" class="book-right" src="/img/sorryimlateididntwanttocome.jpg" alt="Cover of Sorry I'm Late I Didn't Want to Come by Jessica Pan">
 
 This was pretty light and harmless, more biography than self-help. It was nice hearing about the author's journey to a better understanding of what she enjoyed and what she didn't.
 
@@ -197,7 +197,7 @@ I wouldn't necessarily recommend this book, but I wouldn't **not** recommend it 
 
 ### Stolen Focus (2022) _by Johann Hari_
 
-<img aria-hidden="true" class="book-left" src="/img/stolenfocus.jpg">
+<img aria-hidden="true" class="book-left" src="/img/stolenfocus.jpg" alt="Cover of Stolen Focus by Johann Hari">
 
 Ironically I saw a plug for this while scrolling Twitter. It is a timely look at exactly why we feel we can't do any deep focus anymore with some good stories and anecdotes thrown in.
 
@@ -207,7 +207,7 @@ Now for most people, I'd probably say it's not necessarily worth reading. Though
 
 ### Lost Connections (2018) _by Johann Hari_
 
-<img aria-hidden="true" class="book-right" src="/img/lostconnections.jpg">
+<img aria-hidden="true" class="book-right" src="/img/lostconnections.jpg" alt="Cover of Lost Connections by Johann Hari">
 
 This is a book I'm conflicted about a great deal. On the one hand, I spent a lot of it nodding along to the author. Yes, our sense of community has diminished, meaningful connections are harder than ever to create and maintain, and we probably are over-prescribing medication for mental illness. However, I dislike the effect this book can have sometimes.
 
@@ -223,7 +223,7 @@ This year I only had two books that I did not finish(**DNF**), both for complete
 
 ### Effortless (2021) _by Greg McKeown_
 
-<img aria-hidden="true" class="book-left" src="/img/effortless.jpg">
+<img aria-hidden="true" class="book-left" src="/img/effortless.jpg" alt="Cover of Effortless by Greg McKeown">
 
 Overly short, barely anything to say, regurgitating ideas from other people in shorter and less compelling ways. A complete waste of money and time. If only he'd put a little more effort into Effortless.
 
@@ -231,7 +231,7 @@ For me to DNF a 7-hour-long self-help audio book is pretty rare for me, that's h
 
 ### Black Leopard, Red Wolf (2019) _by Marlon James_
 
-<img aria-hidden="true" class="book-right" src="/img/blackleopardredwolf.jpg">
+<img aria-hidden="true" class="book-right" src="/img/blackleopardredwolf.jpg" alt="Cover of Black Leopard, Red Wolf by Marlon James">
 
 This was the complete opposite issue, I enjoyed this. The setting was compelling, and the queer elements of the characters and the language was so well put together. However, it was written in **such** a clever style I wished it would get out of its own way and just let the characters and setting flourish. This is absolutely what happens when a [Booker Prize winner](https://thebookerprizes.com/the-booker-library/authors/marlon-james) writes a fantasy novel. For some people, that's a dream. However, for my fickle brain, it was just a bit too uphill to get finished.
 
@@ -239,7 +239,7 @@ This was the complete opposite issue, I enjoyed this. The setting was compelling
 
 ### Piranesi (2021) _by Susanna Clarke_
 
-<img aria-hidden="true" class="book-left" src="/img/piranesi.jpg">
+<img aria-hidden="true" class="book-left" src="/img/piranesi.jpg" alt="Cover of Piranesi by Susanna Clarke">
 
 I am going to tell you absolutely nothing about this book because that's how I picked it up and I think it's the best way to go into it.
 
