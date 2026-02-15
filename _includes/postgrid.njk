@@ -1,6 +1,3 @@
-{% set firstPost = postslist | last %} {% if firstPost and (firstPost.data.hero or firstPost.data.socialImage) %}
-<link rel="preload" as="image" href="{{ (firstPost.data.hero or firstPost.data.socialImage) | url }}" />
-{% endif %}
 <div class="post-grid">
   {% for post in postslist | reverse %}
   <article class="post-card flow">

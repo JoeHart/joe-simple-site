@@ -93,8 +93,8 @@
     </script>
     <link rel="alternate" type="application/atom+xml" title="Joe Hart's Notes (Atom)" href="/notes/feed.xml" />
     <link rel="alternate" type="application/feed+json" title="Joe Hart's Notes (JSON)" href="/notes/feed.json" />
-    {% if hero %}
-    <link rel="preload" as="image" href="{{ hero }}" />
+    {% if hero or preloadImage %}
+    <link rel="preload" as="image" href="{{ hero or preloadImage }}" />
     {% endif %} {% block customhead %}{% endblock %}
   </head>
   <body>
