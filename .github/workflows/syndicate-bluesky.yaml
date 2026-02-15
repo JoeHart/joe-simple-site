@@ -35,5 +35,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -- package.json package-lock.json 2>/dev/null || true
           git add .github/data/bluesky-posted.json notes/
-          git diff --staged --quiet || git commit -m "Update Bluesky posted tracker and backlinks" && git pull --rebase && git push
+          if ! git diff --staged --quiet; then
+            git commit -m "Update Bluesky posted tracker and backlinks [skip ci]"
+            git pull --rebase
+            git push
+          fi
