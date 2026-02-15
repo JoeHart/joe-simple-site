@@ -1,7 +1,7 @@
 ---
 title: 'Book Thoughts: Straight Acting by Will Tosh'
 date: 2026-02-15
-draft: true
+draft: false
 description: ''
 tags:
   - books
