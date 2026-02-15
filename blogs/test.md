@@ -3,7 +3,9 @@ title: 'Book Thoughts: Straight Acting by Will Tosh'
 date: 2026-01-25
 draft: true
 description: ''
-tags: []
+tags:
+  - books
+  - thoughts
 layout: layouts/post.njk
 emoji: 📝
 hero: /img/uploads/IMG_3421.jpeg
