@@ -10,7 +10,7 @@ hero: /img/uploads/IMG_3421.jpeg
 socialImage: ''
 ---
 
-Shakespeare being some shade of queer is an idea that you really only have two responses for. One being “duh, of course” and the other being “What? I’ve never heard about that?”. Regardless of if you are the former or the later, this book is well worth a read.
+Shakespeare being some shade of queer is an idea that you really only have two responses for. One being _“duh, of course” _and the other being _“What? I’ve never heard about that?”_. Regardless of if you are the former or the later, this book is well worth a read.
 
 ![Cover of "Straight Acting by Will Tosh"](/img/uploads/straight%20acting.jpg)
 
