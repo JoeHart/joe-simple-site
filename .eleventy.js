@@ -30,8 +30,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('play')
   eleventyConfig.addPassthroughCopy('admin')
   eleventyConfig.addPassthroughCopy('admin-sveltia')
-  eleventyConfig.addPassthroughCopy('_siteimg')
-
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 
   eleventyConfig.addNunjucksAsyncShortcode(
@@ -42,7 +40,7 @@ module.exports = function (eleventyConfig) {
         widths,
         formats: ['webp', 'jpeg'],
         urlPath: '/_siteimg/',
-        outputDir: './_siteimg/',
+        outputDir: './_site/_siteimg/',
         cacheOptions: { duration: '1y' },
       })
       let imageAttrs = {
@@ -91,7 +89,7 @@ module.exports = function (eleventyConfig) {
             widths: [480, 800, 1280],
             formats: ['webp', 'jpeg'],
             urlPath: '/_siteimg/',
-            outputDir: './_siteimg/',
+            outputDir: './_site/_siteimg/',
           })
 
           const imageAttrs = {
@@ -129,7 +127,7 @@ module.exports = function (eleventyConfig) {
           widths: [480, 800, 1280],
           formats: ['webp', 'jpeg'],
           urlPath: '/_siteimg/',
-          outputDir: './_siteimg/',
+          outputDir: './_site/_siteimg/',
         })
         const largestWebp = metadata.webp[metadata.webp.length - 1]
         return `<link rel="preload" as="image" type="image/webp" href="${largestWebp.url}" />`
