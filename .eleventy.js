@@ -102,9 +102,7 @@ module.exports = function (eleventyConfig) {
           }
 
           let pictureHtml = Image.generateHTML(metadata, imageAttrs)
-          if (existingAttrs.class && existingAttrs.class.includes('post-hero')) {
-            pictureHtml = pictureHtml.replace(/ width="\d+"/, '').replace(/ height="\d+"/, '')
-          }
+          pictureHtml = pictureHtml.replace(/ width="\d+"/, '').replace(/ height="\d+"/, '')
           return { index: match.index, length: imgTag.length, replacement: pictureHtml }
         } catch (e) {
           console.warn(`[image transform] Failed to process ${src}:`, e.message)
