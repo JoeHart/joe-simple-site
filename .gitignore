@@ -1,4 +1,5 @@
 node_modules
 _site
+_siteimg
 .DS_STORE
 .vercel

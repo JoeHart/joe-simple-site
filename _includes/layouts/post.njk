@@ -4,7 +4,7 @@ templateClass: post
 ---
 
 {% if hero %}
-<img src="{{ hero }}" alt="Hero image for {{ title }}" class="post-hero" />
+<img src="{{ hero }}" alt="Hero image for {{ title }}" class="post-hero" loading="eager" fetchpriority="high" />
 {% endif %}
 
 <h1><span class="emoji">{{ emoji }}</span><span>{{ title }}</span></h1>
