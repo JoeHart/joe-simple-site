@@ -14,7 +14,7 @@ socialImage: ''
 
 Shakespeare being some shade of queer is an idea that you really only have two responses for. One being _“duh, of course”_ and the other being _“What? I’ve never heard about that?”_. Regardless of if you are the former or the later, this book is well worth a read.
 
-![Cover of "Straight Acting by Will Tosh"](/img/uploads/straight%20acting.jpg)
+<img aria-hidden="true" class="book-right" src="/img/uploads/straight%20acting.jpg" alt="Cover of "Straight Acting by Will Tosh"">
 
 My partner bought this book from [Toppings Bookshop](https://www.toppingbooks.co.uk/) on a weekend away in Bath almost 2 years ago now. And it sat on his bedside table ever since, but at the beginning of the year we decided to listen to it in tandem. Both being absolute dweebs about the theatre and Shakespeare and of course being practicing homosexuals; the book seemed tailor made for us.
 
