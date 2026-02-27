@@ -1,0 +1,70 @@
+name: Syndicate to Social
+
+on:
+  workflow_run:
+    workflows: ["Deploy Now: Orchestration"]
+    types: [completed]
+    branches: [master]
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-save @atproto/api
+
+      - name: Wait for deployment propagation
+        run: sleep 60
+
+      - name: Syndicate posts
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+        run: node .github/scripts/syndicate.js
+
+      - name: Commit and push backlinks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Discard any changes from npm install (package.json, package-lock.json)
+          git checkout -- package.json 2>/dev/null || true
+          git checkout -- package-lock.json 2>/dev/null || true
+
+          # Stage only the files we care about
+          git add .github/data/bluesky-posted.json .github/data/mastodon-posted.json notes/
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update syndication trackers and backlinks [skip ci]"
+
+          # Clean any remaining unstaged changes so rebase can proceed
+          git checkout -- . 2>/dev/null || true
+
+          # Push with retry: fetch + rebase if remote moved
+          MAX_RETRIES=3
+          for i in $(seq 1 $MAX_RETRIES); do
+            if git push; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            echo "Push failed (attempt $i/$MAX_RETRIES), pulling and retrying..."
+            git pull --rebase origin master
+            sleep 2
+          done
+
+          echo "Push failed after $MAX_RETRIES attempts."
+          exit 1
