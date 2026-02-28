@@ -1,15 +1,15 @@
 name: Syndicate to Social
 
 on:
-  workflow_run:
-    workflows: ["Deploy Now: Orchestration"]
-    types: [completed]
+  push:
     branches: [master]
+    paths:
+      - 'notes/**'
+  workflow_dispatch:
 
 jobs:
   syndicate:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
         run: npm install --no-save @atproto/api
 
       - name: Wait for deployment propagation
-        run: sleep 60
+        run: sleep 30
 
       - name: Syndicate posts
         env:
