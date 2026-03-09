@@ -23,12 +23,13 @@ jobs:
         run: npm run build
 
       - name: Deploy to Bunny Storage and purge CDN
-        uses: R-J-dev/bunny-deploy@v2
+        uses: R-J-dev/bunny-deploy@v3
         with:
-          source: "_site"
-          storageZoneName: ${{ secrets.BUNNY_STORAGE_ZONE }}
-          storagePassword: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
-          storageEndpoint: ${{ secrets.BUNNY_STORAGE_HOSTNAME }}
-          accessKey: ${{ secrets.BUNNY_API_KEY }}
-          pullZoneId: ${{ secrets.BUNNY_PULL_ZONE_ID }}
-          remove: "true"
+          directory-to-upload: "_site"
+          storage-zone-name: ${{ secrets.BUNNY_STORAGE_ZONE }}
+          storage-zone-password: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          storage-endpoint: ${{ secrets.BUNNY_STORAGE_HOSTNAME }}
+          access-key: ${{ secrets.BUNNY_API_KEY }}
+          pull-zone-id: ${{ secrets.BUNNY_PULL_ZONE_ID }}
+          enable-delete-action: "true"
+          enable-purge-pull-zone: "true"
