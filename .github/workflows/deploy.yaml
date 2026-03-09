@@ -23,7 +23,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Bunny Storage and purge CDN
-        uses: R-J-dev/bunny-deploy@v3
+        uses: R-J-dev/bunny-deploy@v3.0.0
         with:
           directory-to-upload: "_site"
           storage-zone-name: ${{ secrets.BUNNY_STORAGE_ZONE }}
