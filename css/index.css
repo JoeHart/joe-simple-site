@@ -10,10 +10,10 @@
   --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
   --step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
   --pink: #f9968b;
-  --red: #d4572e;
+  --red: #f27348;
   --gray: #26474e;
   --blue: #76cdcd;
-  --teal: #1a9fa3;
+  --teal: #2cced2;
   --gutter: 1.5em;
   --color-emphasis: var(--red);
   --color-accent: var(--teal);
