@@ -23,7 +23,7 @@ jobs:
         run: npm install --no-save @atproto/api
 
       - name: Wait for deployment propagation
-        run: sleep 30
+        run: sleep 60
 
       - name: Syndicate posts
         env:
