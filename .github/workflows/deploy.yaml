@@ -32,13 +32,15 @@ jobs:
           find . -type f | while read file; do
             # Strip leading ./
             filepath="${file#./}"
+            # URL-encode the path (spaces and special chars)
+            encoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$filepath")
             echo "Uploading: $filepath"
             curl --fail --silent --show-error \
               -X PUT \
               -H "AccessKey: $BUNNY_STORAGE_PASSWORD" \
               -H "Content-Type: application/octet-stream" \
               --data-binary "@$file" \
-              "https://${BUNNY_STORAGE_HOSTNAME}/${BUNNY_STORAGE_ZONE}/${filepath}"
+              "https://${BUNNY_STORAGE_HOSTNAME}/${BUNNY_STORAGE_ZONE}/${encoded}"
           done
 
       - name: Purge Bunny CDN cache
