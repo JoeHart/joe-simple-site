@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/bunny-launcher/schema.json",
+  "build": {
+    "beforeDeploy": true,
+    "commands": ["npm ci", "npm run build"],
+    "outDir": "./_site",
+    "packageManager": "npm"
+  },
+  "domain": {
+    "name": "www.joehart.co.uk"
+  },
+  "notFound": {
+    "path": "/404.html",
+    "spa": false
+  }
+}
