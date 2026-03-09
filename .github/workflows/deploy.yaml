@@ -22,33 +22,13 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Upload to Bunny Storage
-        env:
-          BUNNY_STORAGE_ZONE: ${{ secrets.BUNNY_STORAGE_ZONE }}
-          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
-          BUNNY_STORAGE_HOSTNAME: ${{ secrets.BUNNY_STORAGE_HOSTNAME }}
-        run: |
-          cd _site
-          find . -type f | while read file; do
-            # Strip leading ./
-            filepath="${file#./}"
-            # URL-encode the path (spaces and special chars)
-            encoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$filepath")
-            echo "Uploading: $filepath"
-            curl --fail --silent --show-error \
-              -X PUT \
-              -H "AccessKey: $BUNNY_STORAGE_PASSWORD" \
-              -H "Content-Type: application/octet-stream" \
-              --data-binary "@$file" \
-              "https://${BUNNY_STORAGE_HOSTNAME}/${BUNNY_STORAGE_ZONE}/${encoded}"
-          done
-
-      - name: Purge Bunny CDN cache
-        env:
-          BUNNY_API_KEY: ${{ secrets.BUNNY_API_KEY }}
-          BUNNY_PULL_ZONE_ID: ${{ secrets.BUNNY_PULL_ZONE_ID }}
-        run: |
-          curl --fail --silent --show-error \
-            -X POST \
-            -H "AccessKey: $BUNNY_API_KEY" \
-            "https://api.bunny.net/pullzone/${BUNNY_PULL_ZONE_ID}/purgeCache"
+      - name: Deploy to Bunny Storage and purge CDN
+        uses: R-J-dev/bunny-deploy@v2
+        with:
+          source: "_site"
+          storageZoneName: ${{ secrets.BUNNY_STORAGE_ZONE }}
+          storagePassword: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          storageEndpoint: ${{ secrets.BUNNY_STORAGE_HOSTNAME }}
+          accessKey: ${{ secrets.BUNNY_API_KEY }}
+          pullZoneId: ${{ secrets.BUNNY_PULL_ZONE_ID }}
+          remove: "true"
