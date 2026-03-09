@@ -31,5 +31,6 @@ jobs:
           storage-endpoint: ${{ secrets.BUNNY_STORAGE_HOSTNAME }}
           access-key: ${{ secrets.BUNNY_API_KEY }}
           pull-zone-id: ${{ secrets.BUNNY_PULL_ZONE_ID }}
+          concurrency: "50"
           enable-delete-action: "true"
           enable-purge-pull-zone: "true"
