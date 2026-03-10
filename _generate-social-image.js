@@ -111,11 +111,6 @@ async function generateSocialImage(title, emoji, slug) {
   const outputFile = path.join(outputDir, `${slug}.png`)
   const publicPath = `/img/social/${slug}.png`
 
-  // Don't regenerate if already exists
-  if (fs.existsSync(outputFile)) {
-    return publicPath
-  }
-
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true })
   }
