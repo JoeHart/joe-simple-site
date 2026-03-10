@@ -1,7 +1,6 @@
 const sharp = require('sharp')
 const fs = require('fs')
 const path = require('path')
-const https = require('https')
 
 const WIDTH = 1200
 const HEIGHT = 630
@@ -20,7 +19,7 @@ function escapeXml(str) {
     .replace(/'/g, '&apos;')
 }
 
-// Convert an emoji string to its hex codepoint(s) for CDN lookup
+// Convert an emoji string to its hex codepoint(s) for file lookup
 function emojiToCodepoint(emoji) {
   const codepoints = []
   for (const char of emoji) {
@@ -33,58 +32,24 @@ function emojiToCodepoint(emoji) {
   return codepoints.join('-')
 }
 
-// Fetch an Apple emoji PNG from the emoji-datasource-apple CDN
-async function fetchEmojiImage(emoji) {
-  const cacheDir = path.join(__dirname, 'img', 'social', '.emoji-cache')
+// Load an Apple emoji PNG from the locally installed emoji-datasource-apple package
+function getEmojiImage(emoji) {
   const codepoint = emojiToCodepoint(emoji)
-  const cachePath = path.join(cacheDir, `${codepoint}.png`)
+  const emojiPath = path.join(
+    __dirname,
+    'node_modules',
+    'emoji-datasource-apple',
+    'img',
+    'apple',
+    '64',
+    `${codepoint}.png`
+  )
 
-  if (fs.existsSync(cachePath)) {
-    return fs.readFileSync(cachePath)
+  if (!fs.existsSync(emojiPath)) {
+    throw new Error(`Emoji image not found: ${emojiPath}`)
   }
 
-  if (!fs.existsSync(cacheDir)) {
-    fs.mkdirSync(cacheDir, { recursive: true })
-  }
-
-  const url = `https://cdn.jsdelivr.net/npm/emoji-datasource-apple@16.0.0/img/apple/64/${codepoint}.png`
-
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, (res) => {
-        if (res.statusCode === 302 || res.statusCode === 301) {
-          // Follow redirect
-          https
-            .get(res.headers.location, (res2) => {
-              const chunks = []
-              res2.on('data', (chunk) => chunks.push(chunk))
-              res2.on('end', () => {
-                const buf = Buffer.concat(chunks)
-                if (res2.statusCode === 200) {
-                  fs.writeFileSync(cachePath, buf)
-                  resolve(buf)
-                } else {
-                  reject(new Error(`Failed to fetch emoji: ${res2.statusCode}`))
-                }
-              })
-            })
-            .on('error', reject)
-          return
-        }
-        const chunks = []
-        res.on('data', (chunk) => chunks.push(chunk))
-        res.on('end', () => {
-          const buf = Buffer.concat(chunks)
-          if (res.statusCode === 200) {
-            fs.writeFileSync(cachePath, buf)
-            resolve(buf)
-          } else {
-            reject(new Error(`Failed to fetch emoji: ${res.statusCode}`))
-          }
-        })
-      })
-      .on('error', reject)
-  })
+  return fs.readFileSync(emojiPath)
 }
 
 // Simple word-wrap that respects the available width
@@ -164,7 +129,7 @@ async function generateSocialImage(title, emoji, slug) {
   // Composite the Apple emoji on top if we have one
   if (emoji) {
     try {
-      const emojiBuffer = await fetchEmojiImage(emoji)
+      const emojiBuffer = getEmojiImage(emoji)
       // Resize emoji to desired size
       const emojiResized = await sharp(emojiBuffer).resize(EMOJI_SIZE, EMOJI_SIZE).png().toBuffer()
 
