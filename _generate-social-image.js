@@ -1,10 +1,12 @@
 const sharp = require('sharp')
 const fs = require('fs')
 const path = require('path')
+const https = require('https')
 
 const WIDTH = 1200
 const HEIGHT = 630
 const PADDING = 80
+const EMOJI_SIZE = 72
 const TEXT_COLOR = '#2cced2' // --color-accent (teal)
 const BG_COLOR = '#ffffff'
 const BODY_COLOR = '#404040'
@@ -16,6 +18,73 @@ function escapeXml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;')
+}
+
+// Convert an emoji string to its hex codepoint(s) for CDN lookup
+function emojiToCodepoint(emoji) {
+  const codepoints = []
+  for (const char of emoji) {
+    const cp = char.codePointAt(0)
+    // Skip variation selectors (fe0f, fe0e)
+    if (cp !== 0xfe0f && cp !== 0xfe0e) {
+      codepoints.push(cp.toString(16))
+    }
+  }
+  return codepoints.join('-')
+}
+
+// Fetch an Apple emoji PNG from the emoji-datasource-apple CDN
+async function fetchEmojiImage(emoji) {
+  const cacheDir = path.join(__dirname, 'img', 'social', '.emoji-cache')
+  const codepoint = emojiToCodepoint(emoji)
+  const cachePath = path.join(cacheDir, `${codepoint}.png`)
+
+  if (fs.existsSync(cachePath)) {
+    return fs.readFileSync(cachePath)
+  }
+
+  if (!fs.existsSync(cacheDir)) {
+    fs.mkdirSync(cacheDir, { recursive: true })
+  }
+
+  const url = `https://cdn.jsdelivr.net/npm/emoji-datasource-apple@16.0.0/img/apple/64/${codepoint}.png`
+
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, (res) => {
+        if (res.statusCode === 302 || res.statusCode === 301) {
+          // Follow redirect
+          https
+            .get(res.headers.location, (res2) => {
+              const chunks = []
+              res2.on('data', (chunk) => chunks.push(chunk))
+              res2.on('end', () => {
+                const buf = Buffer.concat(chunks)
+                if (res2.statusCode === 200) {
+                  fs.writeFileSync(cachePath, buf)
+                  resolve(buf)
+                } else {
+                  reject(new Error(`Failed to fetch emoji: ${res2.statusCode}`))
+                }
+              })
+            })
+            .on('error', reject)
+          return
+        }
+        const chunks = []
+        res.on('data', (chunk) => chunks.push(chunk))
+        res.on('end', () => {
+          const buf = Buffer.concat(chunks)
+          if (res.statusCode === 200) {
+            fs.writeFileSync(cachePath, buf)
+            resolve(buf)
+          } else {
+            reject(new Error(`Failed to fetch emoji: ${res.statusCode}`))
+          }
+        })
+      })
+      .on('error', reject)
+  })
 }
 
 // Simple word-wrap that respects the available width
@@ -68,10 +137,11 @@ async function generateSocialImage(title, emoji, slug) {
   const totalTextHeight = lines.length * lineHeight
 
   // Position text vertically centered, or slightly above center
-  const textStartY = Math.max(PADDING + fontSize, (HEIGHT - totalTextHeight) / 2 + fontSize * 0.5)
+  const emojiSpace = emoji ? EMOJI_SIZE + 16 : 0
+  const contentHeight = emojiSpace + totalTextHeight
+  const contentStartY = Math.max(PADDING, (HEIGHT - contentHeight) / 2)
 
-  const emojiDisplay = emoji || ''
-  const emojiSize = fontSize * 1.2
+  const textStartY = contentStartY + emojiSpace + fontSize
 
   const titleLines = lines
     .map((line, i) => {
@@ -79,12 +149,6 @@ async function generateSocialImage(title, emoji, slug) {
       return `<text x="${PADDING}" y="${y}" font-family="Arial, Helvetica, sans-serif" font-size="${fontSize}" font-weight="700" fill="${TEXT_COLOR}" letter-spacing="-1">${escapeXml(line)}</text>`
     })
     .join('\n    ')
-
-  // Add the emoji above the title
-  const emojiY = textStartY - lineHeight * 0.8
-  const emojiElement = emojiDisplay
-    ? `<text x="${PADDING}" y="${emojiY}" font-size="${emojiSize}">${emojiDisplay}</text>`
-    : ''
 
   // Add site name at the bottom
   const footerY = HEIGHT - PADDING * 0.6
@@ -96,12 +160,35 @@ async function generateSocialImage(title, emoji, slug) {
   const svg = `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
     <rect width="${WIDTH}" height="${HEIGHT}" fill="${BG_COLOR}" />
     ${accentBar}
-    ${emojiElement}
     ${titleLines}
     ${footerElement}
   </svg>`
 
-  await sharp(Buffer.from(svg)).png().toFile(outputFile)
+  let image = sharp(Buffer.from(svg)).png()
+
+  // Composite the Apple emoji on top if we have one
+  if (emoji) {
+    try {
+      const emojiBuffer = await fetchEmojiImage(emoji)
+      // Resize emoji to desired size
+      const emojiResized = await sharp(emojiBuffer).resize(EMOJI_SIZE, EMOJI_SIZE).png().toBuffer()
+
+      // Get the base image as a buffer first, then composite
+      const baseBuffer = await image.toBuffer()
+      image = sharp(baseBuffer).composite([
+        {
+          input: emojiResized,
+          top: Math.round(contentStartY),
+          left: PADDING,
+        },
+      ])
+    } catch (e) {
+      console.warn(`[social-image] Could not fetch emoji "${emoji}":`, e.message)
+      // Continue without emoji
+    }
+  }
+
+  await image.png().toFile(outputFile)
 
   return publicPath
 }
