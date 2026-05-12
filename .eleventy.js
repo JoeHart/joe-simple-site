@@ -134,6 +134,33 @@ module.exports = function (eleventyConfig) {
       }
     })
 
+    // Rewrite og:image / twitter:image meta tags to a compressed JPEG variant.
+    // Social platforms reject images over ~600 KB; raw photos can be many megabytes.
+    const metaImageRegex = /<meta\b[^>]*\bproperty="(?:og:image|twitter:image)"[^>]*>/gi
+    result = result.replace(metaImageRegex, (tag) => {
+      const contentMatch = tag.match(/content="([^"]+)"/)
+      if (!contentMatch) return tag
+      const content = contentMatch[1]
+      const imgPathMatch = content.match(/\/img\/[^"]+/)
+      if (!imgPathMatch) return tag
+      const imgPath = imgPathMatch[0]
+      if (imgPath.startsWith('/img/social/')) return tag
+      if (!/\.(jpe?g|png)$/i.test(imgPath)) return tag
+      try {
+        const metadata = Image.statsSync(`.${imgPath}`, {
+          widths: [480, 800, 1280],
+          formats: ['webp', 'jpeg'],
+          urlPath: '/_siteimg/',
+          outputDir: './_site/_siteimg/',
+        })
+        const largestJpeg = metadata.jpeg[metadata.jpeg.length - 1]
+        const newContent = content.replace(imgPath, largestJpeg.url)
+        return tag.replace(/content="[^"]+"/, `content="${newContent}"`)
+      } catch (e) {
+        return tag
+      }
+    })
+
     return result
   })
 
