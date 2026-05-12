@@ -22,7 +22,7 @@ As well as: all the standard tourist attractions, some Last of Us related sights
   <figcaption>There is an alternate version of this blog which is Seattle in five coffee shops.</figcaption>
 </figure>
 
-Bookshops are where, as Lemony Snicket said of libraries, the world is quiet. They have an energy and thrumming hum to them of potential energy. This resonance is how I rank bookshops. It’s hard to describe but the best bookshops I’ve ever been to feel full of polite people who would desperately love to tell you about their greatest passion but will suffice with a small “excuse me” to reach the section you’re blocking.
+Bookshops are where, as Lemony Snicket said of libraries, the world is quiet. They have a thrumming hum to them of potential energy. This resonance is how I rate bookshops. It’s hard to describe but the best bookshops I’ve ever been to feel full of polite people who would desperately love to tell you about their greatest passion but will suffice with a small “excuse me” to reach the section you’re blocking.
 
 ## Barnes and Noble
 
