@@ -30,7 +30,7 @@ This was my first trip to the states so you will forgive me for patronising the 
 
 <img aria-hidden="true" class="book-left" style="--aspect: 2 / 3;" src="/img/gilgamesh.jpeg" alt="Cover of Simon Armitage’s verse translation of Gilgamesh.">
 
-This was a perfectly shop with books, though I did end up buying [Simon Armitage’s new verse translation of Gilgamesh](https://uk.bookshop.org/p/books/gilgamesh-simon-armitage/ce2e48de47069618?ean=9780571357277&next=t) here. For some reason this released in the US in April but isn't being released in the UK until October. So while I’m ahead of the curve having bought it early and smuggled it bank into the country, I do feel distinctly wasteful and not very eco friendly of me to buy Simon’s book almost 5000 miles away from home, despite him being from the town my Family live in.
+This was a perfectly fine shop with books, though I did end up buying [Simon Armitage’s new verse translation of Gilgamesh](https://uk.bookshop.org/p/books/gilgamesh-simon-armitage/ce2e48de47069618?ean=9780571357277&next=t) here. For some reason this released in the US in April but isn't being released in the UK until October. So while I’m ahead of the curve having bought it early and smuggled it bank into the country, I do feel distinctly wasteful and not very eco friendly of me to buy Simon’s book almost 5000 miles away from home, despite him being from the town my Family live in.
 
 ## Lamplight Books
 
