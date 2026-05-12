@@ -97,7 +97,7 @@ Good fantasy fun with a queer angle. Think "Mulan but more magic, lesbianism and
 
 <img aria-hidden="true" class="book-left" src="/img/undertheudalatrees.jpg" alt="Cover of Under the Udala Trees by Chinelo Okparanta">
 
-This was the first book I got in my subscription from [Common Press](https://www.glasshouse.london/the-common-press), a wonderful queer bookshop in East London. This book made me feel a lot, it follows the life of a young woman discovering her queerness under the backdrop of the [Nigerian Civil War](https://en.wikipedia.org/wiki/Nigerian_Civil_War).
+This was the first book I got in my subscription from [Common Press](https://www.commonpress.co.uk/), a wonderful queer bookshop in East London. This book made me feel a lot, it follows the life of a young woman discovering her queerness under the backdrop of the [Nigerian Civil War](https://en.wikipedia.org/wiki/Nigerian_Civil_War).
 
 It was a wonderful read, but be ready to feel quite a lot of despair throughout it. There's as close to a resolution as the writer could morally conjure for the ending of the book's characters. Though you are then hit with the sobering summary of the current [state of queer rights in Nigeria](https://en.wikipedia.org/wiki/LGBT_rights_in_Nigeria).
 
