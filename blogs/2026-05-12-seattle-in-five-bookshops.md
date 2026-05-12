@@ -99,7 +99,7 @@ I say all that because Left Bank Books is in harmony with Gays the Word but with
   <figcaption>Like a Cathedral but for books.</figcaption>
 </figure>
 
-The aforementioned friend I was visiting in Seattle had to head home at the sensible hour of 8pm so I was left with some time to kill. Thankfully a stones through from the vegan, cocktail music bar we were in was a bookshop **open until 10pm**. In the heart of Capital Hill, that in this uncultured Englishman’s eye was the Soho of Seattle, lies Elliot Bay Book Shop. Adorned with an enchanting stain glass window above the door, it seems deceptively small from the outside.
+The aforementioned friend I was visiting in Seattle had to head home at the sensible hour of 8pm so I was left with some time to kill. Thankfully a just round the corner from the vegan, cocktail music bar we were in was a bookshop **open until 10pm**. In the heart of Capital Hill, that in this uncultured Englishman’s eye was the Soho of Seattle, lies Elliot Bay Book Shop. Adorned with an enchanting stain glass window above the door, it seems deceptively small from the outside.
 
 <figure class="float-left">
   <img src="/img/elliot-books-recommnedations.jpeg" alt="Shelves at Elliot Bay covered in handwritten staff recommendation cards." />
