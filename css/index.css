@@ -134,6 +134,11 @@ strong {
   color: var(--color-emphasis);
 }
 
+mark {
+  background: transparent;
+  color: var(--color-accent);
+}
+
 ul {
   margin: 0;
   margin-left: 2em;
@@ -300,11 +305,18 @@ h3 {
   --flow-space: var(--step-2);
 }
 
+.book-left,
+.book-right {
+  width: 30%;
+  margin-bottom: var(--gutter);
+  aspect-ratio: var(--aspect, auto);
+  object-fit: cover;
+  object-position: center;
+}
+
 .book-left {
   float: left;
-  width: 30%;
   margin-right: var(--gutter);
-  margin-bottom: var(--gutter);
   /* The minimum margin is the width of the img plus it's right margin */
   /* We should position it to the left hand side of the screen */
   /* The maximum left margin is 0, essentially floating it normally */
@@ -313,10 +325,53 @@ h3 {
 
 .book-right {
   float: right;
-  width: 30%;
   margin-left: var(--gutter);
-  margin-bottom: var(--gutter);
   margin-right: clamp(calc(-30% - var(--gutter)), calc(-1 * ((100vw - 100%) / 2) + (2 * var(--gutter))), 0px);
+}
+
+figure.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  column-gap: var(--gutter);
+  row-gap: 0;
+  align-items: start;
+}
+
+figure.gallery > figcaption {
+  grid-column: 1 / -1;
+}
+
+figure.gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--aspect, 2 / 3);
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+img.crop {
+  aspect-ratio: var(--aspect, 4 / 3);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+figure.float-left,
+figure.float-right {
+  width: 50%;
+  margin-bottom: var(--gutter);
+}
+
+figure.float-left {
+  float: left;
+  margin-right: var(--gutter);
+}
+
+figure.float-right {
+  float: right;
+  margin-left: var(--gutter);
 }
 
 .postlist {

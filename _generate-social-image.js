@@ -148,7 +148,14 @@ async function generateSocialImage(title, emoji, slug) {
     }
   }
 
-  await image.png().toFile(outputFile)
+  const newBuffer = await image.png().toBuffer()
+  if (fs.existsSync(outputFile)) {
+    const existing = fs.readFileSync(outputFile)
+    if (existing.equals(newBuffer)) {
+      return publicPath
+    }
+  }
+  fs.writeFileSync(outputFile, newBuffer)
 
   return publicPath
 }
