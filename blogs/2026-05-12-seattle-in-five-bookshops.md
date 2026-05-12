@@ -1,7 +1,7 @@
 ---
 title: Seattle in Five Bookshops
 date: 2026-05-12
-description: After a company offsite in Washington State I stole a couple of days in Seattle, ranking the city by its bookshops.
+description: After a company offsite in Washington State I stole a couple of days in Seattle, wandering the city by its bookshops.
 tags:
   - books
   - travel
