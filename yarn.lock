@@ -108,73 +108,6 @@
     semver "^7.3.7"
     slugify "^1.6.5"
 
-"@atproto/api@^0.30.3":
-  version "0.30.3"
-  resolved "https://registry.npmjs.org/@atproto/api/-/api-0.30.3.tgz"
-  integrity sha512-9zN1al51/22pPOFX0BofgyggmgZTzLwv05jkoGDjG9Jdc+e5ZLCjLrlsObWW73EEud/b5t/IrY3c77ZIuy78sQ==
-  dependencies:
-    "@atproto/common-web" "^0.5.17"
-    "@atproto/lexicon" "^0.7.19"
-    "@atproto/syntax" "^0.7.7"
-    "@atproto/xrpc" "^0.8.18"
-    await-lock "^3.0.0"
-    multiformats "^13.0.0"
-    tlds "^1.234.0"
-    zod "^3.23.8"
-
-"@atproto/common-web@^0.5.17":
-  version "0.5.17"
-  resolved "https://registry.npmjs.org/@atproto/common-web/-/common-web-0.5.17.tgz"
-  integrity sha512-SdtlxRHVFYV0r5E7mIsnnRqrX5jrY1rhmVkQzK+OIcdk/WTd3wamsnM/vLPZq0YWw+HlZEPisR+1B4WCXET1Sg==
-  dependencies:
-    "@atproto/lex-data" "^0.1.10"
-    "@atproto/lex-json" "^0.1.9"
-    "@atproto/syntax" "^0.7.7"
-    zod "^3.23.8"
-
-"@atproto/lex-data@^0.1.10":
-  version "0.1.10"
-  resolved "https://registry.npmjs.org/@atproto/lex-data/-/lex-data-0.1.10.tgz"
-  integrity sha512-SLnmB30avSABQCwp1DX3q/D/pvjB3qMYf/G7VU8SbJIzDwZxzEY96Cxmukyx0JXN4iN6VRYhhTPK3v1oaO1+nA==
-  dependencies:
-    multiformats "^13.0.0"
-    tslib "^2.8.1"
-    unicode-segmenter "^0.14.0"
-
-"@atproto/lex-json@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.npmjs.org/@atproto/lex-json/-/lex-json-0.1.9.tgz"
-  integrity sha512-9geZuufwIVPSj9fniG7Ua3ZRq1DEpHCB9TGaHPHLpa0WKjjLvY2UMxvERpN97JIimusOWtPGOnzKtwQHMC371w==
-  dependencies:
-    "@atproto/lex-data" "^0.1.10"
-    tslib "^2.8.1"
-
-"@atproto/lexicon@^0.7.19":
-  version "0.7.19"
-  resolved "https://registry.npmjs.org/@atproto/lexicon/-/lexicon-0.7.19.tgz"
-  integrity sha512-O9Igzy9RAWQRoH+N6xC8O6qMtQ5UR55bQqbL9a7k7Ou8Z1WV/6ePR6NOFqTIQNFd4XEHxJhGXzcGDR8eM7QdIw==
-  dependencies:
-    "@atproto/common-web" "^0.5.17"
-    "@atproto/syntax" "^0.7.7"
-    multiformats "^13.0.0"
-    zod "^3.23.8"
-
-"@atproto/syntax@^0.7.7":
-  version "0.7.7"
-  resolved "https://registry.npmjs.org/@atproto/syntax/-/syntax-0.7.7.tgz"
-  integrity sha512-MJ+QUo8yzAGP2SOQKs2CBI2ouY5KaO9Pv5a7laX3xtrkfWmS/s96L/FCJm5VBHEvKXmd6ap/HSGypYclQcfoWA==
-  dependencies:
-    iso-datestring-validator "^2.2.2"
-    tslib "^2.8.1"
-
-"@atproto/xrpc@^0.8.18":
-  version "0.8.18"
-  resolved "https://registry.npmjs.org/@atproto/xrpc/-/xrpc-0.8.18.tgz"
-  integrity sha512-MrWYmMV1KrXm1DM4E9CA67i/jAemoMBDh+Wo2N63daNOtf1cUWdRc3COF0tjJTuHG5qLmk4HTR5SfrgFyFEs0A==
-  dependencies:
-    "@atproto/lexicon" "^0.7.19"
-    zod "^3.23.8"
-
 "@babel/helper-string-parser@^7.19.4":
   version "7.19.4"
   resolved "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.19.4.tgz"
@@ -472,11 +405,6 @@ async@^3.2.3:
   version "3.2.4"
   resolved "https://registry.npmjs.org/async/-/async-3.2.4.tgz"
   integrity sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==
-
-await-lock@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/await-lock/-/await-lock-3.0.0.tgz"
-  integrity sha512-eO6fLiSnrJrMdjWMNK8zbVRXPs2TKJg78iKZd9wDpN3na5tcoV6EoeiOlMgk2QaAQ1gIrK1YuMsJHXWqz89tSA==
 
 axios@0.21.4:
   version "0.21.4"
@@ -1618,11 +1546,6 @@ isexe@^2.0.0:
   resolved "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
-iso-datestring-validator@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.npmjs.org/iso-datestring-validator/-/iso-datestring-validator-2.2.2.tgz"
-  integrity sha512-yLEMkBbLZTlVQqOnQ4FiMujR6T4DEcCb1xizmvXS+OxuhwcbtynoosRzdMA69zZCShCNAbi+gJ71FxZBBXx1SA==
-
 jake@^10.8.5:
   version "10.8.5"
   resolved "https://registry.npmjs.org/jake/-/jake-10.8.5.tgz"
@@ -1970,11 +1893,6 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
-
-multiformats@^13.0.0:
-  version "13.4.2"
-  resolved "https://registry.npmjs.org/multiformats/-/multiformats-13.4.2.tgz"
-  integrity sha512-eh6eHCrRi1+POZ3dA+Dq1C6jhP1GNtr9CRINMb67OKzqW9I5DUuZM/3jLPlzhgpGeiNUlEGEbkCYChXMCc/8DQ==
 
 multimatch@^5.0.0:
   version "5.0.0"
@@ -2817,11 +2735,6 @@ tfunk@^4.0.0:
     chalk "^1.1.3"
     dlv "^1.1.3"
 
-tlds@^1.234.0:
-  version "1.261.0"
-  resolved "https://registry.npmjs.org/tlds/-/tlds-1.261.0.tgz"
-  integrity sha512-QXqwfEl9ddlGBaRFXIvNKK6OhipSiLXuRuLJX5DErz0o0Q0rYxulWLdFryTkV5PkdZct5iMInwYEGe/eR++1AA==
-
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz"
@@ -2843,11 +2756,6 @@ token-stream@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/token-stream/-/token-stream-1.0.0.tgz"
   integrity sha512-VSsyNPPW74RpHwR8Fc21uubwHY7wMDeJLys2IX5zJNih+OnAnaifKHo+1LHT7DAdloQ7apeaaWg8l7qnf/TnEg==
-
-tslib@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
-  integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
 typescript@^4.6.2:
   version "4.9.4"
@@ -2873,11 +2781,6 @@ uhyphen@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/uhyphen/-/uhyphen-0.1.0.tgz"
   integrity sha512-o0QVGuFg24FK765Qdd5kk0zU/U4dEsCtN/GSiwNI9i8xsSVtjIAOdTaVhLwZ1nrbWxFVMxNDDl+9fednsOMsBw==
-
-unicode-segmenter@^0.14.0:
-  version "0.14.5"
-  resolved "https://registry.npmjs.org/unicode-segmenter/-/unicode-segmenter-0.14.5.tgz"
-  integrity sha512-jHGmj2LUuqDcX3hqY12Ql+uhUTn8huuxNZGq7GvtF6bSybzH3aFgedYu/KTzQStEgt1Ra2F3HxadNXsNjb3m3g==
 
 universalify@^0.1.0:
   version "0.1.2"
@@ -3009,8 +2912,3 @@ yargs@17.1.1:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
-
-zod@^3.23.8:
-  version "3.25.76"
-  resolved "https://registry.npmjs.org/zod/-/zod-3.25.76.tgz"
-  integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
