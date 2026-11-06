@@ -172,6 +172,21 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromISO(dateString, { zone: 'utc' }).toFormat('dd LLL yyyy')
   })
 
+  // Plain-text snippet of a note for listings.
+  eleventyConfig.addFilter('noteExcerpt', (html, length = 140) => {
+    const text = (html || '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+    const chars = [...text]
+    return chars.length > length
+      ? chars
+          .slice(0, length)
+          .join('')
+          .replace(/\s+\S*$/, '') + '…'
+      : text
+  })
+
   eleventyConfig.addFilter('activePostsOnly', (postList) => {
     return postList.filter((post) => post.data.draft !== true)
   })
