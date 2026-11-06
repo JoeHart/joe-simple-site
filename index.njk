@@ -9,7 +9,40 @@ templateClass: homepage
 <div class="flow">
   <h3>Recent Posts</h3>
   {% set postslist = collections.posts | activePostsOnly | head(-5) %} {% set postslistCounter = collections.posts |
-  length %} {% include "postslist.njk" %} {% if upcomingTalks.length %}
+  length %} {% include "postslist.njk" %}
+
+  <h3>Latest Notes</h3>
+  <ol class="postlist" role="list">
+    {%- for note in collections.notes | head(-3) | reverse %}
+    <li class="postlist-item h-entry">
+      <span class="postlist-emoji">💬</span>
+      <div style="flex-grow: 1">
+        <a href="{{ note.url | url }}" class="postlist-link u-url p-summary"
+          >{{ note.templateContent | noteExcerpt }}</a
+        >
+        {% if note.data.bluesky_url or note.data.mastodon_url %}
+        <div style="font-size: 0.875em; opacity: 0.8">
+          Also on {% if note.data.bluesky_url %}<a
+            href="{{ note.data.bluesky_url }}"
+            rel="syndication"
+            class="u-syndication"
+            >Bluesky</a
+          >{% endif %}{% if note.data.bluesky_url and note.data.mastodon_url %} ⋅ {% endif %}{% if
+          note.data.mastodon_url %}<a href="{{ note.data.mastodon_url }}" rel="syndication" class="u-syndication"
+            >Mastodon</a
+          >{% endif %}
+        </div>
+        {% endif %}
+      </div>
+      <time class="postlist-date no-wrap dt-published" datetime="{{ note.date | htmlDateString }}"
+        >{{ note.date | readableDate }}</time
+      >
+    </li>
+    {%- endfor %}
+  </ol>
+  <p><a href="{{ '/notes/' | url }}">All notes →</a></p>
+
+  {% if upcomingTalks.length %}
   <h3>Upcoming Talks</h3>
   <ol class="postlist">
     {% for talk in upcomingTalks %}
@@ -58,6 +91,7 @@ templateClass: homepage
   <p>
     For now find me on
     <a href="https://social.lol/@joehart" rel="me" target="_blank">Mastodon</a>,
+    <a href="https://bsky.app/profile/joehart.bsky.social" rel="me" target="_blank">Bluesky</a>,
     <a href="https://www.linkedin.com/in/joe-hart-developer/" rel="me" target="_blank">LinkedIn</a>,
     <a href="https://github.com/JoeHart" rel="me" target="_blank">GitHub</a>
   </p>
