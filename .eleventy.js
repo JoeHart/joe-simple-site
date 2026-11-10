@@ -172,21 +172,6 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromISO(dateString, { zone: 'utc' }).toFormat('dd LLL yyyy')
   })
 
-  // Plain-text snippet of a note for listings.
-  eleventyConfig.addFilter('noteExcerpt', (html, length = 140) => {
-    const text = (html || '')
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-    const chars = [...text]
-    return chars.length > length
-      ? chars
-          .slice(0, length)
-          .join('')
-          .replace(/\s+\S*$/, '') + '…'
-      : text
-  })
-
   // Podcast episodes for one role ("host" | "guest"), newest first; undated episodes last.
   eleventyConfig.addFilter('podcastEpisodes', (episodes, role) => {
     return (episodes || []).filter((ep) => ep.role === role).sort((a, b) => (b.date || '').localeCompare(a.date || ''))
