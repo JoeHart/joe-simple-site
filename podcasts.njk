@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+templateClass: flow
+title: Podcasts
+description: Podcasts Joe Hart hosts and has appeared on as a guest.
+emoji: 🎙️
+---
+
+<h1>🎙️ Podcasts</h1>
+
+{% set hosting = podcasts.episodes | podcastEpisodes('host') %} {% set guesting = podcasts.episodes |
+podcastEpisodes('guest') %}
+
+<h2>Hosting</h2>
+{% for showName, show in podcasts.hostedShows %}
+<p>
+  <a href="{{ show.url }}" target="_blank" rel="noopener">{{ showName }}</a>{% if show.publisher %} ({{ show.publisher
+  }}){% endif %}{% if show.description %}: {{ show.description }}{% endif %}
+</p>
+{% endfor %}
+
+<div class="podcast-grid">
+  {% for ep in hosting %}
+  <article class="podcast-card flow">
+    {% if ep.embed %}
+    <div class="podcast-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/{{ ep.embed }}"
+        title="{{ ep.show }}: {{ ep.episodeTitle }}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    {% endif %}
+    <h3 class="podcast-title"><a href="{{ ep.url }}" target="_blank" rel="noopener">{{ ep.episodeTitle }}</a></h3>
+    <p class="podcast-meta">
+      {{ ep.show }}{% if ep.guest %} ⋅ with {{ ep.guest }}{% endif %} ⋅ {{ ep.duration }}{% if ep.date %} ⋅
+      <time datetime="{{ ep.date }}">{{ ep.date | readableDateFromString }}</time>{% endif %}
+    </p>
+    {% if ep.summary %}
+    <p class="podcast-summary">{{ ep.summary }}</p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
+
+<h2>Guest appearances</h2>
+<ol class="postlist">
+  {% for ep in guesting %}
+  <li class="postlist-item">
+    <span class="postlist-emoji">🎙️</span>
+    <div style="flex-grow: 1">
+      <a href="{{ ep.url }}" target="_blank" rel="noopener" class="postlist-link">{{ ep.episodeTitle }}</a>
+      <div class="podcast-meta">{{ ep.show }} ⋅ {{ ep.duration }}</div>
+      {% if ep.summary %}
+      <div class="podcast-summary">{{ ep.summary }}</div>
+      {% endif %}
+    </div>
+    {% if ep.date %}
+    <time class="postlist-date no-wrap" datetime="{{ ep.date }}">{{ ep.date | readableDateFromString }}</time>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>

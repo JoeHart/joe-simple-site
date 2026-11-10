@@ -1,0 +1,52 @@
+{
+  "hostedShows": {
+    "The Runbook": {
+      "publisher": "incident.io",
+      "url": "https://www.youtube.com/playlist?list=PLBlrCzTLmdbA",
+      "description": "A fortnightly engineering show on incident.io's YouTube channel."
+    }
+  },
+  "episodes": [
+    {
+      "show": "PodRocket",
+      "episodeTitle": "Building video games in React with Joe Hart",
+      "role": "guest",
+      "date": "2023-04-26",
+      "duration": "29m 40s",
+      "url": "https://podrocket.logrocket.com/building-video-games-in-react",
+      "summary": "I chatted about rebuilding Age of Empires 2 in React, and what making games teaches you about the web."
+    },
+    {
+      "show": "The Runbook",
+      "episodeTitle": "A million interns who never learn",
+      "role": "host",
+      "date": null,
+      "duration": "31 min",
+      "url": "https://www.youtube.com/watch?v=zApCoF0Dxog",
+      "guest": "Lisa (Founding Engineer)",
+      "summary": "Lisa and I dig into what it really means to work alongside AI agents that never remember yesterday.",
+      "embed": "zApCoF0Dxog"
+    },
+    {
+      "show": "The Runbook",
+      "episodeTitle": "We break our own systems on purpose",
+      "role": "host",
+      "date": null,
+      "duration": "22 min",
+      "url": "https://www.youtube.com/watch?v=3JxLKtUFtEk",
+      "guest": "Leo (Product Engineer)",
+      "summary": "Leo explains why we deliberately break our own systems, and what we learn every time we do.",
+      "embed": "3JxLKtUFtEk"
+    },
+    {
+      "show": "The Runbook",
+      "episodeTitle": "Your AI demo works. Now comes the hard part.",
+      "role": "host",
+      "date": null,
+      "duration": "35 min",
+      "url": "https://www.youtube.com/watch?v=XqY0rIG_IGU",
+      "summary": "Getting an AI feature to demo well is easy. Getting it to production is the hard part.",
+      "embed": "XqY0rIG_IGU"
+    }
+  ]
+}
