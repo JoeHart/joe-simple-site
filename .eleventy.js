@@ -172,6 +172,11 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromISO(dateString, { zone: 'utc' }).toFormat('dd LLL yyyy')
   })
 
+  // Podcast episodes for one role ("host" | "guest"), newest first; undated episodes last.
+  eleventyConfig.addFilter('podcastEpisodes', (episodes, role) => {
+    return (episodes || []).filter((ep) => ep.role === role).sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+  })
+
   eleventyConfig.addFilter('activePostsOnly', (postList) => {
     return postList.filter((post) => post.data.draft !== true)
   })
