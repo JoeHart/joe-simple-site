@@ -63,15 +63,17 @@ Order: 1 → test item 2 with a folder uploaded by hand → 3–5 in one PR.
 
 ## Open questions / decisions
 
-| #   | Question                                                      | Answer                                                                                                                                                                                                                                                               |
-| --- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Where is `joehart.co.uk`'s DNS hosted?                        | **Namecheap or Bunny; Joe to confirm.** If Bunny DNS: the wildcard certificate is free and automatic. If Namecheap: move the DNS to Bunny, upload a certificate ourselves (certbot with DNS validation, renewed every 90 days), or use a different preview hostname. |
-| 2   | URL pattern                                                   | Proposed `pr-<n>.preview.joehart.co.uk`; not yet confirmed.                                                                                                                                                                                                          |
-| 3   | Should `metadata.url` point at the preview in preview builds? | Not decided. The default leaves it as production, so the feed, canonical tags and social images point at the live site.                                                                                                                                              |
+| #   | Question                                                      | Answer                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Where is `joehart.co.uk`'s DNS hosted?                        | **Probably Bunny DNS** (2026-11-10): Google DNS got its answer from `2400:52e0:fff0::1`, which looks like a bunny.net IPv6 address. To confirm: `joehart.co.uk` should be listed under DNS → Zones in the Bunny dashboard. If it's Bunny, the wildcard certificate is free and automatic. If it turns out to be Namecheap: move the DNS to Bunny, upload a certificate ourselves, or use a different preview hostname. |
+| 2   | URL pattern                                                   | Proposed `pr-<n>.preview.joehart.co.uk`; not yet confirmed.                                                                                                                                                                                                                                                                                                                                                            |
+| 3   | Should `metadata.url` point at the preview in preview builds? | Not decided. The default leaves it as production, so the feed, canonical tags and social images point at the live site.                                                                                                                                                                                                                                                                                                |
 
-How to check #1: look up the domain's nameservers (e.g. `dig NS joehart.co.uk`
-or a web DNS lookup). `*.registrar-servers.com` means Namecheap; `*.bunny.net`
-means Bunny DNS.
+How we checked #1: `dig` on Joe's home network returned nothing, because the
+router seems to block or rewrite DNS. Asking Google DNS over HTTPS worked:
+https://dns.google/resolve?name=joehart.co.uk&type=NS. It returned no NS
+records, only the address of the server that answered (above). The zone may
+not publish NS records at the apex; that's harmless for previews.
 
 ## Out of scope
 
