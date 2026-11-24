@@ -16,111 +16,146 @@
       "text": "Joe Hart is a web engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC, LEGO and a bunch of startups, and spends spare time rebuilding classic video games like Age of Empires 2 and Final Fantasy IX in React, a tool that was never meant for them. Joe's talks sit somewhere between a tech talk and a comedy set, and have been seen at React Advanced London, JSWORLD, Brighton Ruby, Front End North and HalfStack. Joe also hosts podcasts and makes silly games at joehart.co.uk."
     }
   ],
+  "talks": [
+    {
+      "title": "Final Fantasy IX in React",
+      "abstract": "The original Final Fantasy IX was a masterclass in creative constraint, pushing the PlayStation's hardware to its limits. In this talk Joe tries to recreate the magic in React: rendering 3D scenes with React Three Fiber, building a game loop, and fighting the browser one frame at a time.",
+      "link": "https://gitnation.com/contents/final-fantasy-ix-in-react-fighting-the-browser-one-frame-at-a-time",
+      "event": "React Advanced London 2025"
+    },
+    {
+      "title": "Trying to build Age of Empires 2 in React",
+      "abstract": "React was never meant for real-time strategy games. Joe builds one anyway, rebuilding the classic Age of Empires 2 in the browser, and finds out what happens when you use a tool for something it really shouldn't be used for.",
+      "link": "https://www.youtube.com/watch?v=meUjZAyBkE8",
+      "event": "JSWORLD Conference, Amsterdam"
+    },
+    {
+      "title": "Games Games Games",
+      "abstract": "Why should developers make fun, silly, useless things? A talk about making games for the joy of it, and why playing is one of the best ways to learn.",
+      "link": "https://www.youtube.com/watch?v=ZReKW_b5xVw",
+      "event": "HalfStack Online"
+    }
+  ],
   "photos": [
     {
       "src": "/img/joe-speaker.jpg",
       "download": "joe-hart-headshot.jpg",
+      "event": "Headshot",
+      "caption": "Square headshot",
       "alt": "Head and shoulders photo of Joe Hart on stage wearing glasses, a blue corduroy shirt and a headset mic, against a black background",
-      "caption": "Headshot (square)",
+      "credit": ""
+    },
+    {
+      "src": "/img/uploads/frontendnorthme.jpg",
+      "download": "joe-hart-front-end-north.jpg",
+      "event": "Front End North, Sheffield",
+      "caption": "Mid-lunge",
+      "alt": "Joe Hart mid-lunge on stage at Front End North in Sheffield, holding a microphone, next to a green Front End North banner",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-arms-wide.jpg",
       "download": "joe-hart-jsworld-arms-wide.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "Arms wide",
       "alt": "Joe Hart on stage at JSWORLD Conference with both arms spread wide",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-at-the-lectern.jpg",
       "download": "joe-hart-jsworld-at-the-lectern.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "At the lectern",
       "alt": "Joe Hart at the lectern at JSWORLD Conference, mid-explanation with one hand raised, wearing a blue corduroy shirt",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-age-of-empires.jpg",
       "download": "joe-hart-jsworld-age-of-empires.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "Age of Empires 2 slide",
       "alt": "Joe Hart walking across the JSWORLD Conference stage in front of a giant slide reading 'Trying to build Age of Empires 2 in React'",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
-    },
-    {
-      "src": "/img/uploads/React-Advanced-2025-The-Brewery-London-Event-Photographer-Simon-Callaghan-Photography-2152_Original.jpeg",
-      "download": "joe-hart-react-advanced-2025.jpg",
-      "alt": "Joe Hart on stage at React Advanced London, gesturing to the audience in front of a slide reading 'Joe Hart, Web Engineer'",
-      "caption": "React Advanced London 2025",
-      "credit": "Simon Callaghan Photography"
     },
     {
       "src": "/img/press/jsworld-crowd.jpg",
       "download": "joe-hart-jsworld-crowd.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "With the crowd",
       "alt": "Joe Hart gesturing on stage at JSWORLD Conference with a large audience behind",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
-    },
-    {
-      "src": "/img/press/react-advanced-podium-1.jpg",
-      "download": "joe-hart-react-advanced-podium-1.jpg",
-      "alt": "Portrait photo of Joe Hart speaking at the React Advanced London podium, wearing blue glasses and an olive jacket",
-      "caption": "React Advanced London 2025",
-      "credit": "Simon Callaghan Photography"
     },
     {
       "src": "/img/press/jsworld-pointing.jpg",
       "download": "joe-hart-jsworld-pointing.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "Pointing at the screen",
       "alt": "Joe Hart pointing up at the screen on the JSWORLD Conference stage",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-looking-up.jpg",
       "download": "joe-hart-jsworld-looking-up.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "Looking up",
       "alt": "Joe Hart at the JSWORLD Conference lectern looking up towards the audience",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-wide.jpg",
       "download": "joe-hart-jsworld-wide.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "Wide stage shot",
       "alt": "Wide shot of Joe Hart speaking beside the JSWORLD Conference lectern on a large red-lit stage",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
     {
       "src": "/img/press/jsworld-from-behind.jpg",
       "download": "joe-hart-jsworld-from-behind.jpg",
+      "event": "JSWORLD Conference, Amsterdam",
+      "caption": "From behind, facing the audience",
       "alt": "Joe Hart at the JSWORLD Conference lectern, seen from behind, facing a packed auditorium",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
+    },
+    {
+      "src": "/img/uploads/React-Advanced-2025-The-Brewery-London-Event-Photographer-Simon-Callaghan-Photography-2152_Original.jpeg",
+      "download": "joe-hart-react-advanced-2025.jpg",
+      "event": "React Advanced London 2025",
+      "caption": "Speaker slide",
+      "alt": "Joe Hart on stage at React Advanced London, gesturing to the audience in front of a slide reading 'Joe Hart, Web Engineer'",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/press/react-advanced-podium-1.jpg",
+      "download": "joe-hart-react-advanced-podium-1.jpg",
+      "event": "React Advanced London 2025",
+      "caption": "At the podium (portrait)",
+      "alt": "Portrait photo of Joe Hart speaking at the React Advanced London podium, wearing blue glasses and an olive jacket",
+      "credit": "Simon Callaghan Photography"
     },
     {
       "src": "/img/press/react-advanced-podium-2.jpg",
       "download": "joe-hart-react-advanced-podium-2.jpg",
+      "event": "React Advanced London 2025",
+      "caption": "At the podium, mid-sentence (portrait)",
       "alt": "Portrait photo of Joe Hart mid-sentence at the React Advanced London podium",
-      "caption": "React Advanced London 2025",
       "credit": "Simon Callaghan Photography"
     },
     {
       "src": "/img/press/react-advanced-command-and-conquer.jpg",
       "download": "joe-hart-react-advanced-command-and-conquer.jpg",
+      "event": "React Advanced London 2025",
+      "caption": "Tiberium Jira slide",
       "alt": "Joe Hart presenting to a full room at React Advanced London next to a slide reading 'Command & Conquer: Tiberium Jira'",
-      "caption": "React Advanced London 2025",
       "credit": "Simon Callaghan Photography"
     },
     {
       "src": "/img/press/react-advanced-room.jpg",
       "download": "joe-hart-react-advanced-room.jpg",
+      "event": "React Advanced London 2025",
+      "caption": "From the back of the room",
       "alt": "Joe Hart presenting at React Advanced London, seen from the back of the audience",
-      "caption": "React Advanced London 2025",
       "credit": "Simon Callaghan Photography"
-    },
-    {
-      "src": "/img/uploads/frontendnorthme.jpg",
-      "download": "joe-hart-front-end-north.jpg",
-      "alt": "Joe Hart mid-lunge on stage at Front End North in Sheffield, holding a microphone, next to a green Front End North banner",
-      "caption": "On stage at Front End North, Sheffield",
-      "credit": ""
     }
   ],
   "links": [

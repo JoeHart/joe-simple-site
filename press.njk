@@ -15,6 +15,15 @@ emoji: 📸
   programme, the big screen. Crop it, resize it, go wild. If a photo has a credit, please include it.
 </p>
 
+<div class="press-zips">
+  {% for zip in pressKit.zips %}
+  <a class="press-zip" href="{{ zip.url }}" download>
+    ⬇️ Download everything{% if zip.size == 'web' %}, web size{% else %}, full size{% endif %}
+    <span>{{ zip.count }} photos + bios &amp; talks as text ⋅ {{ zip.bytes | fileSize }}</span>
+  </a>
+  {% endfor %}
+</div>
+
 <h2>Bios</h2>
 <div class="press-bios">
   {% for bio in press.bios %}
@@ -29,21 +38,69 @@ emoji: 📸
 </div>
 
 <h2>Photos</h2>
-<p>Click a photo, or its download link, for the full-resolution original.</p>
-<div class="press-photos">
-  {% for photo in press.photos %}
-  <figure class="press-photo flow">
-    <a href="{{ photo.src }}" download="{{ photo.download }}">
-      <img src="{{ photo.src }}" alt="{{ photo.alt }}" sizes="(min-width: 800px) 400px, 100vw" />
-    </a>
-    <figcaption>
-      {{ photo.caption }}{% if photo.credit %}<br /><span class="press-credit">📷 {{ photo.credit }}</span>{% endif
-      %}<br />
-      <a href="{{ photo.src }}" download="{{ photo.download }}">Download original</a>
-    </figcaption>
-  </figure>
+<p>
+  Every photo comes as the original plus square, 16:9 and 4:5 crops. <strong>Web</strong> size (1600px) is right for
+  social and websites; <strong>full</strong> size is for print and big screens.
+</p>
+{% for group in pressKit.groups %}
+<section class="press-group flow">
+  <h3>{{ group.event }}</h3>
+  {% if group.credit %}
+  <p class="press-credit">📷 Photos by {{ group.credit }}</p>
+  {% endif %}
+  <div class="press-photos">
+    {% for photo in group.photos %}
+    <figure class="press-photo flow">
+      <a href="{{ photo.src }}" download="{{ photo.download }}">
+        <img src="{{ photo.src }}" alt="{{ photo.alt }}" sizes="(min-width: 800px) 400px, 100vw" />
+      </a>
+      <figcaption class="flow">
+        <div>
+          {{ photo.caption }}{% if photo.credit and not group.credit %}<br /><span class="press-credit"
+            >📷 {{ photo.credit }}</span
+          >{% endif %}
+        </div>
+        <details class="press-variants">
+          <summary>Download</summary>
+          <table>
+            {% for v in photo.variants %}
+            <tr>
+              <th scope="row">{{ v.label }}</th>
+              <td>
+                {% if v.web %}<a href="{{ v.web.url }}" download>Web</a>
+                <span class="press-dim">{{ v.web.width }}×{{ v.web.height }} ⋅ {{ v.web.bytes | fileSize }}</span
+                ><br />{% endif %}
+                <a href="{{ v.full.url }}" download>Full</a>
+                <span class="press-dim">{{ v.full.width }}×{{ v.full.height }} ⋅ {{ v.full.bytes | fileSize }}</span>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </details>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<h2>Talks</h2>
+<div class="press-bios">
+  {% for talk in press.talks %}
+  <section class="press-bio flow">
+    <div class="press-bio-header">
+      <h3>{{ talk.title }}</h3>
+      <button type="button" class="press-copy" data-copy-target="talk-{{ loop.index }}">Copy</button>
+    </div>
+    <p id="talk-{{ loop.index }}">{{ talk.abstract }}</p>
+    <p class="press-dim">
+      {% if talk.event %}{{ talk.event }}{% endif %}{% if talk.link %} ⋅
+      <a href="{{ talk.link }}" target="_blank" rel="noopener">Watch</a>{% endif %}
+    </p>
+  </section>
   {% endfor %}
 </div>
+<p>More past talks are on the <a href="/talks/">talks page</a>.</p>
 
 <h2>Name &amp; links</h2>
 <dl class="press-links">
@@ -56,9 +113,6 @@ emoji: 📸
   <dd><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.value }}</a></dd>
   {% endfor %}
 </dl>
-
-<h2>Talks</h2>
-<p>Previous talks, with recordings where they exist, are on the <a href="/talks/">talks page</a>.</p>
 
 <p>Need something that isn't here? <a href="mailto:joe@joehart.dev">Drop me an email</a>.</p>
 

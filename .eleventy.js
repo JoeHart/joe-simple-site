@@ -177,6 +177,12 @@ module.exports = function (eleventyConfig) {
     return (episodes || []).filter((ep) => ep.role === role).sort((a, b) => (b.date || '').localeCompare(a.date || ''))
   })
 
+  // Human-readable file size, e.g. 1536000 -> "1.5 MB".
+  eleventyConfig.addFilter('fileSize', (bytes) => {
+    if (bytes >= 1e6) return `${(bytes / 1e6).toFixed(1)} MB`
+    return `${Math.max(1, Math.round(bytes / 1e3))} KB`
+  })
+
   eleventyConfig.addFilter('activePostsOnly', (postList) => {
     return postList.filter((post) => post.data.draft !== true)
   })
