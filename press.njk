@@ -1,0 +1,125 @@
+---
+layout: layouts/base.njk
+templateClass: flow
+permalink: /press/
+eleventyExcludeFromCollections: true
+noindex: true
+title: Press pack — Joe Hart
+description: Photos, bios and links for events Joe Hart is speaking at.
+emoji: 📸
+---
+
+<h1>📸 Press pack</h1>
+<p>
+  Hello! If I'm speaking at your event, everything here is yours to use for promo: social posts, the website, the
+  programme, the big screen. Crop it, resize it, go wild.
+</p>
+
+<div class="press-zips">
+  {% for zip in pressKit.zips %}
+  <a class="press-zip" href="{{ zip.url }}" download>
+    ⬇️ Download everything{% if zip.size == 'web' %}, web size{% else %}, full size{% endif %}
+    <span>{{ zip.count }} photos + bios &amp; talks as text ⋅ {{ zip.bytes | fileSize }}</span>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Bios</h2>
+<div class="press-bios">
+  {% for bio in press.bios %}
+  <section class="press-bio flow">
+    <div class="press-bio-header">
+      <h3>{{ bio.label }}</h3>
+      <button type="button" class="press-copy" data-copy-target="bio-{{ loop.index }}">Copy</button>
+    </div>
+    <p id="bio-{{ loop.index }}">{{ bio.text }}</p>
+  </section>
+  {% endfor %}
+</div>
+
+<h2>Photos</h2>
+<p>
+  Every photo comes as the original plus square, 16:9 and 4:5 crops. <strong>Web</strong> size (1600px) is right for
+  social and websites; <strong>full</strong> size is for print and big screens.
+</p>
+{% for group in pressKit.groups %}
+<section class="press-group flow">
+  <h3>{{ group.event }}</h3>
+  <div class="press-photos">
+    {% for photo in group.photos %}
+    <figure class="press-photo flow">
+      <a href="{{ photo.src }}" download="{{ photo.download }}">
+        <img src="{{ photo.src }}" alt="{{ photo.alt }}" sizes="(min-width: 800px) 400px, 100vw" />
+      </a>
+      <figcaption class="flow">
+        <div>{{ photo.caption }}</div>
+        <details class="press-variants">
+          <summary>Download</summary>
+          <table>
+            {% for v in photo.variants %}
+            <tr>
+              <th scope="row">{{ v.label }}</th>
+              <td>
+                {% if v.web %}<a href="{{ v.web.url }}" download>Web</a>
+                <span class="press-dim">{{ v.web.width }}×{{ v.web.height }} ⋅ {{ v.web.bytes | fileSize }}</span
+                ><br />{% endif %}
+                <a href="{{ v.full.url }}" download>Full</a>
+                <span class="press-dim">{{ v.full.width }}×{{ v.full.height }} ⋅ {{ v.full.bytes | fileSize }}</span>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </details>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<h2>Talks</h2>
+<div class="press-bios">
+  {% for talk in press.talks %}
+  <section class="press-bio flow">
+    <div class="press-bio-header">
+      <h3>{{ talk.title }}</h3>
+      <button type="button" class="press-copy" data-copy-target="talk-{{ loop.index }}">Copy</button>
+    </div>
+    <p id="talk-{{ loop.index }}">{{ talk.abstract }}</p>
+    <p class="press-dim">
+      {% if talk.event %}{{ talk.event }}{% endif %}{% if talk.link %} ⋅
+      <a href="{{ talk.link }}" target="_blank" rel="noopener">Watch</a>{% endif %}
+    </p>
+  </section>
+  {% endfor %}
+</div>
+<p>More past talks are on the <a href="/talks/">talks page</a>.</p>
+
+<h2>Name &amp; links</h2>
+<dl class="press-links">
+  <dt>Name</dt>
+  <dd>{{ press.name }}{% if press.pronouns %} ({{ press.pronouns }}){% endif %}</dd>
+  <dt>Title</dt>
+  <dd>{{ press.tagline }}</dd>
+  {% for link in press.links %}
+  <dt>{{ link.label }}</dt>
+  <dd><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.value }}</a></dd>
+  {% endfor %}
+</dl>
+
+<p>Need something that isn't here? <a href="mailto:joe@joehart.dev">Drop me an email</a>.</p>
+
+<script>
+  document.querySelectorAll('.press-copy').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const text = document.getElementById(button.dataset.copyTarget).textContent.trim()
+      try {
+        await navigator.clipboard.writeText(text)
+        button.textContent = 'Copied!'
+      } catch (e) {
+        button.textContent = 'Copy failed'
+      }
+      setTimeout(() => (button.textContent = 'Copy'), 2000)
+    })
+  })
+</script>

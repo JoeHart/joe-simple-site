@@ -7,6 +7,9 @@
     <meta name="description" content="{{ description or metadata.description }}" />
     <meta name="generator" content="{{ eleventy.generator }}" />
     <meta name="author" content="Joe Hart" />
+    {% if noindex %}
+    <meta name="robots" content="noindex, nofollow" />
+    {% endif %}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@joehart" />
     <meta name="twitter:creator" content="@joehart" />
@@ -20,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript>
       <link
