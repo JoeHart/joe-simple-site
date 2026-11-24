@@ -30,6 +30,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('play')
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
 
+  // Cache-busting: "/css/index.css" -> "/css/index.css?v=<hash of file contents>".
+  // The URL only changes when the file does, so browsers holding an old copy
+  // (Bunny sends long max-age headers) are forced to fetch the new one.
+  eleventyConfig.addFilter('assetHash', (url) => {
+    const fs = require('fs')
+    const crypto = require('crypto')
+    const hash = crypto
+      .createHash('sha256')
+      .update(fs.readFileSync(`.${url}`))
+      .digest('hex')
+      .slice(0, 10)
+    return `${url}?v=${hash}`
+  })
+
   eleventyConfig.addNunjucksAsyncShortcode(
     'clImage',
     async function (src, alt = '', widths = [480, 800, 1280], sizes = '(min-width: 800px) 800px, 100vw') {

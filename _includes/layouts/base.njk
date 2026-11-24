@@ -41,8 +41,8 @@
     <meta property="og:image" content="{{metadata.url}}{{hero or socialImage or metadata.socialImage}}" />
     <meta property="twitter:image" content="{{metadata.url}}{{hero or socialImage or metadata.socialImage}}" />
     <meta property="og:type" content="article" />
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="{{ '/css/reset.css' | assetHash }}" />
+    <link rel="stylesheet" href="{{ '/css/index.css' | assetHash }}" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{ emoji or metadata.emoji or '👋' }}</text></svg>"
@@ -161,6 +161,6 @@
         </ul>
       </div>
     </footer>
-    <script src="/js/burger-menu.js" type="module" defer></script>
+    <script src="{{ '/js/burger-menu.js' | assetHash }}" type="module" defer></script>
   </body>
 </html>
