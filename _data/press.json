@@ -25,6 +25,13 @@
       "credit": ""
     },
     {
+      "src": "/img/press/jsworld-arms-wide.jpg",
+      "download": "joe-hart-jsworld-arms-wide.jpg",
+      "alt": "Joe Hart on stage at JSWORLD Conference with both arms spread wide",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
       "src": "/img/press/jsworld-at-the-lectern.jpg",
       "download": "joe-hart-jsworld-at-the-lectern.jpg",
       "alt": "Joe Hart at the lectern at JSWORLD Conference, mid-explanation with one hand raised, wearing a blue corduroy shirt",
@@ -46,6 +53,13 @@
       "credit": "Simon Callaghan Photography"
     },
     {
+      "src": "/img/press/jsworld-crowd.jpg",
+      "download": "joe-hart-jsworld-crowd.jpg",
+      "alt": "Joe Hart gesturing on stage at JSWORLD Conference with a large audience behind",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
       "src": "/img/press/react-advanced-podium-1.jpg",
       "download": "joe-hart-react-advanced-podium-1.jpg",
       "alt": "Portrait photo of Joe Hart speaking at the React Advanced London podium, wearing blue glasses and an olive jacket",
@@ -53,9 +67,30 @@
       "credit": "Simon Callaghan Photography"
     },
     {
+      "src": "/img/press/jsworld-pointing.jpg",
+      "download": "joe-hart-jsworld-pointing.jpg",
+      "alt": "Joe Hart pointing up at the screen on the JSWORLD Conference stage",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-looking-up.jpg",
+      "download": "joe-hart-jsworld-looking-up.jpg",
+      "alt": "Joe Hart at the JSWORLD Conference lectern looking up towards the audience",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
       "src": "/img/press/jsworld-wide.jpg",
       "download": "joe-hart-jsworld-wide.jpg",
       "alt": "Wide shot of Joe Hart speaking beside the JSWORLD Conference lectern on a large red-lit stage",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-from-behind.jpg",
+      "download": "joe-hart-jsworld-from-behind.jpg",
+      "alt": "Joe Hart at the JSWORLD Conference lectern, seen from behind, facing a packed auditorium",
       "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     },
@@ -85,41 +120,6 @@
       "download": "joe-hart-front-end-north.jpg",
       "alt": "Joe Hart mid-lunge on stage at Front End North in Sheffield, holding a microphone, next to a green Front End North banner",
       "caption": "On stage at Front End North, Sheffield",
-      "credit": ""
-    },
-    {
-      "src": "/img/press/jsworld-arms-wide.jpg",
-      "download": "joe-hart-jsworld-arms-wide.jpg",
-      "alt": "Joe Hart on stage at JSWORLD Conference with both arms spread wide",
-      "caption": "JSWORLD Conference, Amsterdam",
-      "credit": ""
-    },
-    {
-      "src": "/img/press/jsworld-looking-up.jpg",
-      "download": "joe-hart-jsworld-looking-up.jpg",
-      "alt": "Joe Hart at the JSWORLD Conference lectern looking up towards the audience",
-      "caption": "JSWORLD Conference, Amsterdam",
-      "credit": ""
-    },
-    {
-      "src": "/img/press/jsworld-crowd.jpg",
-      "download": "joe-hart-jsworld-crowd.jpg",
-      "alt": "Joe Hart gesturing on stage at JSWORLD Conference with a large audience behind",
-      "caption": "JSWORLD Conference, Amsterdam",
-      "credit": ""
-    },
-    {
-      "src": "/img/press/jsworld-from-behind.jpg",
-      "download": "joe-hart-jsworld-from-behind.jpg",
-      "alt": "Joe Hart at the JSWORLD Conference lectern, seen from behind, facing a packed auditorium",
-      "caption": "JSWORLD Conference, Amsterdam",
-      "credit": ""
-    },
-    {
-      "src": "/img/press/jsworld-pointing.jpg",
-      "download": "joe-hart-jsworld-pointing.jpg",
-      "alt": "Joe Hart pointing up at the screen on the JSWORLD Conference stage",
-      "caption": "JSWORLD Conference, Amsterdam",
       "credit": ""
     }
   ],
