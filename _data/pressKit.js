@@ -78,14 +78,10 @@ function textFiles() {
   const talks = (press.talks || [])
     .map((t) => `${t.title}\n\n${t.abstract}${t.link ? `\n\n${t.link}` : ''}`)
     .join('\n\n---\n\n')
-  const credits = press.photos
-    .map((p) => `${p.download}: ${p.event}, ${p.caption}${p.credit ? ` (photo: ${p.credit})` : ''}`)
-    .join('\n')
   const links = press.links.map((l) => `${l.label}: ${l.url.replace('mailto:', '')}`).join('\n')
   return [
     { name: 'bios.txt', content: bios + '\n' },
     { name: 'talks.txt', content: talks + '\n' },
-    { name: 'photo-credits.txt', content: credits + '\n' },
     { name: 'links.txt', content: links + '\n' },
   ]
 }
@@ -164,10 +160,6 @@ module.exports = async function () {
     let group = groups.find((g) => g.event === photo.event)
     if (!group) groups.push((group = { event: photo.event, photos: [] }))
     group.photos.push(photo)
-  }
-  for (const group of groups) {
-    const credits = new Set(group.photos.map((p) => p.credit || ''))
-    group.credit = credits.size === 1 ? [...credits][0] : ''
   }
 
   return { photos, groups, zips }

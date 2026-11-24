@@ -12,7 +12,7 @@ emoji: 📸
 <h1>📸 Press pack</h1>
 <p>
   Hello! If I'm speaking at your event, everything here is yours to use for promo: social posts, the website, the
-  programme, the big screen. Crop it, resize it, go wild. If a photo has a credit, please include it.
+  programme, the big screen. Crop it, resize it, go wild.
 </p>
 
 <div class="press-zips">
@@ -45,9 +45,6 @@ emoji: 📸
 {% for group in pressKit.groups %}
 <section class="press-group flow">
   <h3>{{ group.event }}</h3>
-  {% if group.credit %}
-  <p class="press-credit">📷 Photos by {{ group.credit }}</p>
-  {% endif %}
   <div class="press-photos">
     {% for photo in group.photos %}
     <figure class="press-photo flow">
@@ -55,11 +52,7 @@ emoji: 📸
         <img src="{{ photo.src }}" alt="{{ photo.alt }}" sizes="(min-width: 800px) 400px, 100vw" />
       </a>
       <figcaption class="flow">
-        <div>
-          {{ photo.caption }}{% if photo.credit and not group.credit %}<br /><span class="press-credit"
-            >📷 {{ photo.credit }}</span
-          >{% endif %}
-        </div>
+        <div>{{ photo.caption }}</div>
         <details class="press-variants">
           <summary>Download</summary>
           <table>

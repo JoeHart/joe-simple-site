@@ -757,10 +757,6 @@ nav.site-menu ul {
   font-size: var(--step--1);
 }
 
-.press-credit {
-  opacity: 0.8;
-}
-
 .press-links {
   display: grid;
   grid-template-columns: max-content 1fr;
