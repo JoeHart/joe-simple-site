@@ -1,39 +1,15 @@
 {
   "name": "Joe Hart",
-  "tagline": "Web engineer & comedian",
+  "tagline": "Product engineer & comedian",
   "pronouns": "",
   "bios": [
     {
       "label": "One-liner",
-      "text": "Joe Hart is a web engineer and comedian who makes joyous, charming and occasionally useless things for the web."
+      "text": "Joe Hart is a product engineer and comedian who makes joyous, charming and occasionally useless things for the web."
     },
     {
       "label": "Short bio",
-      "text": "Joe Hart is a web engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC and LEGO, and spends spare time rebuilding classic video games in tools that were never meant for them."
-    },
-    {
-      "label": "Long bio",
-      "text": "Joe Hart is a web engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC, LEGO and a bunch of startups, and spends spare time rebuilding classic video games like Age of Empires 2 and Final Fantasy IX in React, a tool that was never meant for them. Joe's talks sit somewhere between a tech talk and a comedy set, and have been seen at React Advanced London, JSWORLD, Brighton Ruby, Front End North and HalfStack. Joe also hosts podcasts and makes silly games at joehart.co.uk."
-    }
-  ],
-  "talks": [
-    {
-      "title": "Final Fantasy IX in React",
-      "abstract": "The original Final Fantasy IX was a masterclass in creative constraint, pushing the PlayStation's hardware to its limits. In this talk Joe tries to recreate the magic in React: rendering 3D scenes with React Three Fiber, building a game loop, and fighting the browser one frame at a time.",
-      "link": "https://gitnation.com/contents/final-fantasy-ix-in-react-fighting-the-browser-one-frame-at-a-time",
-      "event": "React Advanced London 2025"
-    },
-    {
-      "title": "Trying to build Age of Empires 2 in React",
-      "abstract": "React was never meant for real-time strategy games. Joe builds one anyway, rebuilding the classic Age of Empires 2 in the browser, and finds out what happens when you use a tool for something it really shouldn't be used for.",
-      "link": "https://www.youtube.com/watch?v=meUjZAyBkE8",
-      "event": "JSWORLD Conference, Amsterdam"
-    },
-    {
-      "title": "Games Games Games",
-      "abstract": "Why should developers make fun, silly, useless things? A talk about making games for the joy of it, and why playing is one of the best ways to learn.",
-      "link": "https://www.youtube.com/watch?v=ZReKW_b5xVw",
-      "event": "HalfStack Online"
+      "text": "Joe Hart is a product engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC and LEGO, and spends spare time rebuilding classic video games in tools that were never meant for them."
     }
   ],
   "photos": [
@@ -148,6 +124,11 @@
       "label": "Website",
       "value": "joehart.co.uk",
       "url": "https://www.joehart.co.uk"
+    },
+    {
+      "label": "Past talks",
+      "value": "joehart.co.uk/talks",
+      "url": "https://www.joehart.co.uk/talks/"
     },
     {
       "label": "Bluesky",

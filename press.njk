@@ -19,7 +19,7 @@ emoji: 📸
   {% for zip in pressKit.zips %}
   <a class="press-zip" href="{{ zip.url }}" download>
     ⬇️ Download everything{% if zip.size == 'web' %}, web size{% else %}, full size{% endif %}
-    <span>{{ zip.count }} photos + bios &amp; talks as text ⋅ {{ zip.bytes | fileSize }}</span>
+    <span>{{ zip.count }} photos + bios &amp; links as text ⋅ {{ zip.bytes | fileSize }}</span>
   </a>
   {% endfor %}
 </div>
@@ -76,24 +76,6 @@ emoji: 📸
   </div>
 </section>
 {% endfor %}
-
-<h2>Talks</h2>
-<div class="press-bios">
-  {% for talk in press.talks %}
-  <section class="press-bio flow">
-    <div class="press-bio-header">
-      <h3>{{ talk.title }}</h3>
-      <button type="button" class="press-copy" data-copy-target="talk-{{ loop.index }}">Copy</button>
-    </div>
-    <p id="talk-{{ loop.index }}">{{ talk.abstract }}</p>
-    <p class="press-dim">
-      {% if talk.event %}{{ talk.event }}{% endif %}{% if talk.link %} ⋅
-      <a href="{{ talk.link }}" target="_blank" rel="noopener">Watch</a>{% endif %}
-    </p>
-  </section>
-  {% endfor %}
-</div>
-<p>More past talks are on the <a href="/talks/">talks page</a>.</p>
 
 <h2>Name &amp; links</h2>
 <dl class="press-links">

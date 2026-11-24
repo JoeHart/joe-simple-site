@@ -75,13 +75,9 @@ async function buildVariant(photo, sourcePath, meta, ratio, slug, cache) {
 
 function textFiles() {
   const bios = press.bios.map((b) => `${b.label}\n\n${b.text}`).join('\n\n---\n\n')
-  const talks = (press.talks || [])
-    .map((t) => `${t.title}\n\n${t.abstract}${t.link ? `\n\n${t.link}` : ''}`)
-    .join('\n\n---\n\n')
   const links = press.links.map((l) => `${l.label}: ${l.url.replace('mailto:', '')}`).join('\n')
   return [
     { name: 'bios.txt', content: bios + '\n' },
-    { name: 'talks.txt', content: talks + '\n' },
     { name: 'links.txt', content: links + '\n' },
   ]
 }
