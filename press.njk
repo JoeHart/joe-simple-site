@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+templateClass: flow
+permalink: /press/
+eleventyExcludeFromCollections: true
+noindex: true
+title: Press pack — Joe Hart
+description: Photos, bios and links for events Joe Hart is speaking at.
+emoji: 📸
+---
+
+<h1>📸 Press pack</h1>
+<p>
+  Hello! If I'm speaking at your event, everything here is yours to use for promo: social posts, the website, the
+  programme, the big screen. Crop it, resize it, go wild. If a photo has a credit, please include it.
+</p>
+
+<h2>Bios</h2>
+<div class="press-bios">
+  {% for bio in press.bios %}
+  <section class="press-bio flow">
+    <div class="press-bio-header">
+      <h3>{{ bio.label }}</h3>
+      <button type="button" class="press-copy" data-copy-target="bio-{{ loop.index }}">Copy</button>
+    </div>
+    <p id="bio-{{ loop.index }}">{{ bio.text }}</p>
+  </section>
+  {% endfor %}
+</div>
+
+<h2>Photos</h2>
+<p>Click a photo, or its download link, for the full-resolution original.</p>
+<div class="press-photos">
+  {% for photo in press.photos %}
+  <figure class="press-photo flow">
+    <a href="{{ photo.src }}" download="{{ photo.download }}">
+      <img src="{{ photo.src }}" alt="{{ photo.alt }}" sizes="(min-width: 800px) 400px, 100vw" />
+    </a>
+    <figcaption>
+      {{ photo.caption }}{% if photo.credit %}<br /><span class="press-credit">📷 {{ photo.credit }}</span>{% endif
+      %}<br />
+      <a href="{{ photo.src }}" download="{{ photo.download }}">Download original</a>
+    </figcaption>
+  </figure>
+  {% endfor %}
+</div>
+
+<h2>Name &amp; links</h2>
+<dl class="press-links">
+  <dt>Name</dt>
+  <dd>{{ press.name }}{% if press.pronouns %} ({{ press.pronouns }}){% endif %}</dd>
+  <dt>Title</dt>
+  <dd>{{ press.tagline }}</dd>
+  {% for link in press.links %}
+  <dt>{{ link.label }}</dt>
+  <dd><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.value }}</a></dd>
+  {% endfor %}
+</dl>
+
+<h2>Talks</h2>
+<p>Previous talks, with recordings where they exist, are on the <a href="/talks/">talks page</a>.</p>
+
+<p>Need something that isn't here? <a href="mailto:joe@joehart.dev">Drop me an email</a>.</p>
+
+<script>
+  document.querySelectorAll('.press-copy').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const text = document.getElementById(button.dataset.copyTarget).textContent.trim()
+      try {
+        await navigator.clipboard.writeText(text)
+        button.textContent = 'Copied!'
+      } catch (e) {
+        button.textContent = 'Copy failed'
+      }
+      setTimeout(() => (button.textContent = 'Copy'), 2000)
+    })
+  })
+</script>

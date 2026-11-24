@@ -1,0 +1,50 @@
+{
+  "name": "Joe Hart",
+  "tagline": "Web engineer & comedian",
+  "pronouns": "",
+  "bios": [
+    {
+      "label": "One-liner",
+      "text": "Joe Hart is a web engineer and comedian who makes joyous, charming and occasionally useless things for the web."
+    },
+    {
+      "label": "Short bio",
+      "text": "Joe Hart is a web engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC and LEGO, and spends spare time rebuilding classic video games in tools that were never meant for them."
+    },
+    {
+      "label": "Long bio",
+      "text": "Joe Hart is a web engineer and comedian who loves making joyous and charming things. Joe has built front-ends at Monzo, the BBC, LEGO and a bunch of startups, and spends spare time rebuilding classic video games like Age of Empires 2 and Final Fantasy IX in React, a tool that was never meant for them. Joe's talks sit somewhere between a tech talk and a comedy set, and have been seen at React Advanced London, JSWORLD, Brighton Ruby, Front End North and HalfStack. Joe also hosts podcasts and makes silly games at joehart.co.uk."
+    }
+  ],
+  "photos": [
+    {
+      "src": "/img/joe-speaker.jpg",
+      "download": "joe-hart-headshot.jpg",
+      "alt": "Head and shoulders photo of Joe Hart on stage wearing glasses, a blue corduroy shirt and a headset mic, against a black background",
+      "caption": "Headshot (square)",
+      "credit": ""
+    },
+    {
+      "src": "/img/uploads/React-Advanced-2025-The-Brewery-London-Event-Photographer-Simon-Callaghan-Photography-2152_Original.jpeg",
+      "download": "joe-hart-react-advanced-2025.jpg",
+      "alt": "Joe Hart on stage at React Advanced London, gesturing to the audience in front of a slide reading 'Joe Hart, Web Engineer'",
+      "caption": "On stage at React Advanced London 2025",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/uploads/frontendnorthme.jpg",
+      "download": "joe-hart-front-end-north.jpg",
+      "alt": "Joe Hart mid-lunge on stage at Front End North in Sheffield, holding a microphone, next to a green Front End North banner",
+      "caption": "On stage at Front End North, Sheffield",
+      "credit": ""
+    }
+  ],
+  "links": [
+    { "label": "Website", "value": "joehart.co.uk", "url": "https://www.joehart.co.uk" },
+    { "label": "Bluesky", "value": "@joehart.bsky.social", "url": "https://bsky.app/profile/joehart.bsky.social" },
+    { "label": "Mastodon", "value": "@joehart@social.lol", "url": "https://social.lol/@joehart" },
+    { "label": "LinkedIn", "value": "joe-hart-developer", "url": "https://www.linkedin.com/in/joe-hart-developer/" },
+    { "label": "GitHub", "value": "JoeHart", "url": "https://github.com/JoeHart" },
+    { "label": "Email", "value": "joe@joehart.dev", "url": "mailto:joe@joehart.dev" }
+  ]
+}
