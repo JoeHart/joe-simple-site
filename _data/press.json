@@ -25,10 +25,59 @@
       "credit": ""
     },
     {
+      "src": "/img/press/jsworld-at-the-lectern.jpg",
+      "download": "joe-hart-jsworld-at-the-lectern.jpg",
+      "alt": "Joe Hart at the lectern at JSWORLD Conference, mid-explanation with one hand raised, wearing a blue corduroy shirt",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-age-of-empires.jpg",
+      "download": "joe-hart-jsworld-age-of-empires.jpg",
+      "alt": "Joe Hart walking across the JSWORLD Conference stage in front of a giant slide reading 'Trying to build Age of Empires 2 in React'",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
       "src": "/img/uploads/React-Advanced-2025-The-Brewery-London-Event-Photographer-Simon-Callaghan-Photography-2152_Original.jpeg",
       "download": "joe-hart-react-advanced-2025.jpg",
       "alt": "Joe Hart on stage at React Advanced London, gesturing to the audience in front of a slide reading 'Joe Hart, Web Engineer'",
-      "caption": "On stage at React Advanced London 2025",
+      "caption": "React Advanced London 2025",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/press/react-advanced-podium-1.jpg",
+      "download": "joe-hart-react-advanced-podium-1.jpg",
+      "alt": "Portrait photo of Joe Hart speaking at the React Advanced London podium, wearing blue glasses and an olive jacket",
+      "caption": "React Advanced London 2025",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/press/jsworld-wide.jpg",
+      "download": "joe-hart-jsworld-wide.jpg",
+      "alt": "Wide shot of Joe Hart speaking beside the JSWORLD Conference lectern on a large red-lit stage",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/react-advanced-podium-2.jpg",
+      "download": "joe-hart-react-advanced-podium-2.jpg",
+      "alt": "Portrait photo of Joe Hart mid-sentence at the React Advanced London podium",
+      "caption": "React Advanced London 2025",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/press/react-advanced-command-and-conquer.jpg",
+      "download": "joe-hart-react-advanced-command-and-conquer.jpg",
+      "alt": "Joe Hart presenting to a full room at React Advanced London next to a slide reading 'Command & Conquer: Tiberium Jira'",
+      "caption": "React Advanced London 2025",
+      "credit": "Simon Callaghan Photography"
+    },
+    {
+      "src": "/img/press/react-advanced-room.jpg",
+      "download": "joe-hart-react-advanced-room.jpg",
+      "alt": "Joe Hart presenting at React Advanced London, seen from the back of the audience",
+      "caption": "React Advanced London 2025",
       "credit": "Simon Callaghan Photography"
     },
     {
@@ -37,14 +86,73 @@
       "alt": "Joe Hart mid-lunge on stage at Front End North in Sheffield, holding a microphone, next to a green Front End North banner",
       "caption": "On stage at Front End North, Sheffield",
       "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-arms-wide.jpg",
+      "download": "joe-hart-jsworld-arms-wide.jpg",
+      "alt": "Joe Hart on stage at JSWORLD Conference with both arms spread wide",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-looking-up.jpg",
+      "download": "joe-hart-jsworld-looking-up.jpg",
+      "alt": "Joe Hart at the JSWORLD Conference lectern looking up towards the audience",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-crowd.jpg",
+      "download": "joe-hart-jsworld-crowd.jpg",
+      "alt": "Joe Hart gesturing on stage at JSWORLD Conference with a large audience behind",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-from-behind.jpg",
+      "download": "joe-hart-jsworld-from-behind.jpg",
+      "alt": "Joe Hart at the JSWORLD Conference lectern, seen from behind, facing a packed auditorium",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
+    },
+    {
+      "src": "/img/press/jsworld-pointing.jpg",
+      "download": "joe-hart-jsworld-pointing.jpg",
+      "alt": "Joe Hart pointing up at the screen on the JSWORLD Conference stage",
+      "caption": "JSWORLD Conference, Amsterdam",
+      "credit": ""
     }
   ],
   "links": [
-    { "label": "Website", "value": "joehart.co.uk", "url": "https://www.joehart.co.uk" },
-    { "label": "Bluesky", "value": "@joehart.bsky.social", "url": "https://bsky.app/profile/joehart.bsky.social" },
-    { "label": "Mastodon", "value": "@joehart@social.lol", "url": "https://social.lol/@joehart" },
-    { "label": "LinkedIn", "value": "joe-hart-developer", "url": "https://www.linkedin.com/in/joe-hart-developer/" },
-    { "label": "GitHub", "value": "JoeHart", "url": "https://github.com/JoeHart" },
-    { "label": "Email", "value": "joe@joehart.dev", "url": "mailto:joe@joehart.dev" }
+    {
+      "label": "Website",
+      "value": "joehart.co.uk",
+      "url": "https://www.joehart.co.uk"
+    },
+    {
+      "label": "Bluesky",
+      "value": "@joehart.bsky.social",
+      "url": "https://bsky.app/profile/joehart.bsky.social"
+    },
+    {
+      "label": "Mastodon",
+      "value": "@joehart@social.lol",
+      "url": "https://social.lol/@joehart"
+    },
+    {
+      "label": "LinkedIn",
+      "value": "joe-hart-developer",
+      "url": "https://www.linkedin.com/in/joe-hart-developer/"
+    },
+    {
+      "label": "GitHub",
+      "value": "JoeHart",
+      "url": "https://github.com/JoeHart"
+    },
+    {
+      "label": "Email",
+      "value": "joe@joehart.dev",
+      "url": "mailto:joe@joehart.dev"
+    }
   ]
 }
